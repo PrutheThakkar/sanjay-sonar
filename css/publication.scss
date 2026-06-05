@@ -1,0 +1,90 @@
+.publications-intro {
+  padding: clamp(80px, 7vw, 135px) 0 clamp(100px, 9vw, 170px);
+
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .publications-content {
+    max-width: 1280px;
+  }
+
+  h2 {
+    color: #485a2e;
+    text-align: left;
+    margin-bottom: clamp(34px, 3vw, 58px);
+
+    &::after {
+      background: #485a2e;
+    }
+
+    .subheading {
+      display: block;
+      color: #485a2e;
+      font-family: "Neue Montreal Regular";
+      font-weight: normal;
+      line-height: 1.25;
+      margin-top: clamp(10px, 1vw, 18px);
+    }
+  }
+
+  h3 {
+    color: #485a2e;
+    text-align: left;
+    font-family: "Neue Montreal Regular";
+    font-weight: normal;
+    margin-bottom: clamp(22px, 2vw, 36px);
+
+    &::after {
+      background: #485a2e;
+    }
+  }
+
+  p {
+    color: #485a2e;
+    line-height: 1.65;
+    max-width: 1200px;
+
+    &:not(:last-child) {
+      margin-bottom: clamp(26px, 2.5vw, 48px);
+    }
+  }
+
+  .purpose-block {
+    margin-top: clamp(70px, 7vw, 130px);
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 991px) {
+  .publications-intro {
+    padding: 70px 0 95px;
+
+    .container {
+      max-width: 90%;
+    }
+
+    .purpose-block {
+      margin-top: 65px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .publications-intro {
+    padding: 55px 0 75px;
+
+    h2 {
+      margin-bottom: 30px;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 24px;
+    }
+
+    .purpose-block {
+      margin-top: 55px;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.about-intro,
+.about-story,
+.about-closing {
+  padding: clamp(70px, 6.25vw, 120px) 0;
+}
+.about-intro .container,
+.about-story .container,
+.about-closing .container {
+  max-width: 86%;
+  margin: 0 auto;
+}
+
+.about-intro-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: clamp(45px, 5vw, 90px);
+  align-items: center;
+}
+
+.about-intro-img,
+.about-story-img {
+  border-radius: clamp(18px, 1.5vw, 28px);
+  overflow: hidden;
+}
+.about-intro-img img,
+.about-story-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.about-intro-img {
+  height: clamp(420px, 37vw, 620px);
+}
+
+.about-intro-content h1,
+.about-intro-content h2,
+.about-story-content h1,
+.about-story-content h2 {
+  color: #fff;
+  text-align: left;
+}
+.about-intro-content h1::after,
+.about-intro-content h2::after,
+.about-story-content h1::after,
+.about-story-content h2::after {
+  background: #eee7aa;
+}
+.about-intro-content .subheading,
+.about-story-content .subheading {
+  display: block;
+  color: #eee7aa;
+  font-family: "Neue Montreal Regular";
+  font-weight: normal;
+  line-height: 1.25;
+  margin-top: clamp(10px, 1vw, 18px);
+}
+.about-intro-content p,
+.about-story-content p {
+  color: #fff;
+  line-height: 1.55;
+}
+.about-intro-content p:not(:last-child),
+.about-story-content p:not(:last-child) {
+  margin-bottom: clamp(18px, 1.6vw, 30px);
+}
+
+.about-story .about-story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(45px, 6vw, 110px);
+  align-items: center;
+}
+.about-story .about-story-row:not(:last-child) {
+  margin-bottom: clamp(70px, 7vw, 135px);
+}
+.about-story .about-story-row.image-right .about-story-img {
+  order: 2;
+}
+.about-story .about-story-row.image-right .about-story-content {
+  order: 1;
+}
+.about-story .about-story-img {
+  height: clamp(280px, 24vw, 430px);
+}
+.about-story .about-story-content h2,
+.about-story .about-story-content p {
+  color: #485a2e;
+}
+.about-story .about-story-content h2::after {
+  background: #485a2e;
+}
+
+.about-closing p {
+  color: #fff;
+  line-height: 1.55;
+  max-width: 1180px;
+}
+.about-closing .about-consultation {
+  margin-top: clamp(60px, 6vw, 110px);
+}
+.about-closing .about-consultation h2 {
+  color: #fff;
+  text-align: left;
+}
+.about-closing .about-consultation h2::after {
+  background: #eee7aa;
+}
+.about-closing .about-consultation p {
+  margin-bottom: clamp(18px, 1.5vw, 28px);
+}
+
+@media (max-width: 991px) {
+  .about-intro,
+  .about-story,
+  .about-closing {
+    padding: 70px 0;
+  }
+  .about-intro .container,
+  .about-story .container,
+  .about-closing .container {
+    max-width: 90%;
+  }
+  .about-intro-wrapper,
+  .about-story .about-story-row {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .about-story .about-story-row.image-right .about-story-img,
+  .about-story .about-story-row.image-right .about-story-content {
+    order: unset;
+  }
+  .about-intro-img,
+  .about-story .about-story-img {
+    height: auto;
+    aspect-ratio: 1/0.75;
+  }
+}
+@media (max-width: 575px) {
+  .about-intro,
+  .about-story,
+  .about-closing {
+    padding: 55px 0;
+  }
+  .about-intro-img,
+  .about-story-img {
+    border-radius: 18px;
+  }
+  .about-intro-img,
+  .about-story .about-story-img {
+    aspect-ratio: 1/0.85;
+  }
+  .about-story .about-story-row:not(:last-child) {
+    margin-bottom: 55px;
+  }
+}/*# sourceMappingURL=about.css.map */

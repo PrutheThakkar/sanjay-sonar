@@ -1,0 +1,643 @@
+.expertise-top-section {
+  padding: clamp(70px, 6.25vw, 120px) 0;
+  color: #fff;
+}
+.expertise-top-section .container {
+  max-width: 86%;
+  margin: 0 auto;
+}
+.expertise-top-section .expertise-top-wrapper {
+  display: grid;
+  grid-template-columns: 1.45fr 0.65fr;
+  gap: clamp(40px, 5vw, 90px);
+  align-items: start;
+}
+.expertise-top-section .expertise-top-content h2 {
+  color: #fff;
+  text-align: left;
+  margin-bottom: clamp(40px, 4vw, 76px);
+}
+.expertise-top-section .expertise-top-content h2::after {
+  background: #eee7aa;
+}
+.expertise-top-section .expertise-top-content h2 .subheading {
+  display: block;
+  margin-top: clamp(10px, 1vw, 18px);
+  color: #eee7aa;
+  font-family: "Neue Montreal Regular";
+  font-weight: normal;
+  line-height: 1.2;
+}
+.expertise-top-section .expertise-top-content p {
+  color: #fff;
+  line-height: 1.6;
+  max-width: 1180px;
+}
+.expertise-top-section .expertise-top-content p:not(:last-child) {
+  margin-bottom: clamp(24px, 2.4vw, 46px);
+}
+.expertise-top-section .expertise-top-img {
+  margin-top: clamp(90px, 8vw, 155px);
+  border-radius: clamp(18px, 1.5vw, 28px);
+  overflow: hidden;
+}
+.expertise-top-section .expertise-top-img img {
+  width: 100%;
+  height: clamp(300px, 24vw, 440px);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.65s ease;
+}
+.expertise-top-section .expertise-top-img:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 991px) {
+  .expertise-top-section {
+    padding: 70px 0;
+  }
+  .expertise-top-section .container {
+    max-width: 90%;
+  }
+  .expertise-top-section .expertise-top-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .expertise-top-section .expertise-top-img {
+    margin-top: 0;
+    max-width: 520px;
+  }
+  .expertise-top-section .expertise-top-img img {
+    height: auto;
+    aspect-ratio: 520/420;
+  }
+}
+@media (max-width: 575px) {
+  .expertise-top-section {
+    padding: 55px 0;
+  }
+  .expertise-top-section .expertise-top-content h1 {
+    margin-bottom: 32px;
+  }
+  .expertise-top-section .expertise-top-content p:not(:last-child) {
+    margin-bottom: 22px;
+  }
+  .expertise-top-section .expertise-top-img {
+    border-radius: 18px;
+  }
+  .expertise-top-section .expertise-top-img img {
+    aspect-ratio: 1/0.82;
+  }
+}
+.inside-banner {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  background-image: url("/images/inside-banner-green.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.inside-banner .container {
+  width: 90%;
+  margin: 0 auto;
+}
+.inside-banner h1 {
+  color: #EEE7AA;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .inside-banner {
+    height: 220px;
+  }
+}
+.about-hero {
+  padding: clamp(90px, 7vw, 135px) 0;
+  display: flex;
+  align-items: center;
+}
+.about-hero .container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.about-hero .about-hero-wrapper {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(45px, 5vw, 90px);
+  align-items: center;
+}
+.about-hero .about-hero-img {
+  width: 100%;
+  border-radius: clamp(18px, 1.6vw, 32px);
+  overflow: hidden;
+}
+.about-hero .about-hero-img img {
+  width: 100%;
+  height: clamp(520px, 39vw, 760px);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.about-hero .about-hero-content {
+  max-width: 720px;
+}
+.about-hero .about-hero-content h2 {
+  color: #4B5A2A;
+  font-weight: 700;
+  margin-bottom: clamp(48px, 4vw, 76px);
+  line-height: 1.1;
+}
+.about-hero .about-hero-content h2::after {
+  background: #4B5A2A;
+}
+.about-hero .about-hero-content h2 span {
+  display: block;
+  margin-top: clamp(12px, 1vw, 18px);
+  color: #4B5A2A;
+  font-family: "Neue Montreal Regular";
+  font-weight: normal;
+  line-height: 1.2;
+}
+.about-hero .about-hero-content p {
+  color: #4B5A2A;
+  line-height: 1.55;
+  max-width: 680px;
+}
+.about-hero .about-hero-content p:not(:last-child) {
+  margin-bottom: clamp(28px, 2.5vw, 48px);
+}
+
+@media (max-width: 991px) {
+  .about-hero {
+    padding: 80px 0;
+  }
+  .about-hero .container {
+    max-width: 90%;
+  }
+  .about-hero .about-hero-wrapper {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .about-hero .about-hero-img img {
+    height: auto;
+    aspect-ratio: 820/760;
+  }
+  .about-hero .about-hero-content {
+    max-width: 100%;
+  }
+  .about-hero .about-hero-content h1 {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .about-hero {
+    padding: 60px 0;
+  }
+  .about-hero .about-hero-wrapper {
+    gap: 32px;
+  }
+  .about-hero .about-hero-img {
+    border-radius: 18px;
+  }
+  .about-hero .about-hero-img img {
+    aspect-ratio: 1/1.05;
+  }
+  .about-hero .about-hero-content h1 {
+    margin-bottom: 32px;
+  }
+  .about-hero .about-hero-content p:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+.expertise-overview {
+  padding: clamp(70px, 6.25vw, 120px) 0;
+}
+.expertise-overview .container {
+  max-width: 86%;
+  margin: 0 auto;
+}
+.expertise-overview h2,
+.expertise-overview h3 {
+  color: #485a2e;
+  text-align: left;
+}
+.expertise-overview h2::after,
+.expertise-overview h3::after {
+  background: #485a2e;
+}
+.expertise-overview .expertise-overview-header {
+  max-width: 1180px;
+  margin-bottom: clamp(52px, 5vw, 96px);
+}
+.expertise-overview .expertise-overview-header h2 {
+  margin-bottom: clamp(28px, 2.8vw, 54px);
+}
+.expertise-overview .expertise-overview-header h2 .subheading {
+  display: block;
+  margin-top: clamp(10px, 0.9vw, 18px);
+  color: #485a2e;
+  font-family: "Neue Montreal Regular";
+  font-weight: normal;
+  line-height: 1.25;
+}
+.expertise-overview .expertise-overview-header p {
+  color: #485a2e;
+  line-height: 1.6;
+  max-width: 1120px;
+}
+.expertise-overview .expertise-list-block {
+  max-width: 920px;
+}
+.expertise-overview .expertise-list-block h3 {
+  margin-bottom: clamp(40px, 4vw, 76px);
+  font-family: "Neue Montreal Regular";
+  font-weight: normal;
+}
+.expertise-overview .expertise-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: clamp(80px, 8vw, 160px);
+       column-gap: clamp(80px, 8vw, 160px);
+  row-gap: clamp(42px, 4vw, 72px);
+}
+.expertise-overview .expertise-item {
+  display: grid;
+  grid-template-columns: clamp(58px, 4vw, 76px) 1fr;
+  align-items: center;
+  gap: clamp(18px, 2vw, 36px);
+}
+.expertise-overview .expertise-item p {
+  color: #485a2e;
+  line-height: 1.45;
+}
+.expertise-overview .expertise-icon {
+  width: clamp(58px, 4vw, 76px);
+  height: clamp(58px, 4vw, 76px);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.expertise-overview .expertise-icon img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .expertise-overview {
+    padding: 70px 0;
+  }
+  .expertise-overview .container {
+    max-width: 90%;
+  }
+  .expertise-overview .expertise-overview-header {
+    margin-bottom: 56px;
+  }
+  .expertise-overview .expertise-list-block {
+    max-width: 100%;
+  }
+  .expertise-overview .expertise-list {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+    row-gap: 36px;
+  }
+}
+@media (max-width: 575px) {
+  .expertise-overview {
+    padding: 55px 0;
+  }
+  .expertise-overview .expertise-overview-header {
+    margin-bottom: 44px;
+  }
+  .expertise-overview .expertise-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .expertise-overview .expertise-item {
+    grid-template-columns: 54px 1fr;
+    gap: 16px;
+  }
+  .expertise-overview .expertise-icon {
+    width: 54px;
+    height: 54px;
+  }
+}
+.expertise-detail-section {
+  padding: clamp(70px, 6.25vw, 120px) 0;
+}
+.expertise-detail-section .container {
+  max-width: 86%;
+  margin: 0 auto;
+}
+.expertise-detail-section h3 {
+  color: #485a2e;
+  text-align: left;
+  font-family: "Neue Montreal Regular";
+  font-weight: 600;
+  margin-bottom: clamp(18px, 1.5vw, 28px);
+}
+.expertise-detail-section h3::after {
+  background: #485a2e;
+}
+.expertise-detail-section h4 {
+  color: #485a2e;
+  font-size: clamp(18px, 1.15vw, 22px);
+  font-weight: 600;
+  margin: clamp(28px, 2.5vw, 48px) 0 clamp(16px, 1.5vw, 28px);
+}
+.expertise-detail-section p {
+  color: #485a2e;
+  line-height: 1.55;
+}
+.expertise-detail-section .expertise-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(70px, 7vw, 135px);
+}
+.expertise-detail-section .expertise-detail-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(50px, 6vw, 110px);
+}
+.expertise-detail-section .expertise-detail-block {
+  width: 100%;
+}
+.expertise-detail-section .expertise-detail-block.full {
+  max-width: 100%;
+}
+.expertise-detail-section .procedure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(36px, 4vw, 70px);
+}
+.expertise-detail-section .procedure-card {
+  width: 100%;
+}
+.expertise-detail-section .procedure-card img {
+  width: 100%;
+  aspect-ratio: 520/250;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: clamp(14px, 1vw, 20px);
+  filter: saturate(0.9) contrast(0.95);
+  transition: transform 0.55s ease, filter 0.55s ease;
+}
+.expertise-detail-section .procedure-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.1) contrast(1.05);
+}
+.expertise-detail-section .procedure-card p {
+  margin-top: clamp(10px, 0.8vw, 16px);
+  font-size: clamp(14px, 0.9vw, 17px);
+  line-height: 1.35;
+}
+.expertise-detail-section .expertise-closing {
+  margin-top: clamp(70px, 7vw, 135px);
+}
+.expertise-detail-section .expertise-closing p {
+  max-width: 1180px;
+}
+.expertise-detail-section .expertise-closing p:not(:last-child) {
+  margin-bottom: clamp(28px, 2.5vw, 48px);
+}
+.expertise-detail-section .expertise-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(8px, 0.65vw, 12px) clamp(18px, 1.4vw, 28px);
+  border-radius: 8px;
+  background: #757c53;
+  color: #fff;
+  margin-top: clamp(10px, 1vw, 18px);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+.expertise-detail-section .expertise-btn:hover {
+  transform: translateY(-3px);
+  background: #485a2e;
+}
+
+@media (max-width: 991px) {
+  .expertise-detail-section {
+    padding: 70px 0;
+  }
+  .expertise-detail-section .container {
+    max-width: 90%;
+  }
+  .expertise-detail-section .expertise-detail-list {
+    gap: 70px;
+  }
+  .expertise-detail-section .expertise-detail-row {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+  .expertise-detail-section .procedure-grid {
+    gap: 28px;
+  }
+}
+@media (max-width: 575px) {
+  .expertise-detail-section {
+    padding: 55px 0;
+  }
+  .expertise-detail-section .expertise-detail-list {
+    gap: 55px;
+  }
+  .expertise-detail-section .expertise-detail-row {
+    gap: 55px;
+  }
+  .expertise-detail-section .procedure-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .expertise-detail-section .procedure-card img {
+    border-radius: 16px;
+  }
+  .expertise-detail-section .expertise-btn {
+    width: 100%;
+  }
+}
+.consultation-final {
+  padding: clamp(70px, 6.25vw, 120px) 0;
+  color: #fff;
+}
+.consultation-final .container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.consultation-final h2 {
+  color: #fff;
+  text-align: left;
+}
+.consultation-final h2::after {
+  background: #eee7aa;
+}
+.consultation-final p,
+.consultation-final a {
+  color: #fff;
+}
+.consultation-final .prep-block {
+  margin-bottom: clamp(90px, 9vw, 170px);
+}
+.consultation-final .prep-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(28px, 4vw, 70px);
+  margin: clamp(55px, 5vw, 95px) 0;
+}
+.consultation-final .prep-step {
+  display: grid;
+  grid-template-columns: 180px 14px 1fr;
+  align-items: center;
+}
+.consultation-final .prep-step .name {
+  padding-left: 10px;
+}
+.consultation-final .prep-step .prep-line {
+  width: 100%;
+  height: 3px;
+  background: #fff;
+}
+.consultation-final .prep-step .prep-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0);
+}
+.consultation-final .prep-step p {
+  opacity: 0;
+  transform: translateY(15px);
+  line-height: 1.45;
+}
+.consultation-final.section-active .prep-step .prep-dot {
+  animation: dotMoveReveal 0.7s ease forwards;
+}
+.consultation-final.section-active .prep-step p {
+  animation: textReveal 0.45s ease forwards;
+  animation-delay: 0.55s;
+}
+.consultation-final.section-active .prep-step:nth-child(2) .prep-dot {
+  animation-delay: 0.45s;
+}
+.consultation-final.section-active .prep-step:nth-child(2) p {
+  animation-delay: 1s;
+}
+.consultation-final.section-active .prep-step:nth-child(3) .prep-dot {
+  animation-delay: 0.9s;
+}
+.consultation-final.section-active .prep-step:nth-child(3) p {
+  animation-delay: 1.45s;
+}
+.consultation-final.section-active .prep-step:nth-child(4) .prep-dot {
+  animation-delay: 1.35s;
+}
+.consultation-final.section-active .prep-step:nth-child(4) p {
+  animation-delay: 1.9s;
+}
+@keyframes dotMoveReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-90px) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.consultation-final .prep-note {
+  margin-top: clamp(45px, 4vw, 80px);
+}
+.consultation-final .appointment-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: clamp(50px, 6vw, 110px);
+  align-items: center;
+}
+.consultation-final .appointment-left {
+  max-width: 500px;
+}
+.consultation-final .appointment-left p {
+  line-height: 1.6;
+}
+.consultation-final .appointment-card {
+  background: linear-gradient(135deg, #fff8c7 0%, #efe37a 100%);
+  border-radius: clamp(18px, 1.5vw, 28px);
+  padding: clamp(26px, 2.5vw, 48px);
+}
+.consultation-final .appointment-card a,
+.consultation-final .appointment-card p {
+  color: #485a2e;
+  font-weight: 600;
+}
+.consultation-final .appointment-card-top {
+  display: flex;
+  gap: clamp(30px, 4vw, 70px);
+  flex-wrap: wrap;
+  margin-bottom: clamp(22px, 2vw, 34px);
+}
+
+@keyframes lineReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes dotReveal {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 991px) {
+  .consultation-final {
+    padding: 70px 0;
+  }
+  .consultation-final .prep-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+  }
+  .consultation-final .appointment-row {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+}
+@media (max-width: 575px) {
+  .consultation-final {
+    padding: 55px 0;
+  }
+  .consultation-final .prep-timeline {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .consultation-final .prep-step {
+    grid-template-columns: 70px 12px 1fr;
+    gap: 14px;
+  }
+  .consultation-final .appointment-card-top {
+    flex-direction: column;
+    gap: 14px;
+  }
+}/*# sourceMappingURL=expertise.css.map */
