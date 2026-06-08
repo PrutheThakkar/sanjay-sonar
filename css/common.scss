@@ -726,8 +726,23 @@ body:has(.mobileMenu.open) {
 
 .inside-page{
   header{
+    position: fixed;
     // position: relative;
     opacity: 1;
+  }
+  .inside-banner{
+    text-align: center;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-top: 120px;
+  }
+}
+
+.home-page{
+  header{
+    // position: relative;
+    opacity: 1;
+    position: fixed;
   }
   .inside-banner{
     text-align: center;

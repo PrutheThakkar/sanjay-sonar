@@ -85,6 +85,13 @@
   position: relative;
   z-index: 2;
 }
+.papers-writing-section h2::after {
+  background: #ffffff;
+}
+.papers-writing-section h3::after {
+  background: #ffffff;
+  display: none;
+}
 
 /* Common heading style */
 .section-heading {
@@ -242,4 +249,24 @@
   .content-block p:not(:last-child) {
     margin-bottom: 24px;
   }
+}
+.selected-work-section .selected-work-header h2 {
+  color: #ffffff;
+}
+.selected-work-section .selected-work-header h2 .subheading {
+  color: #EEE7AA;
+}
+.selected-work-section .selected-work-header h2::after {
+  background: #EEE7AA;
+  color: #EEE7AA;
+}
+.selected-work-section .selected-work-grid h4 {
+  color: #ffffff;
+}
+.selected-work-section .selected-work-grid h3::after {
+  display: none;
+}
+
+.papers-writing-section h2::after {
+  background: #485a2e;
 }/*# sourceMappingURL=publication.css.map */

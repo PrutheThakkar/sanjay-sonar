@@ -33,6 +33,18 @@
     pointer-events: none;
   }
 
+  .intro-content{
+    h2{
+      .subheading{
+        color: #EEE7AA;
+        font-weight: normal;
+      }
+      &::after{
+        background: #EEE7AA;
+      }
+    }
+  }
+
   .container {
     max-width: 90%;
     margin: 0 auto;
@@ -64,7 +76,7 @@
 
 .intro-content {
   padding-top: clamp(6px, 1vw, 18px);
-  max-width: 520px;
+  // max-width: 520px;
 
   h2 {
     color: #ffffff;
@@ -88,7 +100,7 @@
     font-size: clamp(15px, 1vw, 18px);
     line-height: 1.75;
     margin: 0;
-    max-width: 480px;
+    // max-width: 480px;
 
     &:not(:last-child) {
       margin-bottom: clamp(24px, 2.4vw, 42px);
@@ -144,6 +156,13 @@
     line-height: 1.1;
     font-weight: 800;
     margin: 0 0 clamp(22px, 2vw, 34px);
+    .subheading{
+      color: #EEE7AA;
+      font-weight: normal;
+    }
+    &::after{
+      background: #EEE7AA;
+    }
   }
 
   h3 {
@@ -377,6 +396,7 @@
   height: 100%;
   overflow: visible;
   z-index: 1;
+  transform: translate(12px, -45px);
 }
 
 .flow-line {

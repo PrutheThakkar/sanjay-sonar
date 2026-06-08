@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { label: "Home", href: "#home", width: "30%" },
+  { label: "Home", href: "/", width: "30%" },
   { label: "About", href: "/about", width: "45%" },
   { label: "Expertise", href: "/expertise", width: "65%" },
   { label: "Teaching", href: "/teaching", width: "75%" },
@@ -15,14 +16,16 @@ const links = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <>
+    <div className={isHome ? "home-page" : undefined}>
       <header className="header">
         <div className="brand">
-          <div className="logo">
+          <a className="logo" href="/">
             <Image
               src="/images/sanjay-logo.svg"
               alt="Dr. Sanjay Sonar Logo"
@@ -30,7 +33,7 @@ export default function Header() {
               height={52}
               priority
             />
-          </div>
+          </a>
         </div>
 
         <nav className="nav">
@@ -91,6 +94,6 @@ export default function Header() {
           </Link>
         </nav>
       </div>
-    </>
+    </div>
   );
 }

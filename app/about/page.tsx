@@ -9,7 +9,7 @@ const aboutSections = [
       "Over the course of his career, he has approached surgery not simply as a technical discipline, but as a process of continuous learning, refinement, and responsibility.",
       "His work focuses on understanding complexity with patience and clarity, carefully evaluating each condition, planning each step with precision, and choosing approaches designed for better long-term outcomes.",
     ],
-    image: "/images/the-practice-img.webp",
+    image: "/images/dss_aboutpage_thepractice-1.webp",
     imagePosition: "right",
   },
   {
@@ -20,7 +20,7 @@ const aboutSections = [
       "He also conducts workshops and teaching programs in India and internationally, sharing practical surgical knowledge developed through decades of clinical experience.",
       "His approach to teaching is rooted in clarity and simplicity, focusing not only on surgical technique, but on judgment, decision-making, and understanding how to think through complexity.",
     ],
-    image: "/images/teaching-mentorship-about.webp",
+    image: "/images/dss_aboutpage_teaching-1.webp",
     imagePosition: "left",
   },
   {
@@ -30,7 +30,7 @@ const aboutSections = [
       "His written work is driven by a simple idea: that complex surgical concepts should be made understandable, teachable, and useful to others.",
       "These contributions continue to support the learning and development of surgeons and trainees across different stages of practice.",
     ],
-    image: "/images/teaching-mentorship-about.webp",
+    image: "/images/dss_aboutpage_teaching-1.webp",
     imagePosition: "right",
   },
   {
@@ -40,21 +40,21 @@ const aboutSections = [
       "He believes that meaningful work extends beyond professional achievement, and that knowledge and experience carry a responsibility to contribute more widely.",
       "At heart, his work is guided by reflection, consistency, and the belief that careful effort, over time, shapes both practice and people.",
     ],
-    image: "/images/beyond-operating-system.webp",
+    image: "/images/dss_aboutpage_beyond_the_operating_room_1.webp",
     imagePosition: "left",
   },
 ];
 
 export default function AboutPage() {
   return (
-      <main className="inside-page about-page">
-    <Layout>
+    <main className="inside-page about-page">
+      <Layout>
 
-         <section className="inside-banner">
-                    <div className="container">
-                        <h1>About Page</h1>
-                    </div>
-                </section>
+        <section className="inside-banner">
+          <div className="container">
+            <h1>About Page</h1>
+          </div>
+        </section>
 
 
         <section className="about-intro green-bg">
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <div className="about-intro-wrapper">
               <div className="about-intro-img">
                 <Image
-                  src="/images/about-header.webp"
+                  src="/images/dss_aboutpage_about_1.webp"
                   alt="Dr. Sanjay Sonar teaching surgery"
                   width={560}
                   height={520}
@@ -105,9 +105,8 @@ export default function AboutPage() {
           <div className="container">
             {aboutSections.map((section) => (
               <div
-                className={`about-story-row ${
-                  section.imagePosition === "right" ? "image-right" : "image-left"
-                }`}
+                className={`about-story-row ${section.imagePosition === "right" ? "image-right" : "image-left"
+                  }`}
                 key={section.title}
               >
                 <div className="about-story-img">
@@ -147,7 +146,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-    </Layout>
-      </main>
+      </Layout>
+    </main>
   );
 }

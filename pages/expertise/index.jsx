@@ -53,11 +53,7 @@ export default function ExpertisePage() {
 
                                 <p>
                                     Some surgical methods are learned through repetition. <br />
-                                    Others are refined over years of careful practice.
-                                </p>
-
-                                <p>
-                                    Dr. Sanjay Sonar’s work is shaped by more than three decades of
+                                    Others are refined over years of careful practice. Dr. Sanjay Sonar’s work is shaped by more than three decades of
                                     experience in advanced laparoscopic surgery, managing cases that demand
                                     precision, judgment, and a deep understanding of surgical complexity.
                                 </p>
@@ -65,27 +61,21 @@ export default function ExpertisePage() {
                                 <p>
                                     Every technique used in practice has been tested, evaluated, and
                                     continuously refined with one objective in mind: better outcomes from
-                                    the very beginning.
-                                </p>
-
-                                <p>
-                                    The focus is not only on performing surgery successfully, but on
+                                    the very beginning. The focus is not only on performing surgery successfully, but on
                                     planning it thoughtfully, reducing unnecessary trauma, improving
                                     recovery, and choosing the most effective approach for each individual
                                     case.
                                 </p>
 
+
                                 <p>
                                     Over time, this process of observation, refinement, and execution has
                                     helped shape methods that are now taught, documented, and shared with
-                                    surgeons more widely.
-                                </p>
-
-                                <p>
-                                    The work spans a broad range of advanced and minimally invasive
+                                    surgeons more widely. The work spans a broad range of advanced and minimally invasive
                                     procedures across gastrointestinal, colorectal, thoracic, endocrine,
                                     urological, vascular, and hernia surgery.
                                 </p>
+                               
                             </div>
 
                             <div className="expertise-top-img">
@@ -155,7 +145,7 @@ export default function ExpertisePage() {
                                 <h3>Colorectal Surgery</h3>
                                 <p>
                                     Advanced laparoscopic procedures designed to manage colorectal conditions
-                                    with careful surgical planning and minimally invasive access.
+                                    with careful surgical planning and minimally invasive access
                                 </p>
 
                                 <h4>Procedures include: </h4>
@@ -163,7 +153,7 @@ export default function ExpertisePage() {
                                 <div className="procedure-grid">
                                     <div className="procedure-card">
                                         <Image
-                                            src="/images/laparoscopic-rectopexy.webp"
+                                            src="/images/Laparoscopic-Rectopexy-new.webp"
                                             alt="Laparoscopic Rectopexy"
                                             width={520}
                                             height={250}
@@ -173,7 +163,7 @@ export default function ExpertisePage() {
 
                                     <div className="procedure-card">
                                         <Image
-                                            src="/images/laparoscopic-colectomy.webp"
+                                            src="/images/Laparoscopic-Colectomy-new.webp"
                                             alt="Laparoscopic Colectomy"
                                             width={520}
                                             height={250}
@@ -186,7 +176,7 @@ export default function ExpertisePage() {
                             <div className="expertise-detail-block full">
                                 <h3>General Laparoscopic Surgery </h3>
                                 <p>
-                                    Common and complex abdominal procedures carried out using refined laparoscopic techniques developed through years of practice.
+                                    Common and complex abdominal procedures carried out using refined laparoscopic techniques developed through years of practice
                                 </p>
 
                                 <h4>Procedures include:</h4>
@@ -220,7 +210,7 @@ export default function ExpertisePage() {
                                     <p>
                                         Minimally invasive thoracic procedures performed
                                         using video-assisted techniques
-                                        for improved precision and recovery.
+                                        for improved precision and recovery
                                     </p>
 
                                     <h4>Procedures include:</h4>
@@ -240,7 +230,7 @@ export default function ExpertisePage() {
                                     <h3>Endocrine Surgery </h3>
                                     <p>
                                         Minimally invasive thyroid procedures approached with careful
-                                        anatomical precision and surgical planning.
+                                        anatomical precision and surgical planning
                                     </p>
 
                                     <h4>Procedures include:</h4>
@@ -262,7 +252,7 @@ export default function ExpertisePage() {
                                     <h3>Reconstructive Urological Surgery</h3>
                                     <p>
                                         Procedures focused on restoring function while minimizing surgical<br />
-                                        trauma wherever possible.
+                                        trauma wherever possible
                                     </p>
 
                                     <h4>Procedures include:</h4>
@@ -282,7 +272,7 @@ export default function ExpertisePage() {
                                     <h3>Vascular Procedures</h3>
                                     <p>
                                         Modern minimally invasive treatment approaches for vascular
-                                        conditions affecting comfort, mobility, and circulation.
+                                        conditions affecting comfort, mobility, and circulation
                                     </p>
 
                                     <h4>Procedures include:</h4>
@@ -305,7 +295,7 @@ export default function ExpertisePage() {
                                 Throughout every area of practice, the approach remains consistent:
                                 <br />
                                 to understand the problem fully, operate with precision, and build
-                                towards the best possible long-term outcome.
+                                towards the best possible long-term outcome
                             </p>
 
                             <p>

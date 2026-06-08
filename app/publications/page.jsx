@@ -121,14 +121,15 @@ export default function HomePage() {
                 <section className="selected-work-section green-bg" id="selected-work">
                     <div className="container">
                         <div className="selected-work-header">
-                            <h2>SELECTED WORK
-                                <span className="subheading">Cases that required more than routine decisions.</span>
+                            <h2>Textbooks
+                                <span className="subheading">lorem ipsum dolor sit amet</span>
                             </h2>
 
                         </div>
 
                         <div className="selected-work-grid">
                             <div className="selected-work-card selected-work-card-large">
+                                <h3>Lorem ipsum dolor </h3>
                                 <div className="selected-work-img">
                                     <Image
                                         src="/images/publications-img.webp"
@@ -142,6 +143,7 @@ export default function HomePage() {
 
                             <div className="selected-work-right">
                                 <div className="selected-work-card">
+                                      <h3>Lorem ipsum dolor </h3>
                                     <div className="selected-work-img">
                                         <Image
                                             src="/images/publications-img.webp"
@@ -154,6 +156,7 @@ export default function HomePage() {
                                 </div>
 
                                 <div className="selected-work-card">
+                                      <h3>Lorem ipsum dolor </h3>
                                     <div className="selected-work-img">
                                         <Image
                                             src="/images/publications-img.webp"

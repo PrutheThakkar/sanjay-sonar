@@ -1,3 +1,4 @@
+import { Span } from "next/dist/trace";
 import Layout from "../../components/Layout";
 import WorkSwiper from "../../components/WorkSwiper";
 
@@ -13,11 +14,11 @@ const philosophyItems = [
         ),
     },
     {
-        icon: "/images/icon-plan.svg",
+        icon: "/images/How-plan-carefully.svg",
         text: <>How to plan carefully</>,
     },
     {
-        icon: "/images/icon-decision.svg",
+        icon: "/images/How-make-decisions-clarity.svg",
         text: (
             <>
                 How to make decisions
@@ -27,7 +28,7 @@ const philosophyItems = [
         ),
     },
     {
-        icon: "/images/icon-refine.svg",
+        icon: "/images/And-how-refine-practice-time.svg",
         text: (
             <>
                 And how to refine
@@ -43,30 +44,33 @@ export default function TeachingPage() {
         <main className="teaching-page inside-page">
             <Layout>
 
-                  <section className="inside-banner">
-        <div className="container">
-          <h1>Selected Work</h1>
-        </div>
-      </section>
+                <section className="inside-banner">
+                    <div className="container">
+                        <h1>Teaching</h1>
+                    </div>
+                </section>
+
                 {/* Top Teaching Intro */}
-                <section className="teaching-intro">
+                <section className="teaching-intro white-bg">
                     <div className="container">
                         <div className="teaching-intro-grid">
                             <div className="teaching-image large">
                                 <img
-                                    src="/images/Teacing-banner-1.webp"
+                                    src="/images/teaching-header-new.webp"
                                     alt="Dr. Sanjay Sonar teaching"
                                 />
                             </div>
 
                             <div className="teaching-copy">
-                                <h1 className="lined-title">Teaching</h1>
-
-                                <h2>
+                                <h2 >
+                                Teaching
+                                <span className="subheading">
                                     Teaching is not separate from the work.
                                     <br />
                                     It is a continuation of it.
+                                </span>
                                 </h2>
+                                                            
 
                                 <p>
                                     For over three decades, Dr. Sanjay Sonar has remained deeply
@@ -86,7 +90,7 @@ export default function TeachingPage() {
                 </section>
 
                 {/* Dark Academic Section */}
-                <section className="teaching-academic">
+                <section className="teaching-academic green-bg">
                     <div className="container">
                         <div className="academic-row first">
                             <div className="academic-copy">
@@ -107,7 +111,7 @@ export default function TeachingPage() {
 
                             <div className="teaching-image small right">
                                 <img
-                                    src="/images/Teaching-banner-2.webp"
+                                    src="/images/teaching-img-new-2.webp"
                                     alt="Academic role"
                                 />
                             </div>
@@ -116,7 +120,7 @@ export default function TeachingPage() {
                         <div className="academic-row second">
                             <div className="teaching-image small left">
                                 <img
-                                    src="/images/Teaching-banner-3.webp"
+                                    src="/images/teaching-img-3.webp"
                                     alt="Workshop and surgical training"
                                 />
                             </div>
@@ -142,7 +146,7 @@ export default function TeachingPage() {
                 </section>
 
                 {/* Philosophy Section */}
-                <section className="teaching-philosophy">
+                <section className="teaching-philosophy white-bg">
                     <div className="container">
                         <div className="philosophy-content">
                             <h2 className="lined-title">A Philosophy of Teaching</h2>
@@ -172,7 +176,9 @@ export default function TeachingPage() {
                     </div>
                 </section>
 
-                 <WorkSwiper />
+                {/* Selected Work — Coverflow Swiper */}
+                <WorkSwiper />
+
             </Layout>
         </main>
     );

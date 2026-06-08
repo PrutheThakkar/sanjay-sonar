@@ -8,7 +8,7 @@
 }
 .expertise-top-section .expertise-top-wrapper {
   display: grid;
-  grid-template-columns: 1.45fr 0.65fr;
+  grid-template-columns: 1.45fr 1fr;
   gap: clamp(40px, 5vw, 90px);
   align-items: start;
 }
@@ -37,13 +37,13 @@
   margin-bottom: clamp(24px, 2.4vw, 46px);
 }
 .expertise-top-section .expertise-top-img {
-  margin-top: clamp(90px, 8vw, 155px);
+  margin-top: clamp(90px, 8vw, 50px);
   border-radius: clamp(18px, 1.5vw, 28px);
   overflow: hidden;
 }
 .expertise-top-section .expertise-top-img img {
   width: 100%;
-  height: clamp(300px, 24vw, 440px);
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

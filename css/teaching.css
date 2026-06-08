@@ -46,7 +46,7 @@
   height: clamp(380px, 35vw, 560px);
 }
 .teaching-image.small {
-  height: clamp(350px, 22vw, 560px);
+  height: clamp(250px, 22vw, 360px);
 }
 
 /* Top intro section */

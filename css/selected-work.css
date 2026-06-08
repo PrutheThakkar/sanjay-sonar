@@ -17,6 +17,13 @@
   z-index: 1;
   pointer-events: none;
 }
+.selected-work-section .intro-content h2 .subheading {
+  color: #EEE7AA;
+  font-weight: normal;
+}
+.selected-work-section .intro-content h2::after {
+  background: #EEE7AA;
+}
 .selected-work-section .container {
   max-width: 90%;
   margin: 0 auto;
@@ -46,7 +53,6 @@
 
 .intro-content {
   padding-top: clamp(6px, 1vw, 18px);
-  max-width: 520px;
 }
 .intro-content h2 {
   color: #ffffff;
@@ -68,7 +74,6 @@
   font-size: clamp(15px, 1vw, 18px);
   line-height: 1.75;
   margin: 0;
-  max-width: 480px;
 }
 .intro-content p:not(:last-child) {
   margin-bottom: clamp(24px, 2.4vw, 42px);
@@ -111,6 +116,13 @@
   line-height: 1.1;
   font-weight: 800;
   margin: 0 0 clamp(22px, 2vw, 34px);
+}
+.case-content h2 .subheading {
+  color: #EEE7AA;
+  font-weight: normal;
+}
+.case-content h2::after {
+  background: #EEE7AA;
 }
 .case-content h3 {
   display: inline-block;
@@ -299,6 +311,7 @@
   height: 100%;
   overflow: visible;
   z-index: 1;
+  transform: translate(12px, -45px);
 }
 
 .flow-line {

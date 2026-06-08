@@ -102,6 +102,17 @@
     position: relative;
     z-index: 2;
   }
+  h2{
+    &::after{
+      background: #ffffff;
+    }
+  }
+  h3{
+    &::after{
+      background: #ffffff;
+      display: none;
+    }
+  }
 }
 
 /* Common heading style */
@@ -298,4 +309,41 @@
       }
     }
   }
+}
+
+
+.selected-work-section{
+  .selected-work-header{
+    h2{
+      color: #ffffff;
+      .subheading{
+        color: #EEE7AA;
+      }
+      &::after{
+        background: #EEE7AA;
+        color: #EEE7AA;
+      }
+    }
+  }
+
+  .selected-work-grid{
+
+    h4{
+      color: #ffffff;
+    }
+    h3{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
+
+
+.papers-writing-section {
+h2{
+  &::after{
+    background: #485a2e;
+  }
+}
 }

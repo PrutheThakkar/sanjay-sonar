@@ -646,9 +646,21 @@ body:has(.mobileMenu.open) {
   }
 }
 .inside-page header {
+  position: fixed;
   opacity: 1;
 }
 .inside-page .inside-banner {
+  text-align: center;
+  align-items: center;
+  padding-bottom: 50px;
+  padding-top: 120px;
+}
+
+.home-page header {
+  opacity: 1;
+  position: fixed;
+}
+.home-page .inside-banner {
   text-align: center;
   align-items: center;
   padding-bottom: 50px;

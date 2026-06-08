@@ -76,7 +76,7 @@ export default function HomePage() {
                         <div className="left">
                             <div className="about-img-wrapper">
                                 <Image
-                                    src="/images/dr-sanjay-sonar.webp"
+                                    src="/images/DSS_Homepage_Doctor-Profile-new.png"
                                     alt="Dr. Sanjay Sonar"
                                     width={485}
                                     height={585}
@@ -334,7 +334,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
 
             <section className="beyond-consultation-section green-bg" id="consultation">
                 <div className="container">
