@@ -28,18 +28,28 @@ export default function HomePage() {
 
             <section className="hero" id="home">
                 <div className="hero-bg">
-                    <Image
-                        src="/images/home-banner.webp"
-                        alt="Dr. Sanjay Sonar Banner"
-                        fill
-                        priority
-                        className="hero-img"
+                <picture>
+                    <source
+                    media="(max-width: 767px)"
+                    srcSet="/images/home-banner-img-mob.png"
                     />
+
+                    <source
+                    media="(min-width: 768px)"
+                    srcSet="/images/Sanjay-Banner-1.jpg"
+                    />
+
+                    <img
+                    src="/images/Sanjay-Banner-1.jpg"
+                    alt="Dr. Sanjay Sonar Banner"
+                    className="hero-img"
+                    />
+                </picture>
                 </div>
 
                 <div className="hero-content">
                     <Image
-                        src="/images/35-text-banner.svg"
+                        src="/images/35-text-new-banner.png"
                         alt="Dr. Sanjay Sonar"
                         width={320}
                         height={100}

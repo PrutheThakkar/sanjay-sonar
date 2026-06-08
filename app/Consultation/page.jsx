@@ -101,7 +101,7 @@ export default function ConsultationPage() {
                   },
                   {
                     title: "Evaluating whether surgery is required",
-                    icon: "/images/Evaluating-whether-surgery.svg",
+                    icon: "/images/Evaluating-whether-surgery .svg",
                   },
                   {
                     title: "Understanding recovery, risks, and expected outcomes",
