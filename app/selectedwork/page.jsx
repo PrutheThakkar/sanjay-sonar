@@ -97,10 +97,10 @@ export default function SelectedWorkPage() {
         </div>
       </section>
 
-      <section className="selected-work-section">
+      <section className="selected-work-section green-bg">
         <div className="container">
           {/* Intro Block */}
-          <div className="selected-work-intro">
+          <div className="selected-work-intro green-bg">
             <div className="work-image placeholder"></div>
 
             <div className="intro-content">
@@ -156,7 +156,7 @@ export default function SelectedWorkPage() {
         </div>
       </section>
 
-       <section className="approach-cases-section">
+       <section className="approach-cases-section white-bg">
       <div className="container">
         <div className="approach-heading">
           <h2>Approach Across Cases</h2>

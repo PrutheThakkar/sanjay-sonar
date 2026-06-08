@@ -5,17 +5,12 @@
   overflow: hidden;
   position: relative;
   color: #ffffff;
-  background: linear-gradient(90deg, rgba(54, 83, 40, 0.96) 0%, rgba(92, 137, 62, 0.91) 48%, rgba(142, 222, 88, 0.9) 100%), url("/images/surgical-bg-pattern.png");
-  background-size: cover;
-  background-position: center top;
 }
-.selected-work-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(30, 54, 31, 0.32) 0%, rgba(30, 54, 31, 0.12) 42%, rgba(170, 235, 92, 0.06) 100%);
-  z-index: 1;
-  pointer-events: none;
+.selected-work-section .green-bg {
+  background-image: url("/images/green-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 .selected-work-section .intro-content h2 .subheading {
   color: #EEE7AA;

@@ -41,7 +41,7 @@ const updateSideSlides = (swiper) => {
 
 export default function WorkSwiper() {
   return (
-    <section className="work-swiper-section">
+    <section className="work-swiper-section green-bg">
       <div className="work-swiper-container">
         <Swiper
           modules={[Navigation, EffectCoverflow]}
