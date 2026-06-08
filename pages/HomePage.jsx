@@ -48,14 +48,24 @@ export default function HomePage() {
                 </div>
 
                 <div className="hero-content">
-                    <Image
-                        src="/images/35-text-new-banner.png"
-                        alt="Dr. Sanjay Sonar"
-                        width={320}
-                        height={100}
-                        priority
-                        className="hero-logo"
+                    
+                    <picture>
+                    <source
+                    media="(max-width: 767px)"
+                    srcSet="/images/35-mob-text.png"
                     />
+
+                    <source
+                    media="(min-width: 768px)"
+                    srcSet="/images/35-text-new-banner.png"
+                    />
+
+                    <img
+                    src="/images/35-text-new-banner.png"
+                    alt="Dr. Sanjay Sonar Banner"
+                    className="hero-img"
+                    />
+                </picture>
 
                     <div className="social-links">
                         <a href="#" aria-label="Instagram">
