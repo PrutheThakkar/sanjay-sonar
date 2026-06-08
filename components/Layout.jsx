@@ -6,6 +6,8 @@ import "../css/about.css";
 import "../css/expertise.css";
 import "../css/consultation.css";
 import "../css/publication.css";
+import "../css/selected-work.css";
+import "../css/teaching.css";
 
 export default function Layout({ children }) {
   return (

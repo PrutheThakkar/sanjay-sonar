@@ -10,7 +10,7 @@ const links = [
   { label: "Expertise", href: "/expertise", width: "65%" },
   { label: "Teaching", href: "/teaching", width: "75%" },
   { label: "Publications", href: "/publications", width: "85%" },
-  { label: "Selected Work", href: "/selected-work", width: "100%" },
+  { label: "Selected Work", href: "/selectedwork", width: "100%" },
 ];
 
 export default function Header() {

@@ -88,3 +88,214 @@
     }
   }
 }
+
+.papers-writing-section {
+  width: 100%;
+  overflow: hidden;
+  font-family: inherit;
+  color: #485a2e;
+
+  .container,
+  .section-container {
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* Common heading style */
+.section-heading {
+  display: inline-block;
+  margin-bottom: clamp(34px, 3vw, 58px);
+
+  h2 {
+    color: inherit;
+    text-align: left;
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+
+ 
+
+  &.white {
+    color: #ffffff;
+
+    &::after {
+      background: rgba(255, 255, 255, 0.95);
+    }
+  }
+
+  &.dark {
+    color: #485a2e;
+
+    &::after {
+      background: #485a2e;
+    }
+  }
+
+  &.small {
+    margin-bottom: clamp(26px, 2vw, 38px);
+  }
+}
+
+/* Top dark green section */
+
+
+/* Card grid */
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(34px, 4vw, 58px);
+  width: 100%;
+}
+
+.paper-card {
+  h3 {
+    color: #ffffff;
+    text-align: left;
+    font-family: "Neue Montreal Regular";
+    font-weight: normal;
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.2;
+    margin: 0 0 clamp(14px, 1.4vw, 22px);
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: clamp(15px, 1.1vw, 18px);
+    line-height: 1.55;
+    margin: clamp(14px, 1.3vw, 22px) 8px 0;
+  }
+}
+
+.paper-image {
+  width: 100%;
+  height: clamp(220px, 22vw, 310px);
+  border-radius: 16px;
+  background: #d9d9d9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Bottom light section */
+
+
+.content-block {
+  max-width: 1280px;
+  margin-bottom: clamp(70px, 7vw, 130px);
+
+  p {
+    color: #485a2e;
+    font-size: clamp(16px, 1.25vw, 21px);
+    line-height: 1.65;
+    max-width: 1200px;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: clamp(26px, 2.5vw, 48px);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.closing-block {
+  max-width: 900px;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .papers-writing-section {
+    .container,
+    .section-container {
+      max-width: 90%;
+    }
+  }
+
+  .papers-top {
+    padding: 70px 0 95px;
+  }
+
+  .papers-bottom {
+    padding: 70px 0 95px;
+  }
+
+  .papers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 42px 32px;
+  }
+
+  .paper-image {
+    height: 250px;
+  }
+
+  .content-block {
+    margin-bottom: 65px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .papers-top {
+    padding: 55px 0 75px;
+  }
+
+  .papers-bottom {
+    padding: 55px 0 75px;
+  }
+
+  .papers-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  .paper-card {
+    h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 15.5px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .paper-image {
+    height: 235px;
+    border-radius: 14px;
+  }
+
+  .content-block {
+    margin-bottom: 55px;
+
+    p {
+      font-size: 16px;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

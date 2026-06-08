@@ -11,51 +11,58 @@ const expertiseItems = [
     {
         title: "Advanced laparoscopic surgery ",
         icon: "/images/Advanced-laparoscopic-surgery.svg",
+        slug: "advanced-laparoscopic-surgery",
     },
     {
         title: "Gastrointestinal surgery ",
         icon: "/images/Gastrointestinal-surgery.svg",
+        slug: "gastrointestinal-surgery",
     },
     {
         title: "Hernia surgery ",
         icon: "/images/Hernia-surgery.svg",
+        slug: "hernia-surgery",
     },
     {
         title: "Colorectal procedures",
         icon: "/images/Colorectal-procedures.svg",
+        slug: "colorectal-procedures",
 
     },
     {
         title: "Thoracic surgery",
         icon: "/images/Thoracic-surgery.svg",
+        slug: "thoracic-surgery",
     },
     {
         title: "Minimally invasive techniques ",
         icon: "/images/Minimally-invasive-techniques.svg",
+        slug: "minimally-invasive-techniques",
     },
     {
         title: "Surgical planning and operative judgment ",
         icon: "/images/Surgical-planning-operative-judgment.svg",
+        slug: "surgical-planning-operative-judgment",
     },
 ];
 
 
 const papers = [
-  {
-    title: "Presentation Title",
-    image: "/images/presentation-1.jpg",
-    description: "Brief description or publication details.",
-  },
-  {
-    title: "Presentation Title",
-    image: "/images/presentation-2.jpg",
-    description: "Brief description or publication details.",
-  },
-  {
-    title: "Presentation Title",
-    image: "/images/presentation-3.jpg",
-    description: "Brief description or publication details.",
-  },
+    {
+        title: "Presentation Title",
+        image: "/images/presentation-1.jpg",
+        description: "Brief description or publication details.",
+    },
+    {
+        title: "Presentation Title",
+        image: "/images/presentation-2.jpg",
+        description: "Brief description or publication details.",
+    },
+    {
+        title: "Presentation Title",
+        image: "/images/presentation-3.jpg",
+        description: "Brief description or publication details.",
+    },
 ];
 
 export default function HomePage() {
@@ -208,6 +215,83 @@ export default function HomePage() {
                         </div>
                     </div>
                 </section>
+
+                <section className="papers-writing-section green-bg">
+                    {/* Top Dark Green Section */}
+                    <div className="papers-top">
+                        <div className="section-container">
+                            <div className="section-heading white">
+                                <h2>Selected Papers &amp; Presentations</h2>
+                            </div>
+
+                            <div className="papers-grid">
+                                {papers.map((item, index) => (
+                                    <div className="paper-card" key={index}>
+                                        <h3>{item.title}</h3>
+
+                                        <div className="paper-image">
+
+                                        </div>
+
+                                        <p>{item.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section className="papers-writing-section white-bg">
+                    {/* Bottom Light Section */}
+                    <div className="papers-bottom">
+                        <div className="section-container">
+                            <div className="content-block">
+                                <div className="section-heading dark">
+                                    <h2>Teaching Through Writing</h2>
+                                </div>
+
+                                <p>
+                                    For Dr. Sonar, writing remains an extension of teaching.
+                                </p>
+
+                                <p>
+                                    The intention is not simply to present information, but to make
+                                    experience transferable: allowing surgical knowledge developed in
+                                    practice to continue beyond the operating room.
+                                </p>
+                            </div>
+
+                            <div className="content-block">
+                                <div className="section-heading dark">
+                                    <h2>Ongoing Contribution</h2>
+                                </div>
+
+                                <p>
+                                    In addition to publications, Dr. Sonar continues to contribute to
+                                    surgical learning through workshops, lectures, live surgical
+                                    demonstrations, case discussions, and international teaching
+                                    programs.
+                                </p>
+                            </div>
+
+                            <div className="content-block closing-block">
+                                <div className="section-heading dark small">
+                                    <h2>Closing</h2>
+                                </div>
+
+                                <p>
+                                    Over time, surgical work becomes more than individual experience.
+                                </p>
+
+                                <p>
+                                    It becomes knowledge that can be shared, refined, and carried
+                                    forward by others.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </Layout>
         </main>
     )
