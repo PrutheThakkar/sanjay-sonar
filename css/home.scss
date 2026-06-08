@@ -526,6 +526,16 @@
     font-weight: 400;
     transition: color 0.35s ease, transform 0.35s ease;
   }
+
+  .btn-wrapper{
+    margin-top: 30;
+    display: flex;
+    justify-content: right;
+    .cta{
+      background: #485a2e;
+      color: #f2eaba;
+    }
+  }
 }
 
 @media (max-width: 1365px) {

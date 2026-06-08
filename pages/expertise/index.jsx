@@ -138,7 +138,7 @@ export default function ExpertisePage() {
                 </section>
 
 
-                <section className="expertise-detail-section white-bg">
+                <section className="expertise-detail-section white-bg" id="Colorectal-Surgery">
                     <div className="container">
                         <div className="expertise-detail-list">
                             <div className="expertise-detail-block full">

@@ -238,6 +238,9 @@ export default function HomePage() {
                             </div>
                         </li>
                     </ul>
+                    <div className="btn-wrapper">
+                    <a href="/expertise#Colorectal-Surgery" className="btn cta">View More</a>
+                    </div>
                 </div>
             </section>
 
