@@ -156,6 +156,18 @@
     height: 30px;
   }
 }
+/* When selected-work section enters viewport on mobile, remove the green overlay */
+@media (max-width: 575px) {
+  .selected-work-section.section-active .img-wrap::after {
+    transform: scaleY(0);
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  .selected-work-section.section-active .img-wrap img {
+    filter: saturate(1.06) contrast(1.03);
+    transform: scale(1.02);
+  }
+}
 @media (max-width: 390px) {
   .hero {
     min-height: 500px;
@@ -725,6 +737,15 @@
 .selected-work-section .selected-work-btn:hover {
   transform: translateY(-3px);
   background: #485a2e;
+}
+.selected-work-section.home {
+  padding: clamp(50px, 6vw, 80px) 0 !important;
+}
+.selected-work-section.home h2, .selected-work-section.home p, .selected-work-section.home .subheading, .selected-work-section.home h4 {
+  color: #757c53 !important;
+}
+.selected-work-section.home h2::after {
+  background: #757c53 !important;
 }
 
 @media (max-width: 991px) {

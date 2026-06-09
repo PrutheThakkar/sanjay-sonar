@@ -178,10 +178,14 @@ section{
     padding-top: 50px;
     padding-bottom: 120px;
  &.green-bg {
-  background-image: url("/images/green-bg.png");
+  background-image: url("/images/green-bg-desk.webp");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+   @media (max-width:1000px) {
+      background-repeat: repeat;
+      background-size: contain;
+    }
 }
 
   &.white-bg {
@@ -189,24 +193,28 @@ section{
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    @media (max-width:767px) {
+      background-repeat: repeat;
+      background-size: contain;
+    }
 }
   }
-  /* desktop/large image */
-  section.green-bg {
-    background-image: url("/images/green-bg-desk.webp");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
+  // /* desktop/large image */
+  // section.green-bg {
+  //   background-image: url("/images/green-bg-desk.webp");
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   background-size: cover;
+  // }
 
-  /* smaller screens - use smaller/mob optimized image */
-  @media (max-width: 991px) {
-    section.green-bg {
-      background-image: url("/images/green-bg-desk.webp");
-      background-position: center top;
-      background-size: cover;
-    }
-  }
+  // /* smaller screens - use smaller/mob optimized image */
+  // @media (max-width: 991px) {
+  //   section.green-bg {
+  //     background-image: url("/images/green-bg-desk.webp");
+  //     background-position: center top;
+  //     background-size: cover;
+  //   }
+  // }
 
 .main {
   flex: 1;

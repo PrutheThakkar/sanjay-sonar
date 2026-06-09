@@ -44,7 +44,7 @@ export default function TeachingPage() {
         <main className="teaching-page inside-page">
             <Layout>
 
-                <section className="inside-banner">
+                <section className="inside-banner ">
                     <div className="container">
                         <h1>Teaching</h1>
                     </div>

@@ -303,7 +303,7 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="selected-work-section white-bg" id="selected-work">
+            <section className="selected-work-section home white-bg" id="selected-work">
                 <div className="container">
                     <div className="selected-work-header">
                         <h2>SELECTED WORK

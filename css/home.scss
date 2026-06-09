@@ -185,6 +185,22 @@
   }
 }
 
+/* When selected-work section enters viewport on mobile, remove the green overlay */
+@media (max-width: 575px) {
+  .selected-work-section.section-active {
+    .img-wrap::after {
+      transform: scaleY(0);
+      opacity: 0;
+      backdrop-filter: blur(0);
+    }
+
+    .img-wrap img {
+      filter: saturate(1.06) contrast(1.03);
+      transform: scale(1.02);
+    }
+  }
+}
+
 @media (max-width: 390px) {
   .hero {
     min-height: 500px;
@@ -778,6 +794,7 @@
     margin: 0 auto;
   }
 
+
   .selected-work-header {
     margin-bottom: clamp(34px, 3vw, 58px);
 
@@ -913,6 +930,20 @@
       background: #485a2e;
     }
   }
+
+   &.home {
+  padding: clamp(50px, 6vw, 80px) 0 !important;
+
+  h2,p,.subheading,h4 {
+    color: #757c53 !important;
+
+  }
+  h2{
+    &::after{
+      background: #757c53 !important;
+    }
+  }
+}
 }
 
 @media (max-width: 991px) {

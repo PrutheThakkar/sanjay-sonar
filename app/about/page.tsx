@@ -50,7 +50,7 @@ export default function AboutPage() {
     <main className="inside-page about-page">
       <Layout>
 
-        <section className="inside-banner">
+        <section className="inside-banner ">
           <div className="container">
             <h1>About Page</h1>
           </div>

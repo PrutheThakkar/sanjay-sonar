@@ -97,8 +97,8 @@ export default function SelectedWorkPage() {
         </div>
       </section>
 
-      <section className="selected-work-section green-bg">
-        <div className="container">
+      <section className="selected-work-section">
+        {/* <div className="container"> */}
           {/* Intro Block */}
           <div className="selected-work-intro green-bg">
             <div className="work-image placeholder"></div>
@@ -133,16 +133,17 @@ export default function SelectedWorkPage() {
           {/* Case Blocks */}
           <div className="case-list">
             {cases.map((item, index) => (
-              <div
-                className={`case-row ${index % 2 === 0 ? "text-left" : "text-right"
-                  }`}
+             <div
+                className={`case-row green-bg ${index % 2 === 0 ? "even" : "odd"} ${
+                  index % 2 === 0 ? "text-left" : "text-right"
+                }`}
                 key={item.number}
               >
                 <div className="case-content">
-                  <h2>{item.number}
+                  <h2>
+                    {item.number}
                     <span className="subheading">{item.title}</span>
                   </h2>
-                 
 
                   {item.description.map((para, i) => (
                     <p key={i}>{para}</p>
@@ -153,7 +154,7 @@ export default function SelectedWorkPage() {
               </div>
             ))}
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
        <section className="approach-cases-section white-bg">

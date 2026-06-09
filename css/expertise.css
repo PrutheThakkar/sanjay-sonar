@@ -95,7 +95,7 @@
   height: 300px;
   display: flex;
   align-items: center;
-  background-image: url("/images/inside-banner-green.png");
+  background-image: url("/images/inside-bg-new.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -107,6 +107,12 @@
 .inside-banner h1 {
   color: #EEE7AA;
   margin: 0;
+}
+.inside-banner.yellow-bg {
+  background-image: url("/images/yellow-inside-bg.jpg");
+}
+.inside-banner.yellow-bg h1 {
+  color: #757c53 !important;
 }
 
 @media (max-width: 575px) {
