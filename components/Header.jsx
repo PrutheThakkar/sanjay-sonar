@@ -39,16 +39,24 @@ export default function Header() {
         <nav className="nav">
           {links.map((link) => {
             const style = { "--underline-width": link.width };
+            const isActive =
+              pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+
             if (link.href && link.href.startsWith("/")) {
               return (
-                <Link key={link.label} href={link.href} className="navLink" style={style}>
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`navLink ${isActive ? "active" : ""}`}
+                  style={style}
+                >
                   {link.label}
                 </Link>
               );
             }
 
             return (
-              <a key={link.label} href={link.href} className="navLink" style={style}>
+              <a key={link.label} href={link.href} className={`navLink ${isActive ? "active" : ""}`} style={style}>
                 {link.label}
               </a>
             );
@@ -74,9 +82,12 @@ export default function Header() {
       <div className={`mobileMenu ${menuOpen ? "open" : ""}`}>
         <nav className="mobileNav">
           {links.map((link) => {
+            const isActive =
+              pathname === link.href || (link.href !== "/" && pathname?.startsWith(link.href));
+
             if (link.href && link.href.startsWith("/")) {
               return (
-                <Link key={link.label} href={link.href} onClick={closeMenu}>
+                <Link key={link.label} href={link.href} className={isActive ? "active" : undefined} onClick={closeMenu}>
                   {link.label}
                 </Link>
               );

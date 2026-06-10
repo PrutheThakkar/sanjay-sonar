@@ -370,6 +370,14 @@ h3:hover::after {
   transform: scaleX(1);
 }
 
+/* Active nav link: show full underline so users know which page is active */
+.navLink.active {
+  color: #ffffff;
+}
+.navLink.active::after {
+  transform: scaleX(1);
+}
+
 .cta {
   padding: 0.75rem 1.4rem;
   border-radius: 10px;

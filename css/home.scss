@@ -1177,3 +1177,567 @@
     }
   }
 }
+
+
+
+
+/* ===============================
+   Modern Zoom Preloader
+================================ */
+
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 34%),
+    linear-gradient(135deg, #101511, #2f3a36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-preloader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.16),
+    transparent 38%
+  );
+  animation: preloaderGlow 1.8s ease-in-out infinite;
+}
+
+.preloader-hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.18);
+  filter: blur(20px);
+}
+
+.preloader-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  transform: scale(1);
+  animation: preloaderInnerFloat 1.8s ease-in-out infinite;
+}
+
+.preloader-mark {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 22px;
+}
+
+.preloader-mark span {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  animation: loaderPulse 1.6s ease-in-out infinite;
+}
+
+.preloader-mark span:nth-child(2) {
+  inset: 14px;
+  animation-delay: 0.2s;
+}
+
+.preloader-mark span:nth-child(3) {
+  inset: 28px;
+  animation-delay: 0.4s;
+}
+
+.preloader-inner p {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.preloader-line {
+  width: 220px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.preloader-line span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  transform-origin: center;
+  animation: loaderLine 1.8s ease forwards;
+}
+
+@keyframes loaderPulse {
+  0% {
+    transform: scale(0.75);
+    opacity: 0.18;
+  }
+
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@keyframes loaderLine {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes preloaderGlow {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.45);
+    opacity: 0.25;
+  }
+}
+
+@keyframes preloaderInnerFloat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* ===============================
+   Hero Zoom In / Zoom Out Reveal
+================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: #111;
+  isolation: isolate;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg picture,
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-bg .hero-img {
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.38);
+  transform-origin: center;
+  filter: blur(28px) grayscale(1) brightness(0.42);
+  will-change: transform, filter, opacity;
+}
+
+/* Dark zoom overlay */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.18), transparent 24%),
+    radial-gradient(circle at center, rgba(47, 58, 54, 0.92), rgba(0, 0, 0, 1) 70%);
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Soft camera flash */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.48),
+    rgba(255, 255, 255, 0.12) 28%,
+    transparent 58%
+  );
+  opacity: 0;
+  transform: scale(0.45);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.hero-loaded .hero-bg .hero-img {
+  animation: heroZoomReveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-loaded .hero-bg::before {
+  animation: heroOverlayZoomOut 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-loaded .hero-bg::after {
+  animation: heroFlashZoom 1.25s ease 0.2s forwards;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+}
+
+.hero-content-reveal {
+  opacity: 0;
+  transform: translateY(42px) scale(0.92);
+  filter: blur(16px);
+  will-change: transform, filter, opacity;
+}
+
+.hero-loaded .hero-content-reveal {
+  animation: heroContentReveal 4s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+}
+
+.hero-loaded .social-links a {
+  opacity: 0;
+  transform: translateY(18px) scale(0.9);
+  animation: socialReveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-loaded .social-links a:nth-child(1) {
+  animation-delay: 1.35s;
+}
+
+.hero-loaded .social-links a:nth-child(2) {
+  animation-delay: 1.48s;
+}
+
+.hero-loaded .social-links a:nth-child(3) {
+  animation-delay: 1.61s;
+}
+
+@keyframes heroZoomReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.38);
+    filter: blur(28px) grayscale(1) brightness(0.42);
+  }
+
+  38% {
+    opacity: 1;
+    transform: scale(6);
+    filter: blur(12px) grayscale(0.5) brightness(0.82);
+  }
+
+  68% {
+    opacity: 1;
+    transform: scale(16);
+    filter: blur(3px) grayscale(0.12) brightness(1.06);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0) grayscale(0) brightness(1);
+  }
+}
+
+@keyframes heroOverlayZoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  45% {
+    opacity: 0.65;
+    transform: scale(1.18);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.65);
+  }
+}
+
+@keyframes heroFlashZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+  }
+
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.1);
+  }
+}
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(42px) scale(0.92);
+    filter: blur(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes socialReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ===============================
+   Mobile Adjustment
+================================ */
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-bg .hero-img {
+    transform: scale(1.2);
+  }
+
+  .preloader-mark {
+    width: 76px;
+    height: 76px;
+  }
+
+  .preloader-inner p {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .preloader-line {
+    width: 170px;
+  }
+
+  @keyframes heroZoomReveal {
+    0% {
+      opacity: 0;
+      transform: scale(1.24);
+      filter: blur(22px) grayscale(1) brightness(0.45);
+    }
+
+    42% {
+      opacity: 1;
+      transform: scale(2);
+      filter: blur(10px) grayscale(0.4) brightness(0.82);
+    }
+
+    72% {
+      opacity: 1;
+      transform: scale(1.03);
+      filter: blur(2px) grayscale(0.1) brightness(1.04);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0) grayscale(0) brightness(1);
+    }
+  }
+}
+
+
+
+/* ===============================
+   Global Clip Path Image Reveal
+================================ */
+
+.clip-reveal-section {
+  overflow: hidden;
+}
+
+.site-img-reveal {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(35px);
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  will-change: clip-path, transform, opacity;
+}
+
+.site-img-reveal img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.16);
+  filter: blur(8px) brightness(0.78);
+  will-change: transform, filter;
+}
+
+.site-img-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #2f3a36;
+  transform: translateY(0);
+  pointer-events: none;
+}
+
+.clip-reveal-section.section-active .site-img-reveal {
+  animation: globalImageWrapperReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.clip-reveal-section.section-active .site-img-reveal img {
+  animation: globalImageZoomReveal 1.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.clip-reveal-section.section-active .site-img-reveal::after {
+  animation: globalImageOverlayReveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* stagger delay */
+.clip-reveal-section.section-active .delay-1,
+.clip-reveal-section.section-active .delay-1 img,
+.clip-reveal-section.section-active .delay-1::after {
+  animation-delay: 0.1s;
+}
+
+.clip-reveal-section.section-active .delay-2,
+.clip-reveal-section.section-active .delay-2 img,
+.clip-reveal-section.section-active .delay-2::after {
+  animation-delay: 0.25s;
+}
+
+.clip-reveal-section.section-active .delay-3,
+.clip-reveal-section.section-active .delay-3 img,
+.clip-reveal-section.section-active .delay-3::after {
+  animation-delay: 0.4s;
+}
+
+.clip-reveal-section.section-active .delay-4,
+.clip-reveal-section.section-active .delay-4 img,
+.clip-reveal-section.section-active .delay-4::after {
+  animation-delay: 0.55s;
+}
+
+.clip-reveal-section.section-active .delay-5,
+.clip-reveal-section.section-active .delay-5 img,
+.clip-reveal-section.section-active .delay-5::after {
+  animation-delay: 0.7s;
+}
+
+.clip-reveal-section.section-active .delay-6,
+.clip-reveal-section.section-active .delay-6 img,
+.clip-reveal-section.section-active .delay-6::after {
+  animation-delay: 0.85s;
+}
+
+@keyframes globalImageWrapperReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes globalImageZoomReveal {
+  0% {
+    transform: scale(1.16);
+    filter: blur(8px) brightness(0.78);
+  }
+
+  100% {
+    transform: scale(1);
+    filter: blur(0) brightness(1);
+  }
+}
+
+@keyframes globalImageOverlayReveal {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-105%);
+  }
+}
+
+/* optional hover zoom */
+.site-img-reveal:hover img {
+  transform: scale(1.06);
+  transition: transform 0.7s ease;
+}
+
+@media (max-width: 767px) {
+  .site-img-reveal {
+    transform: translateY(25px);
+  }
+
+  .clip-reveal-section.section-active .delay-1,
+  .clip-reveal-section.section-active .delay-2,
+  .clip-reveal-section.section-active .delay-3,
+  .clip-reveal-section.section-active .delay-4,
+  .clip-reveal-section.section-active .delay-5,
+  .clip-reveal-section.section-active .delay-6 {
+    animation-delay: 0.1s;
+  }
+}

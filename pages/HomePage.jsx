@@ -1,11 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
+    const [isLoading, setIsLoading] = useState(true);
+    const [showPreloader, setShowPreloader] = useState(true);
+
     useEffect(() => {
-        const sections = document.querySelectorAll(".selected-work-section");
+        const loadTimer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2600);
+
+        const removeTimer = setTimeout(() => {
+            setShowPreloader(false);
+        }, 4000);
+
+        return () => {
+            clearTimeout(loadTimer);
+            clearTimeout(removeTimer);
+        };
+    }, []);
+
+    useEffect(() => {
+        document.body.style.overflow = showPreloader ? "hidden" : "";
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [showPreloader]);
+
+    useEffect(() => {
+        const sections = document.querySelectorAll(".clip-reveal-section");
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -23,49 +49,86 @@ export default function HomePage() {
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        const sections = document.querySelectorAll(".clip-reveal-section");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("section-active");
+                    }
+                });
+            },
+            { threshold: 0.25 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, []);
+
+
     return (
         <>
 
-            <section className="hero" id="home">
-                <div className="hero-bg">
-                <picture>
-                    <source
-                    media="(max-width: 767px)"
-                    srcSet="/images/home-banner-img-mob.png"
-                    />
+            {showPreloader && (
+                <div className={`site-preloader ${!isLoading ? "preloader-hide" : ""}`}>
+                    <div className="preloader-inner">
+                        <div className="preloader-mark">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
 
-                    <source
-                    media="(min-width: 768px)"
-                    srcSet="/images/Sanjay-Banner-1.jpg"
-                    />
+                        <p>Loading experience</p>
 
-                    <img
-                    src="/images/Sanjay-Banner-1.jpg"
-                    alt="Dr. Sanjay Sonar Banner"
-                    className="hero-img"
-                    />
-                </picture>
+                        <div className="preloader-line">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <section className={`hero ${!isLoading ? "hero-loaded" : ""}`} id="home">
+                <div className="hero-bg hero-cinematic-reveal">
+                    <picture>
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="/images/home-banner-img-mob.png"
+                        />
+
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet="/images/Sanjay-Banner-1.jpg"
+                        />
+
+                        <img
+                            src="/images/Sanjay-Banner-1.jpg"
+                            alt="Dr. Sanjay Sonar Banner"
+                            className="hero-img"
+                        />
+                    </picture>
                 </div>
 
-                <div className="hero-content">
-                    
+                <div className="hero-content hero-content-reveal">
                     <picture>
-                    <source
-                    media="(max-width: 767px)"
-                    srcSet="/images/35-mob-text.png"
-                    />
+                        <source
+                            media="(max-width: 767px)"
+                            srcSet="/images/35-mob-text.png"
+                        />
 
-                    <source
-                    media="(min-width: 768px)"
-                    srcSet="/images/35-text-new-banner.png"
-                    />
+                        <source
+                            media="(min-width: 768px)"
+                            srcSet="/images/35-text-new-banner.png"
+                        />
 
-                    <img
-                    src="/images/35-text-new-banner.png"
-                    alt="Dr. Sanjay Sonar Banner"
-                    className="hero-img"
-                    />
-                </picture>
+                        <img
+                            src="/images/35-text-new-banner.png"
+                            alt="Dr. Sanjay Sonar Banner"
+                            className="hero-img"
+                        />
+                    </picture>
 
                     <div className="social-links">
                         <a href="#" aria-label="Instagram">
@@ -90,11 +153,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="about-section green-bg">
+            <section className="about-section green-bg" >
                 <div className="container">
                     <div className="about-wrapper">
                         <div className="left">
-                            <div className="about-img-wrapper">
+                            <div className="about-img-wrapper" data-aos="fade-up">
                                 <Image
                                     src="/images/DSS_Homepage_Doctor-Profile-new.png"
                                     alt="Dr. Sanjay Sonar"
@@ -106,7 +169,7 @@ export default function HomePage() {
                             </div>
 
                         </div>
-                        <div className="right">
+                        <div className="right" data-aos="fade-left">
                             <h2>Dr. Sanjay Sonar
                                 <span className="subheading">
                                     Advanced laparoscopic surgeon
@@ -136,18 +199,37 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="years-Mastery white-bg">
+            <section
+                className="years-Mastery white-bg"
+
+                data-aos-duration="900"
+                data-aos-easing="ease-out-cubic"
+            >
                 <div className="container">
-                    <h3><span><Image
-                        src="/images/35-svg.svg"
-                        alt="Dr. Sanjay Sonar"
-                        width={442}
-                        height={330}
-                        priority
-                        className="about-img"
-                    /></span>years of Mastery in Complex Surgical Cases </h3>
+                    <h3
+                        data-aos="fade-up"
+                        data-aos-duration="900"
+                        data-aos-delay="100"
+                    >
+                        <span>
+                            <Image
+                                src="/images/35-svg.svg"
+                                alt="Dr. Sanjay Sonar"
+                                width={442}
+                                height={330}
+                                priority
+                                className="about-img"
+                            />
+                        </span>
+                        years of Mastery in Complex Surgical Cases
+                    </h3>
+
                     <ul>
-                        <li>
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="150"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -159,10 +241,15 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Advanced gastrointestinal and hernia surgery </h4>
+                                <h4>Advanced gastrointestinal and hernia surgery</h4>
                             </div>
                         </li>
-                        <li>
+
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="250"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -174,10 +261,15 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Colorectal procedures </h4>
+                                <h4>Colorectal procedures</h4>
                             </div>
                         </li>
-                        <li>
+
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="350"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -189,10 +281,15 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Thoracic surgery (VATS) </h4>
+                                <h4>Thoracic surgery (VATS)</h4>
                             </div>
                         </li>
-                        <li>
+
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="450"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -204,10 +301,15 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Thyroid and endocrine surgery </h4>
+                                <h4>Thyroid and endocrine surgery</h4>
                             </div>
                         </li>
-                        <li>
+
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="550"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -219,10 +321,15 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Reconstructive urological procedures </h4>
+                                <h4>Reconstructive urological procedures</h4>
                             </div>
                         </li>
-                        <li>
+
+                        <li
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                            data-aos-delay="650"
+                        >
                             <div className="complex-sec-wrap">
                                 <div className="img-wrap">
                                     <Image
@@ -234,12 +341,20 @@ export default function HomePage() {
                                         className="about-img"
                                     />
                                 </div>
-                                <h4>Laser treatment for varicose veins </h4>
+                                <h4>Laser treatment for varicose veins</h4>
                             </div>
                         </li>
                     </ul>
-                    <div className="btn-wrapper">
-                    <a href="/expertise#Colorectal-Surgery" className="btn cta">View More</a>
+
+                    <div
+                        className="btn-wrapper"
+                        data-aos="fade-up"
+                        data-aos-duration="850"
+                        data-aos-delay="750"
+                    >
+                        <a href="/expertise#Colorectal-Surgery" className="btn cta">
+                            View More
+                        </a>
                     </div>
                 </div>
             </section>
@@ -247,7 +362,7 @@ export default function HomePage() {
             <section className="teaching-publication-section green-bg">
                 <div className="container">
                     <div className="tp-row">
-                        <div className="tp-image">
+                        <div className="tp-image" data-aos="fade-up">
                             <Image
                                 src="/images/teaching-img.webp"
                                 alt="Teaching"
@@ -256,7 +371,7 @@ export default function HomePage() {
                             />
                         </div>
 
-                        <div className="tp-content">
+                        <div className="tp-content" data-aos="fade-left">
                             <h2>TEACHING</h2>
 
                             <h3>
@@ -275,7 +390,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="tp-row">
-                        <div className="tp-image">
+                        <div className="tp-image" data-aos="fade-up">
                             <Image
                                 src="/images/publications-img.webp"
                                 alt="Publications"
@@ -284,7 +399,7 @@ export default function HomePage() {
                             />
                         </div>
 
-                        <div className="tp-content">
+                        <div className="tp-content" data-aos="fade-left">
                             <h2>PUBLICATIONS</h2>
 
                             <h3>
@@ -303,18 +418,26 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="selected-work-section home white-bg" id="selected-work">
+            <section
+                className="selected-work-section home white-bg clip-reveal-section"
+                id="selected-work"
+            >
                 <div className="container">
                     <div className="selected-work-header">
-                        <h2>SELECTED WORK
-                            <span className="subheading">Cases that required more than routine decisions.</span>
+                        <h2
+                            data-aos="fade-up"
+                            data-aos-duration="850"
+                        >
+                            SELECTED WORK
+                            <span className="subheading">
+                                Cases that required more than routine decisions.
+                            </span>
                         </h2>
-
                     </div>
 
                     <div className="selected-work-grid">
                         <div className="selected-work-card selected-work-card-large">
-                            <div className="selected-work-img">
+                            <div className="selected-work-img site-img-reveal delay-1">
                                 <Image
                                     src="/images/publications-img.webp"
                                     alt="Selected work"
@@ -322,12 +445,19 @@ export default function HomePage() {
                                     height={630}
                                 />
                             </div>
-                            <h4>Recurrent hernias where prior interventions had failed</h4>
+
+                            <h4
+                                data-aos="fade-up"
+                                data-aos-delay="450"
+                                data-aos-duration="750"
+                            >
+                                Recurrent hernias where prior interventions had failed
+                            </h4>
                         </div>
 
                         <div className="selected-work-right">
                             <div className="selected-work-card">
-                                <div className="selected-work-img">
+                                <div className="selected-work-img site-img-reveal delay-2">
                                     <Image
                                         src="/images/publications-img.webp"
                                         alt="Selected work"
@@ -335,11 +465,18 @@ export default function HomePage() {
                                         height={260}
                                     />
                                 </div>
-                                <h4>Gastrointestinal conditions requiring staged laparoscopic correction</h4>
+
+                                <h4
+                                    data-aos="fade-up"
+                                    data-aos-delay="600"
+                                    data-aos-duration="750"
+                                >
+                                    Gastrointestinal conditions requiring staged laparoscopic correction
+                                </h4>
                             </div>
 
                             <div className="selected-work-card">
-                                <div className="selected-work-img">
+                                <div className="selected-work-img site-img-reveal delay-3">
                                     <Image
                                         src="/images/publications-img.webp"
                                         alt="Selected work"
@@ -347,38 +484,57 @@ export default function HomePage() {
                                         height={260}
                                     />
                                 </div>
-                                <h4>Thoracic procedures performed through minimally invasive access</h4>
+
+                                <h4
+                                    data-aos="fade-up"
+                                    data-aos-delay="750"
+                                    data-aos-duration="750"
+                                >
+                                    Thoracic procedures performed through minimally invasive access
+                                </h4>
                             </div>
 
-                            <div className="selected-work-btn-wrap">
-                                <a href="#" className="selected-work-btn">View more</a>
+                            <div
+                                className="selected-work-btn-wrap"
+                                data-aos="fade-up"
+                                data-aos-delay="900"
+                                data-aos-duration="750"
+                            >
+                                <a href="#" className="selected-work-btn">
+                                    View more
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="beyond-consultation-section green-bg" id="consultation">
+            <section
+                className="beyond-consultation-section green-bg clip-reveal-section"
+                id="consultation"
+            >
                 <div className="container">
                     <div className="beyond-grid">
                         <div className="beyond-left">
                             <div className="beyond-content">
-                                <h2>BEYOND SURGERY</h2>
+                                <h2 data-aos="fade-up">BEYOND SURGERY</h2>
 
-                                <p>Outside the operating room, the work continues in more ways.</p>
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    Outside the operating room, the work continues in more ways.
+                                </p>
 
-                                <p>
+                                <p data-aos="fade-up" data-aos-delay="200">
                                     Through teaching, writing, and time spent in reflection. <br />
                                     Through initiatives like plantation drives.
                                 </p>
 
-                                <p>
+                                <p data-aos="fade-up" data-aos-delay="300">
                                     At heart, the work is about contributing and passing it forward.
                                 </p>
                             </div>
 
                             <div className="beyond-small-images">
-                                <div className="beyond-img small">
+                                <div className="beyond-img small site-img-reveal delay-1">
                                     <Image
                                         src="/images/beyond-surgery-1st.webp"
                                         alt="Beyond surgery"
@@ -387,7 +543,7 @@ export default function HomePage() {
                                     />
                                 </div>
 
-                                <div className="beyond-img small">
+                                <div className="beyond-img small site-img-reveal delay-2">
                                     <Image
                                         src="/images/beyond-surgery-2nd.webp"
                                         alt="Plantation drive"
@@ -399,7 +555,7 @@ export default function HomePage() {
                         </div>
 
                         <div className="beyond-right">
-                            <div className="beyond-img large">
+                            <div className="beyond-img large site-img-reveal delay-3">
                                 <Image
                                     src="/images/beyond-surgery-3rd.webp"
                                     alt="Community care"
@@ -411,18 +567,23 @@ export default function HomePage() {
                     </div>
 
                     <div className="consultation-content">
-                        <h2>CONSULTATION</h2>
+                        <h2 data-aos="fade-up">CONSULTATION</h2>
 
-                        <p>
+                        <p data-aos="fade-up" data-aos-delay="100">
                             If you are seeking clarity on a surgical condition, consultations and
                             second opinions are available.
                         </p>
 
-                        <p>
+                        <p data-aos="fade-up" data-aos-delay="200">
                             Each case is approached with time, care, and attention to detail.
                         </p>
 
-                        <a href="#" className="consultation-btn">
+                        <a
+                            href="#"
+                            className="consultation-btn"
+                            data-aos="fade-up"
+                            data-aos-delay="300"
+                        >
                             REQUEST A CONSULTATION
                         </a>
                     </div>

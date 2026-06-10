@@ -50,9 +50,9 @@ export default function AboutPage() {
     <main className="inside-page about-page">
       <Layout>
 
-        <section className="inside-banner ">
+        <section className="inside-banner">
           <div className="container">
-            <h1>About Page</h1>
+            <h1  data-aos="fade-in">About Page</h1>
           </div>
         </section>
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
         <section className="about-intro green-bg">
           <div className="container">
             <div className="about-intro-wrapper">
-              <div className="about-intro-img">
+              <div className="about-intro-img" data-aos="fade-up" >
                 <Image
                   src="/images/dss_aboutpage_about_1.webp"
                   alt="Dr. Sanjay Sonar teaching surgery"
@@ -70,7 +70,7 @@ export default function AboutPage() {
                 />
               </div>
 
-              <div className="about-intro-content">
+              <div className="about-intro-content" data-aos="fade-left">
                 <h2>
                   About
                   <span className="subheading">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         <section className="about-story white-bg">
           <div className="container">
             {aboutSections.map((section) => (
-              <div
+              <div data-aos="fade-up"
                 className={`about-story-row ${section.imagePosition === "right" ? "image-right" : "image-left"
                   }`}
                 key={section.title}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                   />
                 </div>
 
-                <div className="about-story-content">
+                <div className="about-story-content" data-aos="fade-right">
                   <h2>{section.title}</h2>
 
                   {section.text.map((para) => (
@@ -130,16 +130,16 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="about-closing green-bg">
+        <section className="about-closing green-bg" >
           <div className="container">
-            <p>
+            <p data-aos="fade-up">
               Over decades of practice, teaching, and continued learning, one
               principle has remained constant: to approach every case with
               clarity, precision, and care and to leave the discipline stronger
               than it was found.
             </p>
 
-            <div className="about-consultation">
+            <div className="about-consultation" data-aos="fade-up">
               <h2>Publications & Surgical Writing</h2>
               <p>For consultations, evaluations, or second opinions:</p>
               <a href="/contact" className="cta">Request a consultation</a>

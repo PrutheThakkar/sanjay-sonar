@@ -174,6 +174,7 @@ ul {
 //   background: #000;
 }
 
+
 section{
     padding-top: 50px;
     padding-bottom: 120px;
@@ -410,6 +411,15 @@ h3:hover::after {
     &::after {
       transform: scaleX(1);
     }
+  }
+}
+
+/* Active nav link: show full underline so users know which page is active */
+.navLink.active {
+  color: #ffffff;
+
+  &::after {
+    transform: scaleX(1);
   }
 }
 
