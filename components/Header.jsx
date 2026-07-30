@@ -10,7 +10,8 @@ const links = [
   { label: "About", href: "/about", width: "45%" },
   { label: "Expertise", href: "/expertise", width: "65%" },
   { label: "Teaching", href: "/teaching", width: "75%" },
-  { label: "Publications", href: "/publications", width: "85%" },
+  // { label: "Publications", href: "/publications", width: "85%" },
+  { label: "Gallery", href: "/gallery", width: "85%" },
   { label: "Selected Work", href: "/selectedwork", width: "100%" },
 ];
 

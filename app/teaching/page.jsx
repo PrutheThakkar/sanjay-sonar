@@ -177,7 +177,7 @@ export default function TeachingPage() {
                 </section>
 
                 {/* Selected Work — Coverflow Swiper */}
-                <WorkSwiper />
+                {/* <WorkSwiper /> */}
 
             </Layout>
         </main>

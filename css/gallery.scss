@@ -1,0 +1,520 @@
+$gallery-green: #485a2e;
+$gallery-green-dark: #334326;
+$gallery-cream: #eee7aa;
+$gallery-white: #ffffff;
+
+body.gallery-page {
+  overflow-x: hidden;
+}
+
+.gallery-page-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Gallery section
+   ========================================================================== */
+
+.gallery-section {
+  position: relative;
+  padding-top: clamp(70px, 7vw, 120px);
+  padding-bottom: clamp(80px, 8vw, 140px);
+
+  .container {
+    width: 90%;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   Gallery heading
+   ========================================================================== */
+
+.gallery-heading {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 0.65fr);
+  gap: clamp(35px, 7vw, 110px);
+  margin-bottom: clamp(50px, 6vw, 90px);
+  align-items: end;
+
+  h2 {
+    width: fit-content;
+    margin-bottom: 0;
+    color: $gallery-green-dark;
+
+    .subheading {
+      margin-top: 8px;
+      color: $gallery-green;
+    }
+
+    &::after {
+      background: $gallery-green;
+    }
+  }
+
+  > p {
+    margin: 0;
+    padding-bottom: 16px;
+    color: $gallery-green;
+    line-height: 1.55;
+  }
+}
+
+/* ==========================================================================
+   Masonry layout
+   ========================================================================== */
+
+.gallery-masonry {
+  width: 100%;
+  column-count: 3;
+  column-gap: clamp(14px, 1.5vw, 24px);
+}
+
+.gallery-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 clamp(14px, 1.5vw, 24px);
+  padding: 0;
+  overflow: hidden;
+  break-inside: avoid;
+  border: 0;
+  border-radius: clamp(14px, 1.4vw, 24px);
+  background: #d9dfc8;
+  color: $gallery-white;
+  text-align: left;
+  cursor: pointer;
+  vertical-align: top;
+
+  box-shadow:
+    0 14px 35px rgba(51, 67, 38, 0.14);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  &__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition:
+        transform 0.75s
+        cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(24, 37, 19, 0) 35%,
+        rgba(24, 37, 19, 0.22) 62%,
+        rgba(24, 37, 19, 0.88) 100%
+      );
+
+    transition: background 0.35s ease;
+  }
+
+  &__content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    padding: clamp(18px, 2vw, 30px);
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+
+    strong {
+      max-width: calc(100% - 60px);
+      color: $gallery-white;
+      font-family: "Neue Montreal Regular";
+      font-size: clamp(20px, 1.5vw, 28px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+  }
+
+  &__expand {
+    display: inline-flex;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    color: $gallery-white;
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      background-color 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    box-shadow:
+      0 22px 45px rgba(51, 67, 38, 0.24);
+    transform: translateY(-5px);
+
+    .gallery-card__image {
+      img {
+        transform: scale(1.055);
+      }
+    }
+
+    .gallery-card__overlay {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(24, 37, 19, 0.04) 25%,
+          rgba(24, 37, 19, 0.3) 58%,
+          rgba(24, 37, 19, 0.94) 100%
+        );
+    }
+
+    .gallery-card__expand {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid $gallery-green;
+    outline-offset: 4px;
+  }
+}
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  padding:
+    clamp(70px, 7vw, 100px)
+    clamp(70px, 8vw, 130px)
+    clamp(30px, 4vw, 55px);
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 18, 11, 0.96);
+  backdrop-filter: blur(12px);
+  animation: gallery-lightbox-fade 0.3s ease;
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    z-index: 4;
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: $gallery-white;
+    cursor: pointer;
+
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+
+    svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+  }
+
+  &__dialog {
+    width: min(1280px, 100%);
+    max-height: calc(100vh - 100px);
+    animation:
+      gallery-dialog-enter
+      0.4s
+      cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+    height: min(76vh, 800px);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: clamp(14px, 1.5vw, 24px);
+    background: #1d2718;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__caption {
+    display: flex;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      color: $gallery-white;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.65);
+      white-space: nowrap;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: inline-flex;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: $gallery-white;
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      border-color: $gallery-cream;
+      background: rgba(238, 231, 170, 0.15);
+    }
+
+    &--previous {
+      left: 24px;
+    }
+
+    &--next {
+      right: 24px;
+    }
+  }
+}
+
+@keyframes gallery-lightbox-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gallery-dialog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .gallery-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    > p {
+      max-width: 720px;
+      padding-bottom: 0;
+    }
+  }
+
+  .gallery-masonry {
+    column-count: 2;
+  }
+
+  .gallery-card {
+    &__expand {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .gallery-lightbox {
+    padding: 75px 70px 30px;
+
+    &__image {
+      height: 70vh;
+    }
+
+    &__arrow {
+      width: 46px;
+      height: 46px;
+
+      &--previous {
+        left: 12px;
+      }
+
+      &--next {
+        right: 12px;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 575px) {
+  .gallery-section {
+    padding-top: 55px;
+    padding-bottom: 75px;
+
+    .container {
+      width: calc(100% - 28px);
+    }
+  }
+
+  .gallery-heading {
+    margin-bottom: 40px;
+  }
+
+  .gallery-masonry {
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  .gallery-card {
+    margin-bottom: 16px;
+    border-radius: 16px;
+
+    &__content {
+      padding: 20px;
+
+      strong {
+        font-size: 21px;
+      }
+    }
+
+    &__expand {
+      width: 42px;
+      min-width: 42px;
+      height: 42px;
+    }
+  }
+
+  .gallery-lightbox {
+    padding: 72px 14px 25px;
+
+    &__close {
+      top: 15px;
+      right: 15px;
+      width: 44px;
+      height: 44px;
+    }
+
+    &__image {
+      height: 65vh;
+      border-radius: 12px;
+    }
+
+    &__caption {
+      padding: 16px 5px 0;
+      align-items: flex-start;
+
+      h2 {
+        max-width: calc(100% - 55px);
+      }
+    }
+
+    &__arrow {
+      top: auto;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      transform: none;
+
+      &--previous {
+        right: 70px;
+        left: auto;
+      }
+
+      &--next {
+        right: 16px;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card,
+  .gallery-card *,
+  .gallery-lightbox,
+  .gallery-lightbox__dialog {
+    animation: none !important;
+    transition: none !important;
+  }
+}

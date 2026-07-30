@@ -23,16 +23,16 @@ const aboutSections = [
     image: "/images/dss_aboutpage_teaching-1.webp",
     imagePosition: "left",
   },
-  {
-    title: "Publications & Surgical Writing",
-    text: [
-      "Over the years, Dr. Sonar has contributed to medical education through textbooks, academic writing, and surgical documentation.",
-      "His written work is driven by a simple idea: that complex surgical concepts should be made understandable, teachable, and useful to others.",
-      "These contributions continue to support the learning and development of surgeons and trainees across different stages of practice.",
-    ],
-    image: "/images/dss_aboutpage_teaching-1.webp",
-    imagePosition: "right",
-  },
+  // {
+  //   title: "Publications & Surgical Writing",
+  //   text: [
+  //     "Over the years, Dr. Sonar has contributed to medical education through textbooks, academic writing, and surgical documentation.",
+  //     "His written work is driven by a simple idea: that complex surgical concepts should be made understandable, teachable, and useful to others.",
+  //     "These contributions continue to support the learning and development of surgeons and trainees across different stages of practice.",
+  //   ],
+  //   image: "/images/dss_aboutpage_teaching-1.webp",
+  //   imagePosition: "right",
+  // },
   {
     title: "Beyond the Operating Room",
     text: [
@@ -41,7 +41,7 @@ const aboutSections = [
       "At heart, his work is guided by reflection, consistency, and the belief that careful effort, over time, shapes both practice and people.",
     ],
     image: "/images/dss_aboutpage_beyond_the_operating_room_1.webp",
-    imagePosition: "left",
+    imagePosition: "right",
   },
 ];
 

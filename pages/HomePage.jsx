@@ -389,7 +389,7 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    <div className="tp-row">
+                    {/* <div className="tp-row">
                         <div className="tp-image" data-aos="fade-up">
                             <Image
                                 src="/images/publications-img.webp"
@@ -414,11 +414,11 @@ export default function HomePage() {
 
                             <a href="#" className="btn">View publications</a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
-            <section
+            {/* <section
                 className="selected-work-section home white-bg clip-reveal-section"
                 id="selected-work"
             >
@@ -507,7 +507,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <section
                 className="beyond-consultation-section green-bg clip-reveal-section"
