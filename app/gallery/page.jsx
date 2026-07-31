@@ -96,8 +96,168 @@ const galleryItems = [
   },
   {
     id: 12,
-    title: "Medical Community Event",
+    title: "Medical Community Event1",
     image: "/images/WhatsApp Image 2026-07-29 at 7.16.48 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event2",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.18.53 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event3",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.19.31 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event4",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.20.51 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event5",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.26.01 PM (1).jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event6",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.26.01 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event7",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.28.19 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event8",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.29.00 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event9",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.30.44 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event10",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.31.12 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event11",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.32.20 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event12",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.36.22 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event13",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.37.46 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event14",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.39.11 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event15",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.40.17 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event16",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.42.17 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event17",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.45.51 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event18",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.46.41 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event19",
+    image: "/images/WhatsApp Image 2026-07-29 at 7.47.10 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event20",
+    image: "/images/WhatsApp Image 2026-07-29 at 9.34.02 PM.jpeg",
+    alt: "Dr. Sanjay Sonar at a medical community event",
+    width: 1200,
+    height: 900,
+  },
+  {
+    id: 12,
+    title: "Medical Community Event21",
+    image: "/images/WhatsApp Image 2026-07-29 at 9.34.34 PM.jpeg",
     alt: "Dr. Sanjay Sonar at a medical community event",
     width: 1200,
     height: 900,
@@ -206,7 +366,7 @@ export default function GalleryPage() {
       return undefined;
     }
 
-    const handleKeyDown = event => {
+    const handleKeyDown = event => { 
       if (event.key === "Escape") {
         setSelectedIndex(null);
       }
@@ -260,8 +420,8 @@ export default function GalleryPage() {
   };
 
   return (
-      <Layout>
     <main className="inside-page gallery-page-content">
+      <Layout>
         <section className="inside-banner">
           <div className="container">
             <h1>Gallery</h1>
@@ -385,7 +545,7 @@ export default function GalleryPage() {
             </button>
           </div>
         )}
-    </main>
       </Layout>
+    </main>
   );
 }
