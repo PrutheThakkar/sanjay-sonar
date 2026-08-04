@@ -9,6 +9,7 @@ import "../css/publication.css";
 import "../css/selected-work.css";
 import "../css/teaching.css";
 import "../css/gallery.css";
+import "../css/HeroSlider.css";
 import SmoothAnimationProvider from "./SmoothAnimationProvider";
 
 export default function Layout({ children }) {

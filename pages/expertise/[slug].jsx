@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
+import { getExpertiseBySlug, getExpertiseItems } from "../../lib/wordpress";
 
-const expertiseItems = [
+const fallbackExpertiseItems = [
     {
         title: "Laparoscopic Heller’s Cardiomyotomy",
         icon: "/images/laparoscopic.svg",
@@ -74,7 +75,17 @@ export default function ExpertiseDetail({ item }) {
                         <div className="expertise-detail-list">
                             <div className="expertise-detail-block full">
                                 <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                                {item.content ? (
+                                    <div
+                                        className="wordpress-content"
+                                        dangerouslySetInnerHTML={{ __html: item.content }}
+                                    />
+                                ) : (
+                                    <div
+                                        className="wordpress-content"
+                                        dangerouslySetInnerHTML={{ __html: item.description }}
+                                    />
+                                )}
 
                                 <h4>Example procedures</h4>
 
@@ -109,18 +120,37 @@ export default function ExpertiseDetail({ item }) {
 }
 
 export async function getStaticPaths() {
-    const paths = expertiseItems.map((i) => ({ params: { slug: i.slug } }));
+    let expertiseItems = fallbackExpertiseItems;
+
+    try {
+        const wordpressItems = await getExpertiseItems();
+        if (wordpressItems.length) expertiseItems = wordpressItems;
+    } catch (error) {
+        console.warn(`Using local expertise paths: ${error.message}`);
+    }
+
+    const paths = expertiseItems.map((item) => ({ params: { slug: item.slug } }));
 
     return {
         paths,
-        fallback: false,
+        fallback: "blocking",
     };
 }
 
 export async function getStaticProps({ params }) {
-    const item = expertiseItems.find((i) => i.slug === params.slug) || null;
+    let item = null;
+
+    try {
+        item = await getExpertiseBySlug(params.slug);
+    } catch (error) {
+        console.warn(`Using local expertise detail: ${error.message}`);
+        item = fallbackExpertiseItems.find((entry) => entry.slug === params.slug) || null;
+    }
+
+    if (!item) return { notFound: true, revalidate: 60 };
 
     return {
         props: { item },
+        revalidate: 300,
     };
 }

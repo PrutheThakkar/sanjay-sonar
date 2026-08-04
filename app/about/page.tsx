@@ -142,7 +142,7 @@ export default function AboutPage() {
             <div className="about-consultation" data-aos="fade-up">
               <h2>Publications & Surgical Writing</h2>
               <p>For consultations, evaluations, or second opinions:</p>
-              <a href="/contact" className="cta">Request a consultation</a>
+              <a href="/Consultation" className="cta">Request a consultation</a>
             </div>
           </div>
         </section>

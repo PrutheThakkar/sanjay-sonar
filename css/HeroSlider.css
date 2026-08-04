@@ -1,0 +1,300 @@
+.hero-slider-section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background-color: #12352c;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Swiper sizing */
+.hero-swiper,
+.hero-swiper .swiper-wrapper,
+.hero-swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image */
+.hero-slide .hero-bg,
+.hero-slide .hero-bg picture,
+.hero-slide .hero-background-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide .hero-bg {
+  z-index: 0;
+}
+
+.hero-background-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  transform: scale(1.01);
+  transition: transform 7s ease;
+}
+
+/* Slow zoom effect on active slide */
+.hero-loaded .hero-swiper .swiper-slide-active .hero-background-image {
+  transform: scale(1.08);
+}
+
+/* Dark overlay only for HTML text slides */
+.hero-slide--text-content::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(7, 28, 22, 0.88) 0%, rgba(7, 28, 22, 0.55) 48%, rgba(7, 28, 22, 0.08) 100%);
+}
+
+/* Content layer */
+.hero-slide .hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+/* Existing text artwork image */
+.hero-content-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content-image {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* HTML text used in second/third slides */
+.hero-copy {
+  width: min(720px, 76vw);
+  margin-left: clamp(30px, 8vw, 150px);
+  padding: 130px 0 150px;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 700ms ease 350ms, transform 900ms cubic-bezier(0.22, 1, 0.36, 1) 350ms;
+}
+
+.hero-loaded .hero-swiper .swiper-slide-active .hero-copy {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  font-size: clamp(13px, 1vw, 17px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-copy h2 {
+  max-width: 720px;
+  margin: 0;
+  color: inherit;
+  font-size: clamp(44px, 5vw, 88px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.hero-copy p {
+  max-width: 620px;
+  margin: 26px 0 0;
+  color: inherit;
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.6;
+}
+
+/* Social icons */
+.hero-social-overlay {
+  position: absolute;
+  z-index: 10;
+  left: clamp(25px, 4.5vw, 86px);
+  bottom: clamp(75px, 9vh, 125px);
+}
+
+.hero-social-overlay .social-links {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-social-overlay .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.hero-social-overlay .social-links a:hover {
+  opacity: 0.7;
+  transform: translateY(-3px);
+}
+
+/*
+Your original SVG paths use fill="".
+
+Change those SVG path values to:
+
+fill="currentColor"
+*/
+/* Swiper arrows */
+.hero-swiper {
+  --swiper-theme-color: #ffffff;
+  --swiper-navigation-size: 20px;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+  top: auto;
+  bottom: clamp(25px, 4vh, 55px);
+  width: 46px;
+  height: 46px;
+  margin-top: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(10, 35, 28, 0.3);
+  backdrop-filter: blur(8px);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.hero-swiper .swiper-button-prev:hover,
+.hero-swiper .swiper-button-next:hover {
+  border-color: #ffffff;
+  background: rgba(10, 35, 28, 0.7);
+}
+
+.hero-swiper .swiper-button-prev {
+  right: clamp(90px, 8vw, 145px);
+  left: auto;
+}
+
+.hero-swiper .swiper-button-next {
+  right: clamp(25px, 4vw, 75px);
+}
+
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Pagination dots */
+.hero-swiper .swiper-pagination {
+  right: auto;
+  bottom: clamp(34px, 4.8vh, 64px);
+  left: 50%;
+  width: auto;
+  transform: translateX(-50%);
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  margin: 0 6px !important;
+  background-color: #ffffff;
+  opacity: 0.45;
+  transition: width 250ms ease, border-radius 250ms ease, opacity 250ms ease;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-slider-section {
+    height: 100svh;
+    min-height: 620px;
+    max-height: 900px;
+  }
+  .hero-background-image,
+  .hero-content-image {
+    -o-object-position: center top;
+       object-position: center top;
+  }
+  .hero-slide--text-content::after {
+    background: linear-gradient(180deg, rgba(7, 28, 22, 0.05) 0%, rgba(7, 28, 22, 0.55) 48%, rgba(7, 28, 22, 0.92) 100%);
+  }
+  .hero-slide .hero-content {
+    align-items: flex-end;
+  }
+  .hero-copy {
+    width: 100%;
+    margin-left: 0;
+    padding: 120px 24px 150px;
+  }
+  .hero-copy h2 {
+    max-width: 100%;
+    font-size: clamp(38px, 11vw, 60px);
+    line-height: 1.02;
+  }
+  .hero-copy p {
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .hero-social-overlay {
+    left: 24px;
+    bottom: 82px;
+  }
+  .hero-social-overlay .social-links {
+    gap: 12px;
+  }
+  .hero-social-overlay .social-links svg {
+    width: 26px;
+    height: 26px;
+  }
+  .hero-swiper .swiper-button-prev,
+  .hero-swiper .swiper-button-next {
+    display: none;
+  }
+  .hero-swiper .swiper-pagination {
+    bottom: 28px;
+  }
+}
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-image,
+  .hero-copy,
+  .hero-social-overlay a {
+    transition: none !important;
+  }
+  .hero-loaded .hero-swiper .swiper-slide-active .hero-background-image {
+    transform: none;
+  }
+}
+.hero-content.hero-content-reveal img {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}/*# sourceMappingURL=HeroSlider.css.map */

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
+import { getExpertiseItems } from "../../lib/wordpress";
 
-const expertiseItems = [
+const fallbackExpertiseItems = [
     {
         title: "Laparoscopic Heller’s Cardiomyotomy",
         icon: "/images/laparoscopic.svg",
@@ -30,7 +31,7 @@ const expertiseItems = [
     },
 ];
 
-export default function ExpertisePage() {
+export default function ExpertisePage({ expertiseItems }) {
     return (
             <main className="inside-page expertise-page">
         <Layout>
@@ -80,10 +81,10 @@ export default function ExpertisePage() {
 
                             <div className="expertise-top-img">
                                 <Image
-                                    src="/images/expertise-top-img.webp"
+                                    src="/images/expertise-new-banner.webp"
                                     alt="Dr. Sanjay Sonar"
-                                    width={520}
-                                    height={420}
+                                    width={500}
+                                    height={500}
                                     priority
                                 />
                             </div>
@@ -126,6 +127,7 @@ export default function ExpertisePage() {
                                                 alt={item.title}
                                                 width={76}
                                                 height={76}
+                                                unoptimized={item.icon.startsWith("http")}
                                             />
                                         </div>
 
@@ -313,4 +315,26 @@ export default function ExpertisePage() {
         </Layout>
             </main>
     );
+}
+
+export async function getStaticProps() {
+    try {
+        const expertiseItems = await getExpertiseItems();
+
+        return {
+            props: {
+                expertiseItems: expertiseItems.length
+                    ? expertiseItems
+                    : fallbackExpertiseItems,
+            },
+            revalidate: 300,
+        };
+    } catch (error) {
+        console.warn(`Using local expertise data: ${error.message}`);
+
+        return {
+            props: { expertiseItems: fallbackExpertiseItems },
+            revalidate: 60,
+        };
+    }
 }

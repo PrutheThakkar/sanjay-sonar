@@ -449,7 +449,7 @@ export default function GalleryPage() {
               {galleryItems.map((item, index) => (
                 <button
                   type="button"
-                  key={item.id}
+                   key={item.image}
                   className="gallery-card"
                   aria-label={`Open ${item.title}`}
                   onClick={() => setSelectedIndex(index)}
@@ -516,7 +516,7 @@ export default function GalleryPage() {
             <div className="gallery-lightbox__dialog">
               <div className="gallery-lightbox__image">
                 <Image
-                  key={selectedItem.id}
+                  key={selectedItem.image}
                   src={selectedItem.image}
                   alt={selectedItem.alt}
                   width={selectedItem.width}
