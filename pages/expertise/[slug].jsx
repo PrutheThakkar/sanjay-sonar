@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getExpertiseBySlug, getExpertiseItems } from "../../lib/wordpress";
@@ -36,6 +35,48 @@ const fallbackExpertiseItems = [
         icon: "/images/recurrent-hernia.svg",
         slug: "recurrent-hernia-surgery",
         description: "Management and repair strategies for recurrent hernias.",
+    },
+    {
+        title: "Laparoscopic Rectopexy",
+        icon: "/images/Laparoscopic-Rectopexy-new.webp",
+        slug: "laparoscopic-rectopexy",
+        description: "A minimally invasive procedure used to treat rectal prolapse.",
+    },
+    {
+        title: "Laparoscopic Colectomy",
+        icon: "/images/Laparoscopic-Colectomy-new.webp",
+        slug: "laparoscopic-colectomy",
+        description: "Minimally invasive removal of part or all of the colon.",
+    },
+    {
+        title: "Laparoscopic Cholecystectomy",
+        icon: "/images/laparoscopic-cholecystectomy.webp",
+        slug: "laparoscopic-cholecystectomy",
+        description: "Minimally invasive surgical removal of the gallbladder.",
+    },
+    {
+        title: "Laparoscopic Appendicectomy",
+        icon: "/images/laparoscopic-appendicectomy.webp",
+        slug: "laparoscopic-appendicectomy",
+        description: "Minimally invasive surgical removal of the appendix.",
+    },
+    {
+        title: "Laparoscopic Thyroid Surgery",
+        icon: "/images/laparoscopic-thyroid-surgery.webp",
+        slug: "laparoscopic-thyroid-surgery",
+        description: "A minimally invasive approach to selected thyroid conditions.",
+    },
+    {
+        title: "Pyeloplasty",
+        icon: "/images/pyeloplasty.webp",
+        slug: "pyeloplasty",
+        description: "Reconstructive surgery to restore drainage from the kidney.",
+    },
+    {
+        title: "Laser Treatment for Varicose Veins",
+        icon: "/images/laser-treatment.webp",
+        slug: "laser-treatment-for-varicose-veins",
+        description: "Minimally invasive laser treatment for problematic varicose veins.",
     },
 ];
 
@@ -87,29 +128,12 @@ export default function ExpertiseDetail({ item }) {
                                     />
                                 )}
 
-                                <h4>Example procedures</h4>
-
-                                <div className="procedure-grid">
-                                    <div className="procedure-card">
-                                        <Image
-                                            src="/images/laparoscopic-rectopexy.webp"
-                                            alt="Procedure"
-                                            width={520}
-                                            height={250}
-                                        />
-                                        <p>Example procedure</p>
-                                    </div>
-
-                                    <div className="procedure-card">
-                                        <Image
-                                            src="/images/laparoscopic-colectomy.webp"
-                                            alt="Procedure"
-                                            width={520}
-                                            height={250}
-                                        />
-                                        <p>Example procedure</p>
-                                    </div>
-                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                    aliquip ex ea commodo consequat.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -144,6 +168,9 @@ export async function getStaticProps({ params }) {
         item = await getExpertiseBySlug(params.slug);
     } catch (error) {
         console.warn(`Using local expertise detail: ${error.message}`);
+    }
+
+    if (!item) {
         item = fallbackExpertiseItems.find((entry) => entry.slug === params.slug) || null;
     }
 

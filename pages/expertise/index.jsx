@@ -153,7 +153,10 @@ export default function ExpertisePage({ expertiseItems }) {
                                 <h4>Procedures include: </h4>
 
                                 <div className="procedure-grid">
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-rectopexy"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/Laparoscopic-Rectopexy-new.webp"
                                             alt="Laparoscopic Rectopexy"
@@ -161,9 +164,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Rectopexy </p>
-                                    </div>
+                                    </Link>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-colectomy"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/Laparoscopic-Colectomy-new.webp"
                                             alt="Laparoscopic Colectomy"
@@ -171,7 +177,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Colectomy </p>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -184,7 +190,10 @@ export default function ExpertisePage({ expertiseItems }) {
                                 <h4>Procedures include:</h4>
 
                                 <div className="procedure-grid">
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-cholecystectomy"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/laparoscopic-cholecystectomy.webp"
                                             alt="Laparoscopic Cholecystectomy"
@@ -192,9 +201,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Cholecystectomy </p>
-                                    </div>
+                                    </Link>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-appendicectomy"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/laparoscopic-appendicectomy.webp"
                                             alt="Laparoscopic Appendicectomy"
@@ -202,7 +214,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Appendicectomy </p>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -217,7 +229,10 @@ export default function ExpertisePage({ expertiseItems }) {
 
                                     <h4>Procedures include:</h4>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-rectopexy"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/laparoscopic-rectopexy.webp"
                                             alt="Laparoscopic Rectopexy"
@@ -225,7 +240,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Rectopexy </p>
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className="expertise-detail-block">
@@ -237,7 +252,10 @@ export default function ExpertisePage({ expertiseItems }) {
 
                                     <h4>Procedures include:</h4>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laparoscopic-thyroid-surgery"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/laparoscopic-thyroid-surgery.webp"
                                             alt="Laparoscopic Thyroid Surgery"
@@ -245,7 +263,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laparoscopic Thyroid Surgery </p>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
 
@@ -259,7 +277,10 @@ export default function ExpertisePage({ expertiseItems }) {
 
                                     <h4>Procedures include:</h4>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/pyeloplasty"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/pyeloplasty.webp"
                                             alt="Pyeloplasty"
@@ -267,7 +288,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Pyeloplasty</p>
-                                    </div>
+                                    </Link>
                                 </div>
 
                                 <div className="expertise-detail-block">
@@ -279,7 +300,10 @@ export default function ExpertisePage({ expertiseItems }) {
 
                                     <h4>Procedures include:</h4>
 
-                                    <div className="procedure-card">
+                                    <Link
+                                        href="/expertise/laser-treatment-for-varicose-veins"
+                                        className="procedure-card"
+                                    >
                                         <Image
                                             src="/images/laser-treatment.webp"
                                             alt="Laser Treatment for Varicose Veins"
@@ -287,7 +311,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                             height={250}
                                         />
                                         <p>Laser Treatment for Varicose Veins</p>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -305,7 +329,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                 cases:
                             </p>
 
-                            <a href="#consultation" className="expertise-btn">
+                            <a href="/Consultation" className="expertise-btn">
                                 Request a consultation
                             </a>
                         </div>
