@@ -4,7 +4,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import HeroSlider from "../components/HeroSlider";
 import Link from "next/link";
-export default function HomePage() {
+export default function HomePage({
+    heroSlides,
+    aboutSection,
+    expertiseSection,
+    teachingSection,
+    consultationSection,
+}) {
     const [isLoading, setIsLoading] = useState(true);
     const [showPreloader, setShowPreloader] = useState(true);
 
@@ -97,7 +103,7 @@ export default function HomePage() {
                     </div>
                 </div>
             )}
-            <HeroSlider isLoading={isLoading}>
+            <HeroSlider isLoading={isLoading} slides={heroSlides}>
                 <div className="social-links">
                     <a
                         href="https://instagram.com/"
@@ -128,51 +134,45 @@ export default function HomePage() {
                 </div>
             </HeroSlider>
 
-            <section className="about-section green-bg" >
-                <div className="container">
-                    <div className="about-wrapper">
-                        <div className="left">
-                            <div className="about-img-wrapper" data-aos="fade-up">
-                                <Image
-                                    src="/images/DSS_Homepage_Doctor-Profile-new.png"
-                                    alt="Dr. Sanjay Sonar"
-                                    width={485}
-                                    height={585}
-                                    priority
-                                    className="about-img"
-                                />
+            {aboutSection && (
+                <section className="about-section green-bg">
+                    <div className="container">
+                        <div className="about-wrapper">
+                            <div className="left">
+                                {aboutSection.imageUrl && (
+                                    <div className="about-img-wrapper" data-aos="fade-up">
+                                        <Image
+                                            src={aboutSection.imageUrl}
+                                            alt={aboutSection.imageAlt}
+                                            width={485}
+                                            height={585}
+                                            priority
+                                            className="about-img"
+                                        />
+                                    </div>
+                                )}
                             </div>
 
-                        </div>
-                        <div className="right" data-aos="fade-left">
-                            <h2>Dr. Sanjay Sonar
-                                <span className="subheading">
-                                    Advanced laparoscopic surgeon
-                                </span>
-                            </h2>
-                            <div className="honor-div">
-                                <p className="bold">Honorary Professor - </p>
-                                <p>Grant Government Medical College <br /> Sir J.J. Group of Hospitals </p>
+                            <div className="right" data-aos="fade-left">
+                                {aboutSection.titleHtml && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: aboutSection.titleHtml,
+                                        }}
+                                    />
+                                )}
+                                {aboutSection.contentHtml && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: aboutSection.contentHtml,
+                                        }}
+                                    />
+                                )}
                             </div>
-                            <ul>
-                                <li><p>Some cases arrive with uncertainty. </p></li>
-                                <li><p>They have been seen before, but not fully understood. </p></li>
-                                <li><p>These are the cases we chooses to spend time on. </p></li>
-                            </ul>
-
-                            <h3>
-                                Approach to Care
-                            </h3>
-                            <ul>
-                                <li><p>There is no rush to operate. </p></li>
-                                <li><p>First, the problem is understood. </p></li>
-                                <li><p>Every detail is considered. Every possibility explored. </p></li>
-                                <li><p>And only then, the simplest, most precise path is chosen. </p></li>
-                            </ul>
                         </div>
                     </div>
-                </div>
-            </section> 
+                </section>
+            )}
 
             <section
                 className="years-Mastery white-bg"
@@ -196,129 +196,31 @@ export default function HomePage() {
                                 className="about-img"
                             />
                         </span>
-                        years of Mastery in Complex Surgical Cases
+                        {expertiseSection?.title || "years of Mastery in Complex Surgical Cases"}
                     </h3>
 
                     <ul>
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="150"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/advanced-gastrointestainal-home.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={442}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
+                        {(expertiseSection?.items || []).map((item, index) => (
+                            <li
+                                key={item.id}
+                                data-aos="fade-up"
+                                data-aos-duration="850"
+                                data-aos-delay={150 + index * 100}
+                            >
+                                <div className="complex-sec-wrap">
+                                    <div className="img-wrap">
+                                        <Image
+                                            src={item.imageUrl}
+                                            alt={item.imageAlt}
+                                            width={442}
+                                            height={330}
+                                            className="about-img"
+                                        />
+                                    </div>
+                                    {item.title && <h4>{item.title}</h4>}
                                 </div>
-                                <h4>Advanced gastrointestinal and hernia surgery</h4>
-                            </div>
-                        </li>
-
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="250"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/colorectal-home.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={442}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
-                                </div>
-                                <h4>Colorectal procedures</h4>
-                            </div>
-                        </li>
-
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="350"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/thoracic-surgery-home.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={442}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
-                                </div>
-                                <h4>Thoracic surgery (VATS)</h4>
-                            </div>
-                        </li>
-
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="450"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/thyroid-home-new.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={515}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
-                                </div>
-                                <h4>Thyroid and endocrine surgery</h4>
-                            </div>
-                        </li>
-
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="550"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/reconstruction-home.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={442}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
-                                </div>
-                                <h4>Reconstructive urological procedures</h4>
-                            </div>
-                        </li>
-
-                        <li
-                            data-aos="fade-up"
-                            data-aos-duration="850"
-                            data-aos-delay="650"
-                        >
-                            <div className="complex-sec-wrap">
-                                <div className="img-wrap">
-                                    <Image
-                                        src="/images/laser-tretment-home.webp"
-                                        alt="Dr. Sanjay Sonar"
-                                        width={442}
-                                        height={330}
-                                        priority
-                                        className="about-img"
-                                    />
-                                </div>
-                                <h4>Laser treatment for varicose veins</h4>
-                            </div>
-                        </li>
+                            </li>
+                        ))}
                     </ul>
 
                     <div
@@ -327,42 +229,44 @@ export default function HomePage() {
                         data-aos-duration="850"
                         data-aos-delay="750"
                     >
-                        <a href="/expertise#Colorectal-Surgery" className="btn cta">
+                        <Link href="/expertise#Colorectal-Surgery" className="btn cta">
                             View More
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
 
             <section className="teaching-publication-section green-bg">
                 <div className="container">
-                    <div className="tp-row">
-                        <div className="tp-image" data-aos="fade-up">
-                            <Image
-                                src="/images/teaching-img.webp"
-                                alt="Teaching"
-                                width={560}
-                                height={410}
-                            />
+                    {(teachingSection || []).map((item) => (
+                        <div className="tp-row" key={item.id}>
+                            {item.imageUrl && (
+                                <div className="tp-image" data-aos="fade-up">
+                                    <Image
+                                        src={item.imageUrl}
+                                        alt={item.imageAlt}
+                                        width={560}
+                                        height={410}
+                                    />
+                                </div>
+                            )}
+
+                            <div className="tp-content" data-aos="fade-left">
+                                {item.title && <h2>{item.title}</h2>}
+                                {item.subtitle && <h3>{item.subtitle}</h3>}
+                                {item.textHtml && (
+                                    <div
+                                        dangerouslySetInnerHTML={{
+                                            __html: item.textHtml,
+                                        }}
+                                    />
+                                )}
+                                <Link href={item.buttonHref} className="btn">
+                                    {item.buttonLabel}
+                                </Link>
+                            </div>
                         </div>
-
-                        <div className="tp-content" data-aos="fade-left">
-                            <h2>TEACHING</h2>
-
-                            <h3>
-                                Teaching is not separate from the work. It is a continuation of it.
-                            </h3>
-
-                            <p>
-                                As an Honorary Professor, and through programs in India and abroad,
-                                Dr. Sonar trains surgeons to approach complexity with clarity.
-                            </p>
-
-                            <p>Not just how to operate, but how to think.</p>
-
-                            <Link href="/teaching" className="btn">View More</Link>
-                        </div>
-                    </div>
+                    ))}
 
                     {/* <div className="tp-row">
                         <div className="tp-image" data-aos="fade-up">
@@ -542,16 +446,19 @@ export default function HomePage() {
                     </div>
 
                     <div className="consultation-content">
-                        <h2 data-aos="fade-up">CONSULTATION</h2>
+                        <h2 data-aos="fade-up">
+                            {consultationSection?.title || "CONSULTATION"}
+                        </h2>
 
-                        <p data-aos="fade-up" data-aos-delay="100">
-                            If you are seeking clarity on a surgical condition, consultations and
-                            second opinions are available.
-                        </p>
-
-                        <p data-aos="fade-up" data-aos-delay="200">
-                            Each case is approached with time, care, and attention to detail.
-                        </p>
+                        {consultationSection?.paragraphHtml && (
+                            <div
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                                dangerouslySetInnerHTML={{
+                                    __html: consultationSection.paragraphHtml,
+                                }}
+                            />
+                        )}
 
                         <Link
                             href="/consultation"

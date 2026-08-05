@@ -7,46 +7,15 @@ import {
     EffectFade,
     Keyboard,
     Navigation,
-    Pagination,
 } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+export default function HeroSlider({ isLoading, slides, children }) {
+    const heroSlides = slides || [];
 
-
-
-const heroSlides = [
-    {
-        id: 1,
-         // Replace these with your second banner images.
-        desktopBackground: "/images/hero-banner-new.webp",
-        mobileBackground: "/images/hero-banner-new-mob.webp",
-
-       
-
-        desktopContent: "/images/35-text-new-banner.png",
-        mobileContent: "/images/35-mob-text.png",
-
-        contentAlt:
-            "Dr. Sanjay Sonar, 35 years of mastery in complex surgical cases",
-    },
-
-    {
-        id: 2,
-
-        desktopBackground: "/images/Sanjay-Banner-1.jpg",
-        mobileBackground: "/images/home-banner-img-mob.png",
-
-        desktopContent: "/images/35-text-new-banner.png",
-        mobileContent: "/images/35-mob-text.png",
-    },
-
-   
-];
-
-export default function HeroSlider({ isLoading, children }) {
     return (
         <section
             className={`hero hero-slider-section ${
