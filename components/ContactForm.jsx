@@ -10,6 +10,8 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,18 +22,38 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
 
-    console.log("Contact form submitted:", formData);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      message: "",
-    });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to submit your request.");
+      }
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error ? error.message : "Unable to submit your request.",
+      );
+    }
   };
 
   return (
@@ -105,9 +127,20 @@ export default function ContactForm() {
         ></textarea>
       </div>
 
-      <button type="submit" className="contact-submit-btn">
-        Submit Request
+      <button
+        type="submit"
+        className="contact-submit-btn"
+        disabled={status === "submitting"}
+      >
+        {status === "submitting" ? "Submitting..." : "Submit Request"}
       </button>
+
+      <div aria-live="polite">
+        {status === "success" && (
+          <p className="form-success">Your request has been submitted successfully.</p>
+        )}
+        {status === "error" && <p className="form-error">{errorMessage}</p>}
+      </div>
     </form>
   );
 }
