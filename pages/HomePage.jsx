@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import HeroSlider from "../components/HeroSlider";
 import Link from "next/link";
 export default function HomePage({
@@ -11,32 +11,6 @@ export default function HomePage({
     teachingSection,
     consultationSection,
 }) {
-    const [isLoading, setIsLoading] = useState(true);
-    const [showPreloader, setShowPreloader] = useState(true);
-
-    useEffect(() => {
-        const loadTimer = setTimeout(() => {
-            setIsLoading(false);
-        }, 2600);
-
-        const removeTimer = setTimeout(() => {
-            setShowPreloader(false);
-        }, 4000);
-
-        return () => {
-            clearTimeout(loadTimer);
-            clearTimeout(removeTimer);
-        };
-    }, []);
-
-    useEffect(() => {
-        document.body.style.overflow = showPreloader ? "hidden" : "";
-
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [showPreloader]);
-
     // useEffect(() => {
     //     const sections = document.querySelectorAll(".clip-reveal-section");
 
@@ -86,24 +60,7 @@ export default function HomePage({
     return (
         <>
 
-            {showPreloader && (
-                <div className={`site-preloader ${!isLoading ? "preloader-hide" : ""}`}>
-                    <div className="preloader-inner">
-                        <div className="preloader-mark">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                        <p>Loading experience</p>
-
-                        <div className="preloader-line">
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            )}
-            <HeroSlider isLoading={isLoading} slides={heroSlides}>
+            <HeroSlider isLoading={false} slides={heroSlides}>
                 <div className="social-links">
                     <a
                         href="https://instagram.com/"

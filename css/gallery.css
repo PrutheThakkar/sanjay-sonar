@@ -32,7 +32,6 @@ body.gallery-page {
   align-items: end;
 }
 .gallery-heading h2 {
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 0;
   color: #334326;
@@ -54,23 +53,80 @@ body.gallery-page {
 /* ==========================================================================
    Masonry layout
    ========================================================================== */
+.gallery-tabs {
+  grid-area: sidebar;
+  position: sticky;
+  top: 130px;
+  max-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.gallery-browser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  grid-template-areas: "gallery sidebar";
+  gap: clamp(30px, 4vw, 70px);
+  align-items: start;
+}
+
+.gallery-results {
+  grid-area: gallery;
+  min-width: 0;
+}
+
+.gallery-tab {
+  width: 100%;
+  padding: 11px 18px;
+  border: 1px solid rgba(72, 90, 46, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: #485a2e;
+  font-family: "Agrandir Regular";
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.gallery-tab:hover, .gallery-tab.active {
+  border-color: #485a2e;
+  background: #485a2e;
+  color: #ffffff;
+}
+.gallery-tab:focus-visible {
+  outline: 3px solid rgba(72, 90, 46, 0.35);
+  outline-offset: 3px;
+}
+
+.gallery-empty {
+  margin: 0;
+  padding: clamp(35px, 5vw, 70px);
+  border: 1px dashed rgba(72, 90, 46, 0.3);
+  border-radius: 20px;
+  color: #485a2e;
+  text-align: center;
+}
+
 .gallery-masonry {
   width: 100%;
-  -moz-column-count: 3;
-       column-count: 3;
-  -moz-column-gap: clamp(14px, 1.5vw, 24px);
-       column-gap: clamp(14px, 1.5vw, 24px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 1.5vw, 24px);
+  align-items: start;
 }
 
 .gallery-card {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 0 0 clamp(14px, 1.5vw, 24px);
+  margin: 0;
   padding: 0;
   overflow: hidden;
-  -moz-column-break-inside: avoid;
-       break-inside: avoid;
+  break-inside: avoid;
   border: 0;
   border-radius: clamp(14px, 1.4vw, 24px);
   background: #d9dfc8;
@@ -85,12 +141,14 @@ body.gallery-page {
   position: relative;
   display: block;
   width: 100%;
+  aspect-ratio: 4/3;
   overflow: hidden;
 }
 .gallery-card__image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .gallery-card__overlay {
@@ -220,8 +278,7 @@ body.gallery-page {
   max-width: 100%;
   height: auto;
   max-height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .gallery-lightbox__caption {
   display: flex;
@@ -307,8 +364,7 @@ body.gallery-page {
     padding-bottom: 0;
   }
   .gallery-masonry {
-    -moz-column-count: 2;
-         column-count: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .gallery-card__expand {
     opacity: 1;
@@ -334,6 +390,26 @@ body.gallery-page {
 /* ==========================================================================
    Mobile
    ========================================================================== */
+@media (max-width: 767px) {
+  .gallery-browser {
+    grid-template-columns: 1fr;
+    grid-template-areas: "sidebar" "gallery";
+  }
+  .gallery-tabs {
+    position: static;
+    max-height: none;
+    flex-direction: row;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+  .gallery-tab {
+    width: auto;
+    flex: 0 0 auto;
+    text-align: center;
+  }
+}
 @media (max-width: 575px) {
   .gallery-section {
     padding-top: 55px;
@@ -346,10 +422,8 @@ body.gallery-page {
     margin-bottom: 40px;
   }
   .gallery-masonry {
-    -moz-column-count: 1;
-         column-count: 1;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   .gallery-card {
     margin-bottom: 16px;
@@ -409,4 +483,6 @@ body.gallery-page {
     animation: none !important;
     transition: none !important;
   }
-}/*# sourceMappingURL=gallery.css.map */
+}
+
+/*# sourceMappingURL=gallery.css.map */
