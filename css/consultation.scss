@@ -11,6 +11,11 @@
     color: #fff;
     text-align: left;
 
+    .subheading,
+    span {
+      color: #fff;
+    }
+
     &::after {
       background: #eee7aa;
     }

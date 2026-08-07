@@ -138,7 +138,7 @@ export default function GalleryClient({ pageTitle, galleryCategories }) {
                         </span>
                         <span className="gallery-card__overlay" />
                         <span className="gallery-card__content">
-                          <strong>{item.title}</strong>
+                          {/* <strong>{item.title}</strong> */}
                           <span className="gallery-card__expand"><ExpandIcon /></span>
                         </span>
                       </button>

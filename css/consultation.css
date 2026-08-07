@@ -10,6 +10,10 @@
   color: #fff;
   text-align: left;
 }
+.expect-section h2 .subheading,
+.expect-section h2 span {
+  color: #fff;
+}
 .expect-section h2::after {
   background: #eee7aa;
 }

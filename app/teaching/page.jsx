@@ -156,9 +156,9 @@ export default async function TeachingPage() {
                                 ))}
                             </div>
 
-                            <p className="philosophy-closing">
+                            {/* <p className="philosophy-closing">
                                 The goal is not imitation, but understanding.
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </section>

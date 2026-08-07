@@ -617,7 +617,7 @@
 
   .prep-step {
     display: grid;
-    grid-template-columns: 180px 14px 1fr;
+    grid-template-columns: minmax(36px, 1fr) 14px minmax(0, 1.35fr);
     align-items: center;
     // gap: 18px;
     .name{
@@ -640,6 +640,8 @@
     }
 
     p {
+      min-width: 0;
+      overflow-wrap: anywhere;
       opacity: 0;
       transform: translateY(15px);
       line-height: 1.45;
@@ -814,6 +816,10 @@
       gap: 34px;
     }
 
+    .prep-step {
+      grid-template-columns: minmax(50px, 0.75fr) 12px minmax(0, 1.5fr);
+    }
+
     .appointment-row {
       grid-template-columns: 1fr;
       gap: 38px;
@@ -831,8 +837,12 @@
     }
 
     .prep-step {
-      grid-template-columns: 70px 12px 1fr;
-      gap: 14px;
+      grid-template-columns: minmax(38px, 0.45fr) 10px minmax(0, 1.55fr);
+      gap: 10px;
+
+      .name {
+        padding-left: 4px;
+      }
     }
 
     .appointment-card-top {

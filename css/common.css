@@ -98,6 +98,7 @@ body {
   padding: 0;
   font-family: "Neue Montreal Regular";
   color: #2f3a36;
+  background-color: #eee7aa;
   overflow-x: hidden;
 }
 
@@ -296,7 +297,7 @@ section.green-bg {
 }
 section.white-bg {
   background-image: url("/images/yellow-bg.webp");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center center;
   background-size: cover;
 }
@@ -305,6 +306,10 @@ section.white-bg {
     background-repeat: repeat;
     background-size: contain;
   }
+}
+.expertise-detail-section.white-bg{
+background-repeat: repeat;
+background-size: contain;
 }
 
 .main {
@@ -397,15 +402,28 @@ h3::after {
   width: 100%;
   height: 2px;
   background: #676f43;
-  transform: scaleX(0.05);
   transform-origin: left;
+}
+
+h2::after {
+  transform: scaleX(var(--heading-line-scale, 0.05));
+  will-change: transform;
+}
+
+h3::after {
+  transform: scaleX(0.05);
   transition: transform 0.5s ease;
 }
 
-/* trigger underline when hovering the heading itself (instead of whole section) */
-h2:hover::after,
+/* Keep the existing hover interaction for h3 headings only. */
 h3:hover::after {
   transform: scaleX(0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h2 {
+    --heading-line-scale: 0.4;
+  }
 }
 
 /* Header */
@@ -689,10 +707,21 @@ body:has(.mobileMenu.open) {
   width: clamp(260px, 23vw, 440px);
   height: auto;
 }
-.footer .footer-copy {
+.footer .footer-copy,
+.footer p,
+.footer a {
   color: #ffffff;
-  margin-top: clamp(45px, 4vw, 78px);
   font-size: clamp(18px, 1.2vw, 24px);
+}
+.footer .footer-consultation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(36px, 3.5vw, 68px);
+  padding: 12px 26px;
+  border-radius: 10px;
+  background: #eee7aa;
+  color: #485a2e;
 }
 .footer .footer-right {
   display: flex;
@@ -712,7 +741,6 @@ body:has(.mobileMenu.open) {
   align-items: flex-start;
   gap: 18px;
   color: #ffffff;
-  font-size: clamp(18px, 1.2vw, 24px);
   line-height: 1.25;
 }
 .footer .footer-address {
@@ -739,7 +767,8 @@ body:has(.mobileMenu.open) {
     grid-template-columns: 1fr;
     gap: 42px;
   }
-  .footer .footer-copy {
+  .footer .footer-copy,
+  .footer .footer-consultation-btn {
     margin-top: 32px;
   }
   .footer .footer-contact-row {
@@ -755,13 +784,61 @@ body:has(.mobileMenu.open) {
   .footer .footer-logo {
     width: 240px;
   }
+  .footer p,
+  .footer a {
+    font-size: clamp(16px, 4.4vw, 18px);
+  }
   .footer .footer-address,
   .footer .footer-contact-row a {
-    font-size: 16px;
     gap: 14px;
   }
   .footer .footer-icon {
     font-size: 28px;
+  }
+}
+
+/* Shared interactive treatment for primary site actions. */
+body :is(.header .cta, .mobileCta, .btn, .selected-work-btn, .consultation-btn, .expertise-btn, .contact-submit-btn, .footer-consultation-btn) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, filter 0.35s ease, background-color 0.35s ease;
+}
+body :is(.header .cta, .mobileCta, .btn, .selected-work-btn, .consultation-btn, .expertise-btn, .contact-submit-btn, .footer-consultation-btn)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -40% auto -40% -55%;
+  width: 34%;
+  transform: skewX(-22deg);
+  background: rgba(255, 255, 255, 0.5);
+  transition: left 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+body :is(.header .cta, .mobileCta, .btn, .selected-work-btn, .consultation-btn, .expertise-btn, .contact-submit-btn, .footer-consultation-btn):hover {
+  transform: translateY(-4px) scale(1.025) !important;
+  box-shadow: 0 14px 30px rgba(29, 45, 22, 0.22);
+  filter: saturate(1.08);
+}
+body :is(.header .cta, .mobileCta, .btn, .selected-work-btn, .consultation-btn, .expertise-btn, .contact-submit-btn, .footer-consultation-btn):hover::before {
+  left: 125%;
+}
+body :is(.header .cta, .mobileCta, .btn, .selected-work-btn, .consultation-btn, .expertise-btn, .contact-submit-btn, .footer-consultation-btn):focus-visible {
+  outline: 3px solid rgba(238, 231, 170, 0.9);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(.expertise-list, .procedure-grid, .evaluated-grid, .gallery-masonry, .selected-work-grid, .papers-grid) img {
+    transition: transform 0.55s ease;
+  }
+  .expertise-item:hover img,
+  .procedure-card:hover img,
+  .evaluated-card:hover img,
+  .gallery-card:hover img,
+  .selected-work-card:hover img,
+  .paper-card:hover img {
+    transform: scale(1.035);
   }
 }
 .inside-page header {

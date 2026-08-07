@@ -271,7 +271,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                 <div className="expertise-detail-block">
                                     <h3>Reconstructive Urological Surgery</h3>
                                     <p>
-                                        Procedures focused on restoring function while minimizing surgical<br />
+                                        Procedures focused on restoring function while minimizing surgical
                                         trauma wherever possible
                                     </p>
 
@@ -321,17 +321,17 @@ export default function ExpertisePage({ expertiseItems }) {
                                 Throughout every area of practice, the approach remains consistent:
                                 <br />
                                 to understand the problem fully, operate with precision, and build
-                                towards the best possible long-term outcome
+                                towards the best possible long-term outcome.
                             </p>
 
-                            <p>
+                            {/* <p>
                                 For consultations, evaluations, or second opinions in complex surgical
                                 cases:
                             </p>
 
                             <a href="/Consultation" className="expertise-btn">
                                 Request a consultation
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </section>

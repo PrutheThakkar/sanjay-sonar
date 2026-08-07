@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,7 +15,9 @@ export default function Footer() {
               className="footer-logo"
             />
 
-            <p className="footer-copy">ALL right received 2026</p>
+            <Link href="/Consultation" className="footer-consultation-btn">
+              Consultation
+            </Link>
           </div>
 
           <div className="footer-right">

@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Lenis from "lenis";
 import AOS from "aos";
 import gsap from "gsap";
@@ -120,11 +119,33 @@ export default function SmoothAnimationProvider() {
     };
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!pageReady) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const context = gsap.context(() => {
+      const sections = gsap.utils.toArray<HTMLElement>(
+        ".main > section:not(.hero):not(.inside-banner)",
+      );
+
+      sections.forEach((section) => {
+        gsap.fromTo(
+          section,
+          { clipPath: "inset(100% 0% 0% 0%)" },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 98%",
+              end: "top 40%",
+              scrub: 0.6,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+      });
+
       gsap.fromTo(
         ".header",
         { y: -24, opacity: 0 },
@@ -138,6 +159,25 @@ export default function SmoothAnimationProvider() {
       );
 
       gsap.utils
+        .toArray<HTMLElement>("section:not(.hero) h2")
+        .forEach((heading) => {
+          gsap.fromTo(
+            heading,
+            { "--heading-line-scale": 0 },
+            {
+              "--heading-line-scale": 0.4,
+              duration: 1.1,
+              ease: "power2.inOut",
+              scrollTrigger: {
+                trigger: heading,
+                start: "top 90%",
+                once: true,
+              },
+            },
+          );
+        });
+
+      gsap.utils
         .toArray<HTMLElement>("section:not(.hero) h2:not([data-aos]), section:not(.hero) h3:not([data-aos])")
         .filter((element) => !element.closest(".gsap-case-card"))
         .forEach((element) => {
@@ -149,7 +189,7 @@ export default function SmoothAnimationProvider() {
               opacity: 1,
               duration: 0.8,
               ease: "power3.out",
-              clearProps: "all",
+              clearProps: "transform,opacity",
               scrollTrigger: { trigger: element, start: "top 88%", once: true },
             },
           );

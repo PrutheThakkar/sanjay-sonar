@@ -88,11 +88,12 @@
 
   h2 {
     color: #485a2e;
-    font-family: "Neue Montreal Regular";
-    font-weight: normal;
-    font-size: clamp(24px, 2.2vw, 36px);
-    line-height: 1.25;
     margin: 0 0 clamp(42px, 4vw, 70px);
+
+    .subheading,
+    span {
+      color: #485a2e;
+    }
   }
 
   p {
@@ -318,7 +319,6 @@
     }
 
     h2 {
-      font-size: 21px;
       margin-bottom: 30px;
     }
 
