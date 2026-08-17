@@ -256,7 +256,7 @@
   max-width: 1120px;
 }
 .expertise-overview .expertise-list-block {
-  max-width: 920px;
+  max-width: 100%;
 }
 .expertise-overview .expertise-list-block h3 {
   margin-bottom: clamp(40px, 4vw, 76px);
@@ -265,20 +265,25 @@
 }
 .expertise-overview .expertise-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: clamp(80px, 8vw, 160px);
-       column-gap: clamp(80px, 8vw, 160px);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  -moz-column-gap: clamp(18px, 2vw, 38px);
+       column-gap: clamp(18px, 2vw, 38px);
   row-gap: clamp(42px, 4vw, 72px);
 }
 .expertise-overview .expertise-item {
-  display: grid;
-  grid-template-columns: clamp(58px, 4vw, 76px) 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(18px, 2vw, 36px);
+  justify-content: flex-start;
+  gap: clamp(14px, 1.2vw, 22px);
+  text-align: center;
 }
 .expertise-overview .expertise-item p {
   color: #485a2e;
   line-height: 1.45;
+  font-size: clamp(12px, 1.05vw, 20px);
+  margin: 0;
+  white-space: nowrap;
 }
 .expertise-overview .expertise-icon {
   width: clamp(58px, 4vw, 76px);
@@ -308,9 +313,17 @@
     max-width: 100%;
   }
   .expertise-overview .expertise-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     -moz-column-gap: 40px;
          column-gap: 40px;
     row-gap: 36px;
+  }
+  .expertise-overview .expertise-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
   }
 }
 @media (max-width: 575px) {
@@ -323,10 +336,6 @@
   .expertise-overview .expertise-list {
     grid-template-columns: 1fr;
     gap: 28px;
-  }
-  .expertise-overview .expertise-item {
-    grid-template-columns: 54px 1fr;
-    gap: 16px;
   }
   .expertise-overview .expertise-icon {
     width: 54px;

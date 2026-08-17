@@ -13,7 +13,7 @@ export default async function SelectedWorkPage() {
   return (
     <SelectedWorkClient
       pageTitle={selectedWork?.pageTitle || "Selected Work"}
-      cases={selectedWork?.items || []}
+      cases={selectedWork?.items?.length ? selectedWork.items : undefined}
     />
   );
 }

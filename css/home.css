@@ -235,9 +235,6 @@
 .about-section .right .honor-div {
   margin-bottom: clamp(18px, 1.5vw, 28px);
 }
-.about-section .right .honor-div p {
-  font-size: clamp(16px, 0.95vw, 18px);
-}
 .about-section .right .honor-div .bold {
   color: #eee7aa;
 }
@@ -323,8 +320,9 @@
   padding: clamp(70px, 6.25vw, 120px) 0;
 }
 .years-Mastery h3 {
-  display: flex;
+  display: inline-flex;
   align-items: flex-end;
+  /* justify-content: center; */
   gap: clamp(10px, 1vw, 18px);
   margin-bottom: clamp(40px, 4.16vw, 80px);
   color: #676f43;

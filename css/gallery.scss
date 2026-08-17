@@ -81,15 +81,10 @@ body.gallery-page {
 }
 
 .gallery-browser {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-  grid-template-areas: "gallery sidebar";
-  gap: clamp(30px, 4vw, 70px);
-  align-items: start;
+  display: block;
 }
 
 .gallery-results {
-  grid-area: gallery;
   min-width: 0;
 }
 
@@ -131,17 +126,15 @@ body.gallery-page {
 
 .gallery-masonry {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 1.5vw, 24px);
-  align-items: start;
+  columns: 3;
+  column-gap: clamp(18px, 1.5vw, 24px);
 }
 
 .gallery-card {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 0;
+  margin: 0 0 clamp(18px, 1.5vw, 24px);
   padding: 0;
   overflow: hidden;
   break-inside: avoid;
@@ -164,14 +157,12 @@ body.gallery-page {
     position: relative;
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
     overflow: hidden;
 
     img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       transition:
         transform 0.75s
         cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -457,7 +448,7 @@ body.gallery-page {
   }
 
   .gallery-masonry {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    columns: 2;
   }
 
   .gallery-card {
@@ -494,28 +485,6 @@ body.gallery-page {
    ========================================================================== */
 
 @media (max-width: 767px) {
-  .gallery-browser {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "sidebar"
-      "gallery";
-  }
-
-  .gallery-tabs {
-    position: static;
-    max-height: none;
-    flex-direction: row;
-    padding-bottom: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-  }
-
-  .gallery-tab {
-    width: auto;
-    flex: 0 0 auto;
-    text-align: center;
-  }
 }
 
 @media (max-width: 575px) {
@@ -533,8 +502,7 @@ body.gallery-page {
   }
 
   .gallery-masonry {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    columns: 1;
   }
 
   .gallery-card {

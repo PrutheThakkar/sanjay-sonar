@@ -299,7 +299,7 @@ section.white-bg {
   background-image: url("/images/yellow-bg.webp");
   background-repeat: repeat;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
 }
 @media (max-width: 767px) {
   section.white-bg {
@@ -344,6 +344,7 @@ h2 {
 h2 .subheading {
   font-size: clamp(28px, 1.67vw, 32px);
   font-family: "Neue Montreal Regular";
+  color: inherit !important;
 }
 
 h3 {
@@ -393,37 +394,25 @@ h3 {
   display: inline-flex;
 }
 
-h2::after,
-h3::after {
+h2::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 80% !important;
   height: 2px;
-  background: #676f43;
-  transform-origin: left;
-}
-
-h2::after {
-  transform: scaleX(var(--heading-line-scale, 0.05));
-  will-change: transform;
+  background: currentColor !important;
+  display: block !important;
+  min-width: 0 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  will-change: auto;
 }
 
 h3::after {
-  transform: scaleX(0.05);
-  transition: transform 0.5s ease;
-}
-
-/* Keep the existing hover interaction for h3 headings only. */
-h3:hover::after {
-  transform: scaleX(0.4);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  h2 {
-    --heading-line-scale: 0.4;
-  }
+  display: none !important;
 }
 
 /* Header */

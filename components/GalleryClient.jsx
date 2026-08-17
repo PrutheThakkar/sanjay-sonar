@@ -29,9 +29,13 @@ const ExpandIcon = () => (
 );
 
 export default function GalleryClient({ pageTitle, galleryCategories }) {
-  const [activeCategory, setActiveCategory] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
-  const galleryItems = galleryCategories[activeCategory]?.images || [];
+  const galleryItems = galleryCategories.flatMap((category) =>
+    category.images.map((item) => ({
+      ...item,
+      category: category.label,
+    })),
+  );
   const selectedItem = selectedIndex === null ? null : galleryItems[selectedIndex];
 
   useEffect(() => {
@@ -95,27 +99,7 @@ export default function GalleryClient({ pageTitle, galleryCategories }) {
             </div>
 
             <div className="gallery-browser">
-              {!!galleryCategories.length && (
-                <div className="gallery-tabs" role="tablist" aria-label="Gallery categories">
-                  {galleryCategories.map((category, index) => (
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={activeCategory === index}
-                      className={`gallery-tab${activeCategory === index ? " active" : ""}`}
-                      key={category.key}
-                      onClick={() => {
-                        setActiveCategory(index);
-                        setSelectedIndex(null);
-                      }}
-                    >
-                      {category.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              <div className="gallery-results" role="tabpanel">
+              <div className="gallery-results">
                 {galleryItems.length ? (
                   <div className="gallery-masonry">
                     {galleryItems.map((item, index) => (
@@ -138,7 +122,7 @@ export default function GalleryClient({ pageTitle, galleryCategories }) {
                         </span>
                         <span className="gallery-card__overlay" />
                         <span className="gallery-card__content">
-                          {/* <strong>{item.title}</strong> */}
+                          <strong>{item.category}</strong>
                           <span className="gallery-card__expand"><ExpandIcon /></span>
                         </span>
                       </button>

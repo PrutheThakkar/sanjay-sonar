@@ -403,6 +403,10 @@ export default function SelectedWorkClient({ pageTitle, cases = fallbackCases })
             >
               {cases.map((item, index) => {
                 const isEven = index % 2 === 0;
+                const fullDescription =
+                  fallbackCases[index]?.description ||
+                  item.description ||
+                  [];
 
                 return (
                   <article
@@ -416,23 +420,38 @@ export default function SelectedWorkClient({ pageTitle, cases = fallbackCases })
                     }`}
                   >
                     <div className="case-content">
-                      <span className="case-number">
-                        {item.number}
-                      </span>
-
-                      <h2>
-                        <span className="subheading">
-                          {item.title}
+                      <div className="case-header">
+                        <span className="case-number">
+                          {item.number}
                         </span>
-                      </h2>
 
-                      {item.paragraphHtml && (
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: item.paragraphHtml,
-                          }}
-                        />
-                      )}
+                        <h2>
+                          <span className="subheading">
+                            {item.title}
+                          </span>
+                        </h2>
+                      </div>
+
+                      <div
+                        className="case-description"
+                        data-lenis-prevent
+                        tabIndex={0}
+                        aria-label={`${item.number}: ${item.title} full case details`}
+                      >
+                        {fullDescription.length > 0 ? (
+                          fullDescription.map((paragraph, paragraphIndex) => (
+                            <p key={`${item.id}-paragraph-${paragraphIndex}`}>
+                              {paragraph}
+                            </p>
+                          ))
+                        ) : item.paragraphHtml ? (
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: item.paragraphHtml,
+                            }}
+                          />
+                        ) : null}
+                      </div>
                     </div>
 
                     <div
@@ -475,97 +494,29 @@ export default function SelectedWorkClient({ pageTitle, cases = fallbackCases })
             </div>
 
             <div className="approach-flow-stage">
-              <svg
-                className="approach-svg"
-                viewBox="0 0 2048 520"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  className="flow-line line-1"
-                  d="M72 118 H238"
-                />
-
-                <path
-                  className="flow-line line-2"
-                  d="M660 118 H900"
-                />
-
-                <path
-                  className="flow-line line-3"
-                  d="M1368 118 H1615"
-                />
-
-                <path
-                  className="flow-line line-4"
-                  d="M965 340 H1178"
-                />
-
-                <path
-                  className="flow-line line-5"
-                  d="M1615 340 H1830 V205"
-                />
-
-                <circle
-                  className="flow-dot dot-1"
-                  cx="72"
-                  cy="118"
-                  r="12"
-                />
-
-                <circle
-                  className="flow-dot dot-2"
-                  cx="900"
-                  cy="118"
-                  r="12"
-                />
-
-                <circle
-                  className="flow-dot dot-3"
-                  cx="1615"
-                  cy="118"
-                  r="12"
-                />
-
-                <circle
-                  className="flow-dot dot-4"
-                  cx="965"
-                  cy="340"
-                  r="12"
-                />
-
-                <circle
-                  className="flow-dot dot-5"
-                  cx="1615"
-                  cy="340"
-                  r="12"
-                />
-              </svg>
-
-              <div className="approach-label label-understand">
-                understand
-                <br />
-                the problem fully
+              <div className="approach-label" data-aos="fade-up" data-aos-delay="0">
+                <span className="approach-step-number">01</span>
+                <span>Understand the problem fully</span>
               </div>
 
-              <div className="approach-label label-avoid">
-                avoid unnecessary
-                <br />
-                intervention
+              <div className="approach-label" data-aos="fade-up" data-aos-delay="140">
+                <span className="approach-step-number">02</span>
+                <span>Avoid unnecessary intervention</span>
               </div>
 
-              <div className="approach-label label-plan">
-                plan carefully
+              <div className="approach-label" data-aos="fade-up" data-aos-delay="280">
+                <span className="approach-step-number">03</span>
+                <span>Plan carefully</span>
               </div>
 
-              <div className="approach-label label-outcomes">
-                prioritize long-term
-                <br />
-                outcomes
+              <div className="approach-label" data-aos="fade-up" data-aos-delay="420">
+                <span className="approach-step-number">04</span>
+                <span>Prioritize long-term outcomes</span>
               </div>
 
-              <div className="approach-label label-operate">
-                operate precisely
+              <div className="approach-label" data-aos="fade-up" data-aos-delay="560">
+                <span className="approach-step-number">05</span>
+                <span>Operate precisely</span>
               </div>
             </div>
 

@@ -271,7 +271,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                 <div className="expertise-detail-block">
                                     <h3>Reconstructive Urological Surgery</h3>
                                     <p>
-                                        Procedures focused on restoring function while minimizing surgical
+                                        Procedures focused on restoring function while minimizing surgical<br/>
                                         trauma wherever possible
                                     </p>
 

@@ -159,25 +159,6 @@ export default function SmoothAnimationProvider() {
       );
 
       gsap.utils
-        .toArray<HTMLElement>("section:not(.hero) h2")
-        .forEach((heading) => {
-          gsap.fromTo(
-            heading,
-            { "--heading-line-scale": 0 },
-            {
-              "--heading-line-scale": 0.4,
-              duration: 1.1,
-              ease: "power2.inOut",
-              scrollTrigger: {
-                trigger: heading,
-                start: "top 90%",
-                once: true,
-              },
-            },
-          );
-        });
-
-      gsap.utils
         .toArray<HTMLElement>("section:not(.hero) h2:not([data-aos]), section:not(.hero) h3:not([data-aos])")
         .filter((element) => !element.closest(".gsap-case-card"))
         .forEach((element) => {
