@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getExpertiseItems } from "../../lib/wordpress";
+import SeoHead from "../../components/SeoHead";
 
 const fallbackExpertiseItems = [
     {
@@ -33,6 +34,12 @@ const fallbackExpertiseItems = [
 
 export default function ExpertisePage({ expertiseItems }) {
     return (
+        <>
+        <SeoHead
+            title="Surgical Expertise"
+            description="Explore Dr. Sanjay Sonar's expertise in advanced laparoscopic, gastrointestinal, colorectal, hernia, thoracic, thyroid, and minimally invasive surgery."
+            path="/expertise"
+        />
             <main className="inside-page expertise-page">
         <Layout>
                 <section className="inside-banner">
@@ -338,6 +345,7 @@ export default function ExpertisePage({ expertiseItems }) {
 
         </Layout>
             </main>
+        </>
     );
 }
 

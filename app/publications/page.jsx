@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
 import Layout from "../../components/Layout";
 
 import Link from "next/link";

@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import { getTeachingPageData } from "../../lib/wordpress";
+import { pageMetadata } from "../../lib/seo";
+
+export const metadata = pageMetadata({
+    title: "Surgical Teaching & Mentorship",
+    description: "Explore Dr. Sanjay Sonar's approach to surgical education, clinical judgment, mentorship, and advanced laparoscopic training.",
+    path: "/teaching",
+});
 
 const philosophyItems = [
     {

@@ -2,6 +2,14 @@ import Image from "next/image";
 import Layout from "../../components/Layout";
 import ContactForm from "../../components/ContactForm";
 import { getConsultationPageData } from "../../lib/wordpress";
+import { pageMetadata } from "../../lib/seo";
+
+export const metadata = pageMetadata({
+  title: "Book a Surgical Consultation",
+  description:
+    "Request a consultation or second opinion with Dr. Sanjay Sonar for laparoscopic, gastrointestinal, colorectal, hernia, and complex surgical conditions in Mumbai.",
+  path: "/Consultation",
+});
 
 function CmsTitle({ html }) {
   if (!html) return null;

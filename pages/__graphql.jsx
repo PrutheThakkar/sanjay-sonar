@@ -30,6 +30,8 @@ export default function GraphQLExplorer() {
         <>
             <Head>
                 <title>WordPress GraphQL Explorer</title>
+                <link rel="icon" href="/images/site-logo.svg" type="image/svg+xml" />
+                <meta name="robots" content="noindex, nofollow" />
             </Head>
 
             <main className="explorer">

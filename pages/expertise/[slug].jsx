@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getExpertiseBySlug, getExpertiseItems } from "../../lib/wordpress";
+import SeoHead from "../../components/SeoHead";
 
 const fallbackExpertiseItems = [
     {
@@ -194,6 +195,12 @@ export default function ExpertiseDetail({ item }) {
     }
 
     return (
+        <>
+        <SeoHead
+            title={item.title}
+            description={item.description || `Learn about ${item.title} and Dr. Sanjay Sonar's approach to evaluation, treatment, and minimally invasive surgical care.`}
+            path={`/expertise/${item.slug}`}
+        />
             <main className="inside-page">
         <Layout>
                 <section className="inside-banner">
@@ -230,6 +237,7 @@ export default function ExpertiseDetail({ item }) {
                 </section>
         </Layout>
             </main>
+        </>
     );
 }
 

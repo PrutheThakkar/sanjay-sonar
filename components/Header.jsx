@@ -26,7 +26,7 @@ export default function Header() {
     <div className={isHome ? "home-page" : undefined}>
       <header className="header">
         <div className="brand">
-          <a className="logo" href="/">
+          <Link className="logo" href="/">
             <Image
               src="/images/sanjay-logo.svg"
               alt="Dr. Sanjay Sonar Logo"
@@ -34,7 +34,7 @@ export default function Header() {
               height={52}
               priority
             />
-          </a>
+          </Link>
         </div>
 
         <nav className="nav">
