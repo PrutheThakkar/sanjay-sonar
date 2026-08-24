@@ -169,7 +169,7 @@ export default async function ConsultationPage() {
           </section>
         )}
 
-        <section className="consultation-final green-bg section-active">
+        <section className="consultation-final green-bg">
           <div className="container">
             <div className="prep-block">
               <h2>Preparing for Your Consultation</h2>

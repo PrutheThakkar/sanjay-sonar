@@ -190,7 +190,8 @@
 }
 .about-section .about-img-wrapper {
   width: 100%;
-  height: clamp(500px, 60vw, 850px);
+  max-width: 720px;
+  aspect-ratio: 1078/1230;
   border-radius: 20px;
   overflow: hidden;
   margin-right: 50px;
@@ -275,7 +276,7 @@
     gap: 40px;
   }
   .about-section .left {
-    height: 440px;
+    height: auto;
     border-radius: 20px;
     overflow: hidden;
   }

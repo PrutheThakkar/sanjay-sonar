@@ -160,17 +160,18 @@
 
 .philosophy-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  gap: clamp(42px, 5vw, 80px) clamp(80px, 9vw, 160px);
-  max-width: 900px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 2.5vw, 48px);
+  max-width: 1180px;
   margin: clamp(45px, 4vw, 70px) 0 clamp(42px, 4vw, 70px);
 }
 
 .philosophy-item {
-  display: grid;
-  grid-template-columns: 74px 1fr;
-  gap: clamp(22px, 2vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.5vw, 24px);
   align-items: center;
+  text-align: center;
 }
 .philosophy-item p {
   color: #485a2e;
@@ -231,6 +232,7 @@
     order: 2;
   }
   .philosophy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 100%;
     gap: 38px 60px;
   }
@@ -281,7 +283,6 @@
     margin: 38px 0 42px;
   }
   .philosophy-item {
-    grid-template-columns: 58px 1fr;
     gap: 20px;
   }
   .philosophy-item p {

@@ -117,7 +117,7 @@ export default function GalleryClient({ pageTitle, galleryCategories }) {
                             width={item.width}
                             height={item.height}
                             unoptimized
-                            sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                            sizes="(max-width: 575px) 50vw, (max-width: 1199px) 50vw, 33vw"
                           />
                         </span>
                         <span className="gallery-card__overlay" />
@@ -158,7 +158,6 @@ export default function GalleryClient({ pageTitle, galleryCategories }) {
                 <Image key={selectedItem.image} src={selectedItem.image} alt={selectedItem.alt} width={selectedItem.width} height={selectedItem.height} priority unoptimized sizes="95vw" />
               </div>
               <div className="gallery-lightbox__caption">
-                <h2>{selectedItem.title}</h2>
                 <p>{selectedIndex + 1} / {galleryItems.length}</p>
               </div>
             </div>

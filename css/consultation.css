@@ -38,21 +38,24 @@
   background: #fff;
 }
 .expect-section .expect-content {
+  width: 100%;
+}
+.expect-section .expect-content > h2,
+.expect-section .expect-content > div:not(.expect-list) {
   max-width: 1120px;
 }
 .expect-section .expect-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  -moz-column-gap: clamp(80px, 10vw, 170px);
-       column-gap: clamp(80px, 10vw, 170px);
-  row-gap: clamp(34px, 3vw, 58px);
-  max-width: 900px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(24px, 2.5vw, 48px);
+  width: 100%;
 }
 .expect-section .expect-item {
-  display: grid;
-  grid-template-columns: clamp(58px, 4vw, 78px) 1fr;
-  gap: clamp(20px, 2vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 1.5vw, 24px);
   align-items: center;
+  text-align: center;
 }
 .expect-section .expect-item p {
   line-height: 1.5;
@@ -146,6 +149,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 34px 28px;
   }
+  .expect-section .expect-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 575px) {
   .expect-section,
@@ -157,7 +163,6 @@
     gap: 28px;
   }
   .expect-section .expect-item {
-    grid-template-columns: 54px 1fr;
     gap: 16px;
   }
   .expect-section .expect-icon {

@@ -200,6 +200,54 @@ export default function SmoothAnimationProvider() {
           );
         });
 
+      const consultationTimeline = document.querySelector<HTMLElement>(
+        ".consultation-final .prep-timeline",
+      );
+
+      if (consultationTimeline) {
+        const steps = gsap.utils.toArray<HTMLElement>(
+          ".prep-step",
+          consultationTimeline,
+        );
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: consultationTimeline,
+            start: "top 82%",
+            once: true,
+          },
+        });
+
+        steps.forEach((step) => {
+          const line = step.querySelector<HTMLElement>(".prep-line");
+          const dot = step.querySelector<HTMLElement>(".prep-dot");
+          const label = step.querySelector<HTMLElement>(".name");
+
+          if (line) {
+            timeline.fromTo(
+              line,
+              { scaleX: 0, transformOrigin: "left center" },
+              { scaleX: 1, duration: 0.55, ease: "power2.inOut" },
+            );
+          }
+
+          if (dot) {
+            timeline.fromTo(
+              dot,
+              { opacity: 0, scale: 0 },
+              { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" },
+            );
+          }
+
+          if (label) {
+            timeline.fromTo(
+              label,
+              { opacity: 0, y: 16 },
+              { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+            );
+          }
+        });
+      }
+
       requestAnimationFrame(() => {
         AOS.refreshHard();
         ScrollTrigger.refresh();

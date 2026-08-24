@@ -349,7 +349,7 @@ body.gallery-page {
     display: flex;
     padding-top: 20px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 25px;
 
     h2 {
@@ -502,25 +502,26 @@ body.gallery-page {
   }
 
   .gallery-masonry {
-    columns: 1;
+    columns: 2;
+    column-gap: 10px;
   }
 
   .gallery-card {
-    margin-bottom: 16px;
-    border-radius: 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
 
     &__content {
-      padding: 20px;
+      padding: 10px;
 
       strong {
-        font-size: 21px;
+        max-width: 100%;
+        font-size: clamp(12px, 3.6vw, 15px);
+        line-height: 1.25;
       }
     }
 
     &__expand {
-      width: 42px;
-      min-width: 42px;
-      height: 42px;
+      display: none;
     }
   }
 
