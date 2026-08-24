@@ -288,6 +288,28 @@
   }
 }
 
+.case-row.text-right {
+  .case-header {
+    align-items: flex-end;
+  }
+
+  .case-number {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}
+
+.case-row.text-left {
+  .case-header {
+    align-items: flex-start;
+  }
+
+  .case-number {
+    align-self: flex-start;
+    margin-right: auto;
+  }
+}
+
 /* ==========================================================================
    Case image
    ========================================================================== */

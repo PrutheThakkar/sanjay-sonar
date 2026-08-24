@@ -521,7 +521,7 @@ export default function SelectedWorkClient({ pageTitle, cases = fallbackCases })
             </div>
 
             <div className="approach-closing">
-              <h2>Closing</h2>
+              {/* <h2>Closing</h2> */}
 
               <p>
                 Over time, complex surgery becomes more than

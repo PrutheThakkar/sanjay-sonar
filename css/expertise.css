@@ -374,6 +374,12 @@
   color: #485a2e;
   line-height: 1.55;
 }
+.expertise-detail-section .wordpress-content,
+.expertise-detail-section .wordpress-content p {
+  color: #485a2e;
+  font-size: clamp(18px, 1.15vw, 22px) !important;
+  line-height: 1.55;
+}
 .expertise-detail-section .expertise-detail-list {
   display: flex;
   flex-direction: column;
