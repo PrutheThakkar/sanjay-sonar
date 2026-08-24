@@ -355,3 +355,11 @@ fill="currentColor"
  align-items: center;
  height: 100%;
 }
+
+@media (max-width: 767px) {
+    .hero-content.hero-content-reveal img {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+}

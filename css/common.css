@@ -86,6 +86,10 @@ html {
   color: #545555;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 html::-webkit-scrollbar,
@@ -99,7 +103,10 @@ body {
   font-family: "Neue Montreal Regular";
   color: #2f3a36;
   background-color: #eee7aa;
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.is-preloading {
@@ -275,6 +282,11 @@ ul li a {
 
 .page {
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
   display: flex;
   flex-direction: column;
 }
@@ -310,6 +322,8 @@ section.white-bg {
 .main {
   flex: 1;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin: 0;
   padding: 0;
 }

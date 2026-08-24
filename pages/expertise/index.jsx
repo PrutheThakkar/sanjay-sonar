@@ -119,8 +119,6 @@ export default function ExpertisePage({ expertiseItems }) {
                         </div>
 
                         <div className="expertise-list-block">
-                            <h3>Advanced Gastrointestinal & Hernia Surgery</h3>
-
                             <div className="expertise-list">
                                 {expertiseItems.map((item) => (
                                     <Link

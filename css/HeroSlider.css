@@ -297,4 +297,14 @@ fill="currentColor"
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+@media (max-width: 767px) {
+  .hero-content.hero-content-reveal img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+  }
 }/*# sourceMappingURL=HeroSlider.css.map */

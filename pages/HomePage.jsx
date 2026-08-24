@@ -110,7 +110,7 @@ export default function HomePage({
                                 )}
                             </div>
 
-                            <div className="right" data-aos="fade-left">
+                            <div className="right" data-aos="fade-up">
                                 {aboutSection.titleHtml && (
                                     <div
                                         dangerouslySetInnerHTML={{
@@ -208,7 +208,7 @@ export default function HomePage({
                                 </div>
                             )}
 
-                            <div className="tp-content" data-aos="fade-left">
+                            <div className="tp-content" data-aos="fade-up">
                                 {item.title && <h2>{item.title}</h2>}
                                 {item.subtitle && <h3>{item.subtitle}</h3>}
                                 {item.textHtml && (
@@ -235,7 +235,7 @@ export default function HomePage({
                             />
                         </div>
 
-                        <div className="tp-content" data-aos="fade-left">
+                        <div className="tp-content" data-aos="fade-up">
                             <h2>PUBLICATIONS</h2>
 
                             <h3>
