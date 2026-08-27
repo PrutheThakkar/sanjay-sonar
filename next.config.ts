@@ -4,12 +4,6 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "sanjaysonar.com" }],
-        destination: "https://www.sanjaysonar.com/:path*",
-        permanent: true,
-      },
       { source: "/selectedwork", destination: "/selected-work/", permanent: true },
       { source: "/expertise/complex-hernia-repair", destination: "/expertise/complex-hernia-surgery/", permanent: true },
       { source: "/expertise/pyeloplasty", destination: "/expertise/laparoscopic-pyeloplasty/", permanent: true },
