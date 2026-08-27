@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
 
             <div className="footer-contact-row">
-              <a href="mailto:appointment@sanjaysonar.com">
+              <a href="mailto:sanjaydrsonar@gmail.com">
                 <span className="footer-icon">
                    <Image
               src="/images/email.svg"
@@ -45,10 +45,10 @@ export default function Footer() {
               className="footer-logo"
             />
                 </span>
-                appointment@sanjaysonar.com
+                sanjaydrsonar@gmail.com
               </a>
 
-              <a href="tel:+918447914579">
+              <a href="tel:+919323157440">
                 <span className="footer-icon">
                    <Image
               src="/images/call.svg"
@@ -58,7 +58,7 @@ export default function Footer() {
               className="footer-logo"
             />
                 </span>
-                +91 84479 14579
+                +91 9323157440
               </a>
             </div>
 

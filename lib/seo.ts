@@ -90,8 +90,8 @@ export const physicianStructuredData = {
     postalCode: "400011",
     addressCountry: "IN",
   },
-  telephone: "+91-84479-14579",
-  email: "appointment@sanjaysonar.com",
+  telephone: "+91-9323157440",
+  email: "sanjaydrsonar@gmail.com",
 };
 
 export function pageStructuredData(seo: SeoPage) {
