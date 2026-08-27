@@ -44,7 +44,7 @@ export default function ExpertisePage({ expertiseItems }) {
         <Layout>
                 <section className="inside-banner">
                     <div className="container">
-                        <h1>Expertise</h1>
+                        <h1>Where Experience Meets Surgical Precision</h1>
                     </div>
                 </section>
 
