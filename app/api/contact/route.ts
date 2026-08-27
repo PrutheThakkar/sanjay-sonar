@@ -8,16 +8,11 @@ type ContactRequest = {
 
 const requiredFields = ["firstName", "lastName", "phone", "email", "message"] as const;
 
-export async function POST(request: Request) {
-  const webhookUrl = process.env.N8N_WEBHOOK_URL;
+const productionWebhookUrl =
+  "https://pruthe.app.n8n.cloud/webhook/a294fd41-d8f6-497f-bf5b-9de5d4401834";
 
-  if (!webhookUrl) {
-    console.error("N8N_WEBHOOK_URL is not configured");
-    return Response.json(
-      { error: "The consultation form is not configured yet." },
-      { status: 503 },
-    );
-  }
+export async function POST(request: Request) {
+  const webhookUrl = process.env.N8N_WEBHOOK_URL?.trim() || productionWebhookUrl;
 
   try {
     const parsedWebhookUrl = new URL(webhookUrl);
