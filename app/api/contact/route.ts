@@ -8,11 +8,16 @@ type ContactRequest = {
 
 const requiredFields = ["firstName", "lastName", "phone", "email", "message"] as const;
 
-const productionWebhookUrl =
-  "https://pruthe.app.n8n.cloud/webhook/a294fd41-d8f6-497f-bf5b-9de5d4401834";
-
 export async function POST(request: Request) {
-  const webhookUrl = process.env.N8N_WEBHOOK_URL?.trim() || productionWebhookUrl;
+  const webhookUrl = process.env.N8N_WEBHOOK_URL?.trim();
+
+  if (!webhookUrl) {
+    console.error("N8N_WEBHOOK_URL is not configured");
+    return Response.json(
+      { error: "The consultation form is not configured yet." },
+      { status: 503 },
+    );
+  }
 
   try {
     const parsedWebhookUrl = new URL(webhookUrl);
@@ -51,16 +56,34 @@ export async function POST(request: Request) {
   }
 
   try {
-    const webhookResponse = await fetch(webhookUrl, {
+    const submission = {
+      ...formData,
+      source: "consultation-page",
+      submittedAt: new Date().toISOString(),
+    };
+
+    let webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...formData,
-        source: "consultation-page",
-        submittedAt: new Date().toISOString(),
-      }),
+      body: JSON.stringify(submission),
       cache: "no-store",
     });
+
+    // The existing n8n workflow was originally registered as a GET webhook.
+    // Keep the form working with that workflow while allowing it to be changed
+    // to the preferred POST method without another website deployment.
+    if (webhookResponse.status === 404) {
+      const getWebhookUrl = new URL(webhookUrl);
+
+      Object.entries(submission).forEach(([key, value]) => {
+        getWebhookUrl.searchParams.set(key, value);
+      });
+
+      webhookResponse = await fetch(getWebhookUrl, {
+        method: "GET",
+        cache: "no-store",
+      });
+    }
 
     if (!webhookResponse.ok) {
       console.error(`n8n webhook returned status ${webhookResponse.status}`);
