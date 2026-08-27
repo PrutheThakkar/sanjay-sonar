@@ -168,7 +168,7 @@ export default function HomePage() {
                                 </div>
 
                                 {/* <div className="selected-work-btn-wrap">
-                                    <a href="#" className="selected-work-btn">View more</a>
+                                    <a href="#" className="selected-work-btn site-cta">View more</a>
                                 </div> */}
                             </div>
                         </div>

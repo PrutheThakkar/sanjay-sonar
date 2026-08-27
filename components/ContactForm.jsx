@@ -129,7 +129,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="contact-submit-btn"
+        className="contact-submit-btn site-cta"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Submitting..." : "Submit Request"}

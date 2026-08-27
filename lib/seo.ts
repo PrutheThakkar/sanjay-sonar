@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getSeoPage, type SeoPage } from "./seo-pages";
 
 export const siteName = "Dr. Sanjay Sonar";
 
@@ -7,7 +8,7 @@ export const siteUrl = (() => {
     process.env.NEXT_PUBLIC_SITE_URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "https://sanjaysonar.com");
+      : "https://www.sanjaysonar.com");
 
   return configuredUrl.replace(/\/$/, "");
 })();
@@ -21,18 +22,21 @@ type PageMetadataOptions = {
   title: string;
   description: string;
   path: string;
+  keywords?: string[];
 };
 
 export function pageMetadata({
   title,
   description,
   path,
+  keywords,
 }: PageMetadataOptions): Metadata {
-  const canonicalPath = path === "/" ? "/" : path.replace(/\/$/, "");
+  const canonicalPath = path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
 
   return {
-    title,
+    title: { absolute: title },
     description,
+    keywords,
     alternates: { canonical: canonicalPath },
     openGraph: {
       type: "website",
@@ -52,9 +56,22 @@ export function pageMetadata({
   };
 }
 
+export function seoPageMetadata(path: string): Metadata {
+  const seo = getSeoPage(path);
+
+  if (!seo) throw new Error(`Missing SEO metadata for ${path}`);
+
+  return pageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: seo.path,
+    keywords: [seo.focusKeyword, ...seo.secondaryKeywords],
+  });
+}
+
 export const physicianStructuredData = {
   "@context": "https://schema.org",
-  "@type": "Physician",
+  "@type": ["Physician", "MedicalBusiness"],
   "@id": `${siteUrl}/#physician`,
   name: "Dr. Sanjay Sonar",
   url: siteUrl,
@@ -76,3 +93,19 @@ export const physicianStructuredData = {
   telephone: "+91-84479-14579",
   email: "appointment@sanjaysonar.com",
 };
+
+export function pageStructuredData(seo: SeoPage) {
+  const canonicalUrl = `${siteUrl}${seo.path === "/" ? "/" : `${seo.path}/`}`;
+  const types = seo.schemaTypes.filter((type) => type !== "Physician");
+
+  return types.map((type) => ({
+    "@context": "https://schema.org",
+    "@type": type,
+    "@id": `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: seo.title,
+    description: seo.description,
+    about: { "@id": `${siteUrl}/#physician` },
+    mainEntity: { "@id": `${siteUrl}/#physician` },
+  }));
+}

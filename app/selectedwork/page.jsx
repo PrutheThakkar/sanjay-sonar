@@ -1,13 +1,8 @@
 import SelectedWorkClient from "../../components/SelectedWorkClient";
 import { getSelectedWorkPageData } from "../../lib/wordpress";
-import { pageMetadata } from "../../lib/seo";
+import { seoPageMetadata } from "../../lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Selected Surgical Work",
-  description:
-    "Read selected case stories that illustrate Dr. Sanjay Sonar's experience, clinical judgment, and approach to complex surgical care.",
-  path: "/selectedwork",
-});
+export const metadata = seoPageMetadata("/selected-work");
 
 export default async function SelectedWorkPage() {
   let selectedWork = null;

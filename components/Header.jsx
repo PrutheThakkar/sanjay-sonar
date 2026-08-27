@@ -12,7 +12,7 @@ const links = [
   { label: "Teaching", href: "/teaching", width: "75%" },
   // { label: "Publications", href: "/publications", width: "85%" },
   { label: "Gallery", href: "/gallery", width: "85%" },
-  { label: "Selected Work", href: "/selectedwork", width: "100%" },
+  { label: "Selected Work", href: "/selected-work", width: "100%" },
 ];
 
 export default function Header() {
@@ -65,7 +65,7 @@ export default function Header() {
         </nav>
       
 
-        <Link href="/Consultation" className="cta">
+        <Link href="/consultation" className="cta site-cta">
           Consultation
         </Link>
 
@@ -101,7 +101,7 @@ export default function Header() {
             );
           })}
 
-          <Link href="/Consultation" className="mobileCta" onClick={closeMenu}>
+          <Link href="/consultation" className="mobileCta site-cta" onClick={closeMenu}>
             Consultation
           </Link>
         </nav>

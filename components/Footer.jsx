@@ -15,9 +15,6 @@ export default function Footer() {
               className="footer-logo"
             />
 
-            <Link href="/Consultation" className="footer-consultation-btn">
-              Consultation
-            </Link>
           </div>
 
           <div className="footer-right">
@@ -63,6 +60,15 @@ export default function Footer() {
                 </span>
                 +91 84479 14579
               </a>
+            </div>
+
+            <div className="footer-actions">
+              <Link href="/consultation" className="footer-consultation-btn site-cta">
+                Consultation
+              </Link>
+              <Link href="/site-map/" className="footer-sitemap-link">
+                Site Map
+              </Link>
             </div>
           </div>
         </div>

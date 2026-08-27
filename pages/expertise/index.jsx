@@ -283,7 +283,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                     <h4>Procedures include:</h4>
 
                                     <Link
-                                        href="/expertise/pyeloplasty"
+                                        href="/expertise/laparoscopic-pyeloplasty"
                                         className="procedure-card"
                                     >
                                         <Image
@@ -306,7 +306,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                     <h4>Procedures include:</h4>
 
                                     <Link
-                                        href="/expertise/laser-treatment-for-varicose-veins"
+                                        href="/expertise/laser-treatment-varicose-veins"
                                         className="procedure-card"
                                     >
                                         <Image
@@ -334,7 +334,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                 cases:
                             </p>
 
-                            <a href="/Consultation" className="expertise-btn">
+                            <a href="/consultation" className="expertise-btn site-cta">
                                 Request a consultation
                             </a> */}
                         </div>

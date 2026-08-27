@@ -867,7 +867,7 @@
   border-radius: 10px;
   background: #eee7aa;
   color: #485a2e;
-  text-transform: uppercase;
+  text-transform: none;
   transition: transform 0.35s ease, background 0.35s ease;
 }
 .beyond-consultation-section .consultation-btn:hover {

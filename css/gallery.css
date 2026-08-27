@@ -15,6 +15,11 @@ body.gallery-page {
   padding-top: clamp(70px, 7vw, 120px);
   padding-bottom: clamp(80px, 8vw, 140px);
 }
+.gallery-page-content .gallery-section.white-bg {
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: contain;
+}
 .gallery-section .container {
   width: 90%;
   max-width: 1800px;

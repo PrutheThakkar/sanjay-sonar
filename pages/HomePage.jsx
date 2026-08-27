@@ -186,7 +186,7 @@ export default function HomePage({
                         data-aos-duration="850"
                         data-aos-delay="750"
                     >
-                        <Link href="/expertise#Colorectal-Surgery" className="btn cta">
+                        <Link href="/expertise#Colorectal-Surgery" className="btn cta site-cta">
                             View More
                         </Link>
                     </div>
@@ -218,7 +218,7 @@ export default function HomePage({
                                         }}
                                     />
                                 )}
-                                <Link href={item.buttonHref} className="btn">
+                                <Link href={item.buttonHref} className="btn site-cta">
                                     {item.buttonLabel}
                                 </Link>
                             </div>
@@ -248,7 +248,7 @@ export default function HomePage({
                                 teachable.
                             </p>
 
-                            <a href="#" className="btn">View publications</a>
+                            <a href="#" className="btn site-cta">View publications</a>
                         </div>
                     </div> */}
                 </div>
@@ -336,7 +336,7 @@ export default function HomePage({
                                 data-aos-delay="900"
                                 data-aos-duration="750"
                             >
-                                <a href="#" className="selected-work-btn">
+                                <a href="#" className="selected-work-btn site-cta">
                                     View more
                                 </a>
                             </div>
@@ -419,11 +419,11 @@ export default function HomePage({
 
                         <Link
                             href="/consultation"
-                            className="consultation-btn"
+                            className="consultation-btn site-cta"
                             data-aos="fade-up"
                             data-aos-delay="300"
                         >
-                            REQUEST A CONSULTATION
+                            Request a consultation
                         </Link>
                     </div>
                 </div>

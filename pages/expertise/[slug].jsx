@@ -26,9 +26,9 @@ const fallbackExpertiseItems = [
             "Complex gastrointestinal procedures using laparoscopic and minimally invasive approaches.",
     },
     {
-        title: "Complex Hernia Repair",
+        title: "Complex Hernia Surgery",
         icon: "/images/complex-hernia.svg",
-        slug: "complex-hernia-repair",
+        slug: "complex-hernia-surgery",
         description: "Tailored approaches to recurrent or complicated hernia cases.",
     },
     {
@@ -68,16 +68,46 @@ const fallbackExpertiseItems = [
         description: "A minimally invasive approach to selected thyroid conditions.",
     },
     {
-        title: "Pyeloplasty",
+        title: "Laparoscopic Pyeloplasty",
         icon: "/images/pyeloplasty.webp",
-        slug: "pyeloplasty",
+        slug: "laparoscopic-pyeloplasty",
         description: "Reconstructive surgery to restore drainage from the kidney.",
     },
     {
         title: "Laser Treatment for Varicose Veins",
         icon: "/images/laser-treatment.webp",
-        slug: "laser-treatment-for-varicose-veins",
+        slug: "laser-treatment-varicose-veins",
         description: "Minimally invasive laser treatment for problematic varicose veins.",
+    },
+    {
+        title: "Thoracic Surgery",
+        icon: "/images/thoracic-surgery-home.webp",
+        slug: "thoracic-surgery",
+        description: "Minimally invasive surgical treatment for selected chest and lung conditions.",
+    },
+    {
+        title: "Urological Surgery",
+        icon: "/images/Reconstructive-urological.jpg",
+        slug: "urological-surgery",
+        description: "Minimally invasive urological surgery for selected urinary conditions.",
+    },
+    {
+        title: "Colorectal Surgery",
+        icon: "/images/colorectal-home.webp",
+        slug: "colorectal-surgery",
+        description: "Minimally invasive surgical care for selected colorectal conditions.",
+    },
+    {
+        title: "General Laparoscopic Surgery",
+        icon: "/images/laparoscopic.svg",
+        slug: "laparoscopic-surgery",
+        description: "Minimally invasive laparoscopic surgery for selected abdominal conditions.",
+    },
+    {
+        title: "Hernia Surgery",
+        icon: "/images/Hernia-surgery.svg",
+        slug: "hernia-surgery",
+        description: "Laparoscopic and advanced surgery for abdominal and groin hernias.",
     },
 ];
 

@@ -1,14 +1,9 @@
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import { getAboutPageData } from "../../lib/wordpress";
-import { pageMetadata } from "../../lib/seo";
+import { seoPageMetadata } from "../../lib/seo";
 
-export const metadata = pageMetadata({
-  title: "About Dr. Sanjay Sonar",
-  description:
-    "Learn about Dr. Sanjay Sonar's surgical practice, experience, approach to patient care, and work beyond the operating room.",
-  path: "/about",
-});
+export const metadata = seoPageMetadata("/about");
 
 type PracticeSection = {
   id: string;

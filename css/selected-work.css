@@ -349,6 +349,18 @@
   border-radius: 20px;
   background: #eee7aa;
 }
+@media (min-width: 992px) {
+  /* Keep each scrollbar beside its image in the alternating desktop layout. */
+  .gsap-case-card.text-right .case-description {
+    padding-right: 0;
+    padding-left: 18px;
+    direction: rtl;
+  }
+
+  .gsap-case-card.text-right .case-description > * {
+    direction: ltr;
+  }
+}
 .gsap-case-card .case-image {
   height: clamp(430px, 65vh, 680px);
   max-height: calc(100% - 70px);

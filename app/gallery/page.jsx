@@ -1,13 +1,8 @@
 import GalleryClient from "../../components/GalleryClient";
 import { getGalleryPageData } from "../../lib/wordpress";
-import { pageMetadata } from "../../lib/seo";
+import { seoPageMetadata } from "../../lib/seo";
 
-export const metadata = pageMetadata({
-  title: "Gallery",
-  description:
-    "View photographs from Dr. Sanjay Sonar's surgical practice, teaching, conferences, workshops, and professional journey.",
-  path: "/gallery",
-});
+export const metadata = seoPageMetadata("/gallery");
 
 export default async function GalleryPage() {
   let gallery = null;
