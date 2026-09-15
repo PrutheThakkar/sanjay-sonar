@@ -449,6 +449,12 @@
   background: #485a2e;
 }
 
+@media (max-width: 1380px) {
+  .expertise-closing p br {
+    display: none;
+  }
+}
+
 @media (max-width: 991px) {
   .expertise-detail-section {
     padding: 70px 0;
