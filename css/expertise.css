@@ -454,7 +454,6 @@
     display: none;
   }
 }
-
 @media (max-width: 991px) {
   .expertise-detail-section {
     padding: 70px 0;
@@ -641,4 +640,7 @@
     flex-direction: column;
     gap: 14px;
   }
+}
+.expertise-detail-row p br {
+  display: none;
 }/*# sourceMappingURL=expertise.css.map */

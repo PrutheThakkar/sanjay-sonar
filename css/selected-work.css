@@ -216,7 +216,7 @@
 .case-content p {
   margin: 0;
   color: rgba(255, 255, 255, 0.92);
-  /* font-size: clamp(14px, 1vw, 17px); */
+  font-size: clamp(14px, 1vw, 17px);
   line-height: 1.75;
 }
 .case-content p:not(:last-child) {
@@ -330,9 +330,9 @@
   overflow-x: hidden;
   overflow-y: scroll;
   overscroll-behavior: contain;
+  scrollbar-color: #eee7aa rgba(255, 255, 255, 0.12);
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-  scrollbar-color: #eee7aa rgba(255, 255, 255, 0.12);
 }
 .gsap-case-card .case-description:focus-visible {
   outline: 2px solid #eee7aa;
@@ -348,18 +348,6 @@
 .gsap-case-card .case-description::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background: #eee7aa;
-}
-@media (min-width: 992px) {
-  /* Keep each scrollbar beside its image in the alternating desktop layout. */
-  .gsap-case-card.text-right .case-description {
-    padding-right: 0;
-    padding-left: 18px;
-    direction: rtl;
-  }
-
-  .gsap-case-card.text-right .case-description > * {
-    direction: ltr;
-  }
 }
 .gsap-case-card .case-image {
   height: clamp(430px, 65vh, 680px);
@@ -552,6 +540,7 @@
 .approach-label:last-child::after {
   display: none;
 }
+
 .approach-step-number {
   color: #485a2e;
   font-family: "Agrandir TextBold";
@@ -643,7 +632,7 @@
     padding-left: clamp(35px, 5vw, 70px);
   }
   .case-content p {
-    /* font-size: 14px; */
+    font-size: 14px;
     line-height: 1.62;
   }
 }

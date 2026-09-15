@@ -15,11 +15,6 @@ body.gallery-page {
   padding-top: clamp(70px, 7vw, 120px);
   padding-bottom: clamp(80px, 8vw, 140px);
 }
-.gallery-page-content .gallery-section.white-bg {
-  background-repeat: repeat;
-  background-position: top center;
-  background-size: contain;
-}
 .gallery-section .container {
   width: 90%;
   max-width: 1800px;
@@ -31,12 +26,13 @@ body.gallery-page {
    ========================================================================== */
 .gallery-heading {
   display: grid;
-  /* grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr); */
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
   gap: clamp(35px, 7vw, 110px);
   margin-bottom: clamp(50px, 6vw, 90px);
   align-items: end;
 }
 .gallery-heading h2 {
+  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 0;
   color: #334326;
@@ -113,7 +109,8 @@ body.gallery-page {
 
 .gallery-masonry {
   width: 100%;
-  columns: 3;
+  -moz-columns: 3;
+       columns: 3;
   -moz-column-gap: clamp(18px, 1.5vw, 24px);
        column-gap: clamp(18px, 1.5vw, 24px);
 }
@@ -125,7 +122,8 @@ body.gallery-page {
   margin: 0 0 clamp(18px, 1.5vw, 24px);
   padding: 0;
   overflow: hidden;
-  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
   border: 0;
   border-radius: clamp(14px, 1.4vw, 24px);
   background: #d9dfc8;
@@ -275,7 +273,8 @@ body.gallery-page {
   max-width: 100%;
   height: auto;
   max-height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .gallery-lightbox__caption {
   display: flex;
@@ -361,7 +360,8 @@ body.gallery-page {
     padding-bottom: 0;
   }
   .gallery-masonry {
-    columns: 2;
+    -moz-columns: 2;
+         columns: 2;
   }
   .gallery-card__expand {
     opacity: 1;
@@ -399,8 +399,10 @@ body.gallery-page {
     margin-bottom: 40px;
   }
   .gallery-masonry {
-    columns: 2;
-    column-gap: 10px;
+    -moz-columns: 2;
+         columns: 2;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
   .gallery-card {
     margin-bottom: 10px;
@@ -460,6 +462,4 @@ body.gallery-page {
     animation: none !important;
     transition: none !important;
   }
-}
-
-/*# sourceMappingURL=gallery.css.map */
+}/*# sourceMappingURL=gallery.css.map */

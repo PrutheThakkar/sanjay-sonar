@@ -24,12 +24,15 @@
 .hero-bg picture img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .hero-img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .hero-content {
@@ -115,7 +118,8 @@
     min-height: 600px;
   }
   .hero-img {
-    object-position: center;
+    -o-object-position: center;
+       object-position: center;
   }
   .hero-logo {
     height: auto;
@@ -205,7 +209,8 @@
 .about-section .about-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .about-section .right {
   display: flex;
@@ -321,9 +326,8 @@
   padding: clamp(70px, 6.25vw, 120px) 0;
 }
 .years-Mastery h3 {
-  display: inline-flex;
+  display: flex;
   align-items: flex-end;
-  /* justify-content: center; */
   gap: clamp(10px, 1vw, 18px);
   margin-bottom: clamp(40px, 4.16vw, 80px);
   color: #676f43;
@@ -377,7 +381,6 @@
   transform-origin: top;
   transform: scaleY(1);
   transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-  display: none;
 }
 .years-Mastery .img-wrap .complex-sec-wrap:hover .img-wrap::after {
   transform: scaleY(0);
@@ -385,8 +388,10 @@
 .years-Mastery .img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   filter: saturate(0.8) contrast(0.95);
   transition: transform 0.6s ease, filter 0.6s ease;
 }
@@ -412,8 +417,10 @@
 .years-Mastery .img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   filter: saturate(0.8) contrast(0.95);
   transition: transform 0.6s ease, filter 0.6s ease;
 }
@@ -509,8 +516,10 @@
 .teaching-publication-section .tp-image img {
   width: 100%;
   aspect-ratio: 560/410;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   transition: transform 0.65s ease;
 }
 .teaching-publication-section .tp-image:hover img {
@@ -609,6 +618,7 @@
     margin-bottom: 20px;
   }
   .teaching-publication-section .tp-btn {
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 10px;
   }
@@ -685,8 +695,10 @@
 .selected-work-section .selected-work-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   filter: saturate(0.8) contrast(0.95);
   transition: transform 0.65s ease, filter 0.65s ease;
 }
@@ -834,8 +846,10 @@
 .beyond-consultation-section .beyond-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   transition: transform 0.65s ease;
 }
 .beyond-consultation-section .beyond-img:hover img {
@@ -867,7 +881,7 @@
   border-radius: 10px;
   background: #eee7aa;
   color: #485a2e;
-  text-transform: none;
+  text-transform: uppercase;
   transition: transform 0.35s ease, background 0.35s ease;
 }
 .beyond-consultation-section .consultation-btn:hover {
@@ -1121,7 +1135,8 @@
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transform: scale(1.16);
   filter: blur(8px) brightness(0.78);
   will-change: transform, filter;
@@ -1234,6 +1249,4 @@
   .clip-reveal-section.section-active .delay-6 {
     animation-delay: 0.1s;
   }
-}
-
-/*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=home.css.map */
