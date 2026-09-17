@@ -550,12 +550,6 @@
   }
 }
 
-@media (max-width: 1380px) {
-  .expertise-closing p br {
-    display: none;
-  }
-}
-
 @media (max-width: 991px) {
   .expertise-detail-section {
     padding: 70px 0;
@@ -816,16 +810,6 @@
     .appointment-card-top {
       flex-direction: column;
       gap: 14px;
-    }
-  }
-}
-
-
-
-.expertise-detail-row {
-  p{
-    br{
-      display: none;
     }
   }
 }

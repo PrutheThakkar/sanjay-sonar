@@ -1,0 +1,513 @@
+/* [project]/Documents/Leena/projects/sanjay-sonar/sanjay sonar/css/teaching.css [app-client] (css) */
+.teaching-page {
+  color: #485a2e;
+  width: 100%;
+  overflow: hidden;
+}
+
+.teaching-page .container {
+  z-index: 2;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.lined-title {
+  color: inherit;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.1;
+  display: inline-block;
+  position: relative;
+}
+
+.lined-title:after {
+  content: "";
+  background: currentColor;
+  width: 100%;
+  height: 2px;
+  margin-top: 10px;
+  display: block;
+}
+
+.teaching-image {
+  background: #d9d9d9;
+  border-radius: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.teaching-image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.teaching-image.large {
+  height: clamp(380px, 35vw, 560px);
+}
+
+.teaching-image.small {
+  height: clamp(250px, 22vw, 360px);
+}
+
+.teaching-intro {
+  background-color: #0000;
+  background-image: linear-gradient(90deg, #e2ffc4e6 0%, #ebffbee0 52%, #fff0a5d1 100%), url("/images/surgical-bg-pattern.png");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+  padding: clamp(70px, 7vw, 120px) 0 clamp(70px, 7vw, 115px);
+  position: relative;
+}
+
+.teaching-intro-grid {
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(48px, 5vw, 86px);
+  display: grid;
+}
+
+.teaching-copy {
+  max-width: 650px;
+}
+
+.teaching-copy h1 {
+  margin-bottom: clamp(18px, 1.5vw, 28px);
+  font-size: clamp(34px, 3.4vw, 54px);
+}
+
+.teaching-copy h2 {
+  color: #485a2e;
+  margin: 0 0 clamp(42px, 4vw, 70px);
+}
+
+.teaching-copy h2 .subheading, .teaching-copy h2 span {
+  color: #485a2e;
+}
+
+.teaching-copy p {
+  color: #485a2e;
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(17px, 1.25vw, 22px);
+  line-height: 1.7;
+}
+
+.teaching-copy p:not(:last-child) {
+  margin-bottom: clamp(28px, 2.8vw, 48px);
+}
+
+.teaching-academic {
+  color: #fff;
+  background-color: #0000;
+  background-image: linear-gradient(90deg, #375828f5 0%, #5b883feb 52%, #91dd59db 100%), url("/images/surgical-bg-pattern.png");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+  padding: clamp(80px, 7vw, 130px) 0;
+  position: relative;
+}
+
+.teaching-academic .lined-title {
+  color: #fff;
+  margin-bottom: clamp(28px, 2.5vw, 42px);
+  font-size: clamp(25px, 2.3vw, 38px);
+}
+
+.academic-row {
+  grid-template-columns: 1.25fr .75fr;
+  align-items: center;
+  gap: clamp(52px, 7vw, 120px);
+  display: grid;
+}
+
+.academic-row.first {
+  margin-bottom: clamp(80px, 8vw, 140px);
+}
+
+.academic-row.second {
+  grid-template-columns: .85fr 1.15fr;
+}
+
+.academic-copy {
+  max-width: 850px;
+}
+
+.academic-copy p {
+  color: #fffffff0;
+  margin: 0;
+  font-size: clamp(17px, 1.25vw, 22px);
+  line-height: 1.75;
+}
+
+.academic-copy p:not(:last-child) {
+  margin-bottom: clamp(30px, 3vw, 52px);
+}
+
+.teaching-philosophy {
+  background-color: #0000;
+  background-image: linear-gradient(90deg, #e2ffc4e6 0%, #ecffbee0 55%, #fff0a5d1 100%), url("/images/surgical-bg-pattern.png");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+  padding: clamp(80px, 7vw, 130px) 0 clamp(90px, 8vw, 150px);
+  position: relative;
+}
+
+.philosophy-content {
+  max-width: 1180px;
+}
+
+.philosophy-content .lined-title {
+  margin-bottom: clamp(28px, 2.5vw, 44px);
+  font-size: clamp(27px, 2.6vw, 42px);
+}
+
+.philosophy-content > p {
+  color: #485a2e;
+  margin: 0;
+  font-size: clamp(17px, 1.25vw, 22px);
+  line-height: 1.65;
+}
+
+.philosophy-content > p:not(:last-child) {
+  margin-bottom: clamp(26px, 2.5vw, 44px);
+}
+
+.philosophy-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 2.5vw, 48px);
+  max-width: 1180px;
+  margin: clamp(45px, 4vw, 70px) 0 clamp(42px, 4vw, 70px);
+  display: grid;
+}
+
+.philosophy-item {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(14px, 1.5vw, 24px);
+  display: flex;
+}
+
+.philosophy-item p {
+  color: #485a2e;
+  margin: 0;
+  font-size: clamp(17px, 1.2vw, 22px);
+  line-height: 1.55;
+}
+
+.philosophy-icon {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.philosophy-icon img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.philosophy-closing {
+  margin-top: clamp(36px, 4vw, 65px) !important;
+}
+
+@media (max-width: 991px) {
+  .teaching-page .container {
+    max-width: 90%;
+  }
+
+  .teaching-intro, .teaching-academic, .teaching-philosophy {
+    padding: 70px 0 95px;
+  }
+
+  .teaching-intro-grid, .academic-row, .academic-row.second {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .academic-row.first {
+    margin-bottom: 80px;
+  }
+
+  .teaching-copy, .academic-copy {
+    max-width: 100%;
+  }
+
+  .teaching-image.large, .teaching-image.small {
+    height: 420px;
+  }
+
+  .academic-row.second .teaching-image {
+    order: 1;
+  }
+
+  .academic-row.second .academic-copy {
+    order: 2;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 60px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .teaching-intro, .teaching-academic, .teaching-philosophy {
+    padding: 55px 0 75px;
+  }
+
+  .teaching-intro-grid, .academic-row, .academic-row.second {
+    gap: 34px;
+  }
+
+  .teaching-image.large, .teaching-image.small {
+    border-radius: 14px;
+    height: 285px;
+  }
+
+  .teaching-copy h1 {
+    font-size: 32px;
+  }
+
+  .teaching-copy h2 {
+    margin-bottom: 30px;
+  }
+
+  .teaching-copy p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .teaching-academic .lined-title {
+    font-size: 24px;
+  }
+
+  .academic-copy p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .philosophy-content .lined-title {
+    font-size: 25px;
+  }
+
+  .philosophy-content > p {
+    font-size: 16px;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 38px 0 42px;
+  }
+
+  .philosophy-item {
+    gap: 20px;
+  }
+
+  .philosophy-item p {
+    font-size: 16px;
+  }
+
+  .philosophy-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.work-swiper-section {
+  background-color: #0000;
+  background-image: linear-gradient(90deg, #365328f5 0%, #5c893ee8 48%, #8ede58e6 100%), url("/images/surgical-bg-pattern.png");
+  background-position: center;
+  background-repeat: repeat, repeat;
+  background-size: cover;
+  background-attachment: scroll, scroll;
+  background-origin: padding-box, padding-box;
+  background-clip: border-box, border-box;
+  width: 100%;
+  padding: clamp(70px, 7vw, 120px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-swiper-bg {
+  width: 100%;
+  position: relative;
+}
+
+.work-swiper {
+  width: 100%;
+  padding: 0 0 clamp(65px, 6vw, 95px);
+  overflow: visible;
+}
+
+.work-swiper .swiper-wrapper {
+  align-items: center;
+}
+
+.work-swiper .swiper-slide {
+  opacity: .38;
+  filter: blur(1px);
+  width: clamp(650px, 62vw, 1280px);
+  transition: transform .75s, opacity .75s, filter .75s;
+  transform: scale(.82);
+}
+
+.work-swiper .swiper-slide-active {
+  opacity: 1;
+  filter: blur();
+  z-index: 5;
+  transform: scale(1);
+}
+
+.work-swiper .swiper-slide-prev, .work-swiper .swiper-slide-next {
+  opacity: .52;
+  filter: blur(.5px);
+  z-index: 2;
+}
+
+.work-slide-card {
+  background: #d9d9d9;
+  border-radius: clamp(34px, 4vw, 70px);
+  width: 100%;
+  height: clamp(360px, 33vw, 610px);
+  overflow: hidden;
+  box-shadow: 0 24px 80px #1c361938;
+}
+
+.work-slide-card img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.work-swiper-controls {
+  z-index: 10;
+  align-items: center;
+  gap: clamp(22px, 2vw, 34px);
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.work-swiper-prev, .work-swiper-next {
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  font-size: 46px;
+  line-height: 1;
+  transition: transform .3s, opacity .3s;
+  display: grid;
+}
+
+.work-swiper-prev:hover, .work-swiper-next:hover {
+  opacity: .85;
+  transform: scale(1.12);
+}
+
+.work-swiper-pagination {
+  align-items: center;
+  gap: 14px;
+  display: flex;
+  width: auto !important;
+  position: relative !important;
+  inset: auto !important;
+}
+
+.work-swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  background: #d8d52fd9;
+  width: 20px;
+  height: 20px;
+  transition: background .3s, transform .3s;
+  margin: 0 !important;
+}
+
+.work-swiper-pagination .swiper-pagination-bullet-active {
+  background: #fff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 991px) {
+  .work-swiper-section {
+    padding: 70px 0 95px;
+  }
+
+  .work-swiper .swiper-slide {
+    width: 78vw;
+  }
+
+  .work-slide-card {
+    border-radius: 36px;
+    height: 420px;
+  }
+}
+
+@media (max-width: 575px) {
+  .work-swiper-section {
+    padding: 55px 0 75px;
+  }
+
+  .work-swiper {
+    padding-bottom: 70px;
+  }
+
+  .work-swiper .swiper-slide {
+    width: 86vw;
+    transform: scale(.9);
+  }
+
+  .work-swiper .swiper-slide-active {
+    transform: scale(1);
+  }
+
+  .work-slide-card {
+    border-radius: 24px;
+    height: 280px;
+  }
+
+  .work-swiper-controls {
+    gap: 18px;
+  }
+
+  .work-swiper-prev, .work-swiper-next {
+    font-size: 36px;
+  }
+
+  .work-swiper-pagination {
+    gap: 10px;
+  }
+
+  .work-swiper-pagination .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/*# sourceMappingURL=Documents_Leena_projects_sanjay-sonar_sanjay%20sonar_css_teaching_css_1igg3k2._.single.css.map*/
