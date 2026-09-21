@@ -19,8 +19,6 @@ const footerNavColumns = [
   },
 ];
 
-const footerAddress =
-  "Police Station, 1877, Dr Anandrao Nair Marg, near Agripada, Mumbai Central, Mumbai, Maharashtra 400011, India";
 const footerEmail = "sanjaydrsonar@gmail.com";
 const footerPhone = "+91 9323157440";
 
@@ -104,11 +102,7 @@ export default function Footer() {
               <span className="footer-col-heading">Reach Out</span>
 
               <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                  footerAddress,
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/consultation#appointment"
                 className="footer-contact-item"
               >
                 <span className="footer-icon">

@@ -194,14 +194,16 @@ export default async function ConsultationPage() {
               </div>
             </div>
 
-            <div className="appointment-row">
-              {consultation.appointmentRequestHtml && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: consultation.appointmentRequestHtml,
-                  }}
+            <div className="appointment-row" id="appointment">
+              <div className="appointment-map">
+                <iframe
+                  src="https://www.google.com/maps?q=DR.+SANJAY+SONAR,+Plot+No.+185,+15th+Rd,+opposite+The+Fine+Arts+Society,+Chembur,+Mumbai,+Maharashtra+400071&z=15&output=embed"
+                  title="Map of Dr. Sanjay Sonar's clinic in Chembur, Mumbai"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                 />
-              )}
+              </div>
               <div className="appointment-card">
                 <ContactForm />
               </div>
