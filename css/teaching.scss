@@ -88,7 +88,7 @@
 
   h2 {
     color: #485a2e;
-    margin: 0 0 clamp(42px, 4vw, 70px);
+    margin: 0 0 clamp(10px, 1vw, 16px);
 
     .subheading,
     span {
@@ -130,7 +130,7 @@
   .lined-title {
     color: #ffffff;
     font-size: clamp(25px, 2.3vw, 38px);
-    margin-bottom: clamp(28px, 2.5vw, 42px);
+    margin-bottom: clamp(10px, 1vw, 16px);
   }
 }
 
@@ -187,7 +187,7 @@
 
   .lined-title {
     font-size: clamp(27px, 2.6vw, 42px);
-    margin-bottom: clamp(28px, 2.5vw, 44px);
+    margin-bottom: clamp(10px, 1vw, 16px);
   }
 
   > p {
@@ -321,7 +321,7 @@
     }
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
 
     p {

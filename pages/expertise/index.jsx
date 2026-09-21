@@ -63,11 +63,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                     Some surgical methods are learned through repetition. <br />
                                     Others are refined over years of careful practice. Dr. Sanjay Sonar’s work is shaped by more than three decades of
                                     experience in advanced laparoscopic surgery, managing cases that demand
-                                    precision, judgment, and a deep understanding of surgical complexity.
-                                </p>
-
-                                <p>
-                                    Every technique used in practice has been tested, evaluated, and
+                                    precision, judgment, and a deep understanding of surgical complexity. Every technique used in practice has been tested, evaluated, and
                                     continuously refined with one objective in mind: better outcomes from
                                     the very beginning. The focus is not only on performing surgery successfully, but on
                                     planning it thoughtfully, reducing unnecessary trauma, improving
@@ -75,6 +71,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                     case.
                                 </p>
 
+                               
 
                                 <p>
                                     Over time, this process of observation, refinement, and execution has
@@ -121,7 +118,7 @@ export default function ExpertisePage({ expertiseItems }) {
                         <div className="expertise-list-block">
                             <div className="expertise-list">
                                 {expertiseItems.map((item) => (
-                                    <Link
+                                    <span
                                         href={`/expertise/${item.slug}`}
                                         key={item.title}
                                         className="expertise-item"
@@ -137,7 +134,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                         </div>
 
                                         <p>{item.title}</p>
-                                    </Link>
+                                    </span>
                                 ))}
                             </div>
                         </div>
@@ -148,7 +145,111 @@ export default function ExpertisePage({ expertiseItems }) {
                 <section className="expertise-detail-section white-bg" id="Colorectal-Surgery">
                     <div className="container">
                         <div className="expertise-detail-list">
+                           
+
                             <div className="expertise-detail-block full">
+                                <h3>General Laparoscopic Surgery </h3>
+                                <p>
+                                    Common and complex abdominal procedures carried out using refined laparoscopic techniques developed through years of practice
+                                </p>
+
+                                <h4>Procedures include:</h4>
+
+                                <div className="procedure-grid">
+                                    <Link
+                                        href="/expertise/laparoscopic-cholecystectomy"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/laparoscopic-cholecystectomy.webp"
+                                            alt="Laparoscopic Cholecystectomy"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Laparoscopic Cholecystectomy </p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/laparoscopic-appendicectomy"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/laparoscopic-appendicectomy.webp"
+                                            alt="Laparoscopic Appendicectomy"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Laparoscopic Appendicectomy </p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/laparoscopic-hellers-cardiomyotomy"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/Laparoscopic-Heller’s-Cardiomyotomy.webp"
+                                            alt="Laparoscopic Heller’s Cardiomyotomy"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Laparoscopic Heller’s Cardiomyotomy </p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/laparoscopic-hiatus-hernia-surgery"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/laparoscopic-hiatus-hernia-surgery.webp"
+                                            alt="Laparoscopic Hiatus Hernia Surgery"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Laparoscopic Hiatus Hernia Surgery</p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/advanced-gi-surgery"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/Advanced-GI-Surgery.webp"
+                                            alt="Advanced GI Surgery"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Advanced GI Surgery</p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/complex-hernia-repair"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/Complex-Hernia-Repair.webp"
+                                            alt="Complex Hernia Repair"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Complex Hernia Repair</p>
+                                    </Link>
+
+                                    <Link
+                                        href="/expertise/recurrent-hernia-surgery"
+                                        className="procedure-card"
+                                    >
+                                        <Image
+                                            src="/images/Recurrent-Hernia-Surgery.webp"
+                                            alt="Recurrent Hernia Surgery"
+                                            width={520}
+                                            height={250}
+                                        />
+                                        <p>Recurrent Hernia Surgery</p>
+                                    </Link>
+
+                                </div>
+                            </div>
+                             <div className="expertise-detail-block full">
                                 <h3>Colorectal Surgery</h3>
                                 <p>
                                     Advanced laparoscopic procedures designed to manage colorectal conditions
@@ -186,43 +287,6 @@ export default function ExpertisePage({ expertiseItems }) {
                                 </div>
                             </div>
 
-                            <div className="expertise-detail-block full">
-                                <h3>General Laparoscopic Surgery </h3>
-                                <p>
-                                    Common and complex abdominal procedures carried out using refined laparoscopic techniques developed through years of practice
-                                </p>
-
-                                <h4>Procedures include:</h4>
-
-                                <div className="procedure-grid">
-                                    <Link
-                                        href="/expertise/laparoscopic-cholecystectomy"
-                                        className="procedure-card"
-                                    >
-                                        <Image
-                                            src="/images/laparoscopic-cholecystectomy.webp"
-                                            alt="Laparoscopic Cholecystectomy"
-                                            width={520}
-                                            height={250}
-                                        />
-                                        <p>Laparoscopic Cholecystectomy </p>
-                                    </Link>
-
-                                    <Link
-                                        href="/expertise/laparoscopic-appendicectomy"
-                                        className="procedure-card"
-                                    >
-                                        <Image
-                                            src="/images/laparoscopic-appendicectomy.webp"
-                                            alt="Laparoscopic Appendicectomy"
-                                            width={520}
-                                            height={250}
-                                        />
-                                        <p>Laparoscopic Appendicectomy </p>
-                                    </Link>
-                                </div>
-                            </div>
-
                             <div className="expertise-detail-row">
                                 <div className="expertise-detail-block">
                                     <h3>Thoracic Surgery </h3>
@@ -235,16 +299,16 @@ export default function ExpertisePage({ expertiseItems }) {
                                     <h4>Procedures include:</h4>
 
                                     <Link
-                                        href="/expertise/laparoscopic-rectopexy"
+                                        href="/expertise/video-assisted-thoracoscopic-surgery"
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laparoscopic-rectopexy.webp"
-                                            alt="Laparoscopic Rectopexy"
+                                            src="/images/Video-Assisted-Thoracoscopic-Surgery-new.webp"
+                                            alt="Video-Assisted Thoracoscopic Surgery (VATS)"
                                             width={520}
                                             height={250}
                                         />
-                                        <p>Laparoscopic Rectopexy </p>
+                                        <p>Video-Assisted Thoracoscopic Surgery (VATS) </p>
                                     </Link>
                                 </div>
 
@@ -322,12 +386,12 @@ export default function ExpertisePage({ expertiseItems }) {
                         </div>
 
                         <div className="expertise-closing">
-                            <p>
+                            {/* <p>
                                 Throughout every area of practice, the approach remains consistent:
                                 <br />
                                 to understand the problem fully, operate with precision, and build
                                 towards the best possible long-term outcome.
-                            </p>
+                            </p> */}
 
                             {/* <p>
                                 For consultations, evaluations, or second opinions in complex surgical

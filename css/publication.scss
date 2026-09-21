@@ -13,7 +13,7 @@
   h2 {
     color: #485a2e;
     text-align: left;
-    margin-bottom: clamp(34px, 3vw, 58px);
+    margin-bottom: clamp(10px, 1vw, 16px);
 
     &::after {
       background: #485a2e;
@@ -34,7 +34,7 @@
     text-align: left;
     font-family: "Neue Montreal Regular";
     font-weight: normal;
-    margin-bottom: clamp(22px, 2vw, 36px);
+    margin-bottom: clamp(10px, 1vw, 16px);
 
     &::after {
       background: #485a2e;
@@ -76,7 +76,7 @@
     padding: 55px 0 75px;
 
     h2 {
-      margin-bottom: 30px;
+      margin-bottom: 12px;
     }
 
     p:not(:last-child) {
@@ -118,7 +118,7 @@
 /* Common heading style */
 .section-heading {
   display: inline-block;
-  margin-bottom: clamp(34px, 3vw, 58px);
+  margin-bottom: clamp(10px, 1vw, 16px);
 
   h2 {
     color: inherit;
@@ -149,7 +149,7 @@
   }
 
   &.small {
-    margin-bottom: clamp(26px, 2vw, 38px);
+    margin-bottom: clamp(10px, 1vw, 16px);
   }
 }
 
@@ -273,7 +273,7 @@
   }
 
   .section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 
     h2 {
       font-size: 28px;

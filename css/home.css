@@ -210,34 +210,79 @@
 .about-section .right {
   display: flex;
   flex-direction: column;
+  width: min(560px, 46vw);
+  padding: clamp(32px, 3vw, 48px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
 }
 .about-section .right h2 {
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 6px;
   color: #ffffff;
+  font-size: clamp(28px, 2.6vw, 40px);
+}
+.about-section .right h2::after {
+  display: none !important;
 }
 .about-section .right h2 .subheading {
   display: block;
-  color: #eee7aa;
-  font-size: clamp(22px, 1.45vw, 28px);
+  color: #eee7aa !important;
+  font-size: clamp(15px, 1.15vw, 19px);
   font-weight: 400;
-  margin-top: clamp(10px, 0.8vw, 16px);
+  margin-top: 0;
 }
 .about-section .right h3 {
-  color: #eee7aa;
-  margin-top: clamp(36px, 2.6vw, 50px);
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: inherit;
 }
-.about-section .right h2::after,
 .about-section .right h3::after {
-  background: #ffffff;
+  display: none;
+}
+.about-section .right ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.about-section .right li {
+  display: inline;
 }
 .about-section .right p {
+  display: inline;
+  margin: 0;
   color: #ffffff;
-  line-height: 1.45;
+  font-size: clamp(15px, 1.05vw, 18px);
+  line-height: 1.8;
 }
 .about-section .right .honor-div {
-  margin-bottom: clamp(18px, 1.5vw, 28px);
-}
-.about-section .right .honor-div .bold {
+  display: block;
+  margin-bottom: 0;
   color: #eee7aa;
+  font-size: clamp(15px, 1.15vw, 19px);
+}
+.about-section .right .honor-div p,
+.about-section .right .honor-div .bold {
+  display: inline;
+  color: inherit;
+  font-weight: 400;
+  font-size: inherit;
+}
+.about-section .right .honor-div br {
+  display: none;
+}
+.about-section .right .honor-div::after {
+  content: "";
+  display: block;
+  margin: clamp(16px, 1.4vw, 22px) 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
 }
 
 @media (max-width: 1365px) {
@@ -257,12 +302,6 @@
   }
   .about-section .about-img-wrapper {
     width: 330px;
-  }
-  .about-section .right h2 .subheading {
-    font-size: 22px;
-  }
-  .about-section .right p {
-    line-height: 1.4;
   }
 }
 @media (max-width: 991px) {
@@ -291,12 +330,6 @@
     max-width: 100%;
     text-align: left;
   }
-  .about-section .right h2 .subheading {
-    font-size: clamp(20px, 4vw, 24px);
-  }
-  .about-section .right h3 {
-    margin-top: 36px;
-  }
 }
 @media (max-width: 575px) {
   .about-section {
@@ -310,20 +343,13 @@
     width: 100%;
     border-radius: 16px;
   }
-  .about-section .right h3 {
-    margin-top: 30px;
-  }
-  .about-section .right .honor-div {
-    margin-bottom: 20px;
-  }
 }
 .years-Mastery {
   padding: clamp(70px, 6.25vw, 120px) 0;
 }
 .years-Mastery h3 {
-  display: inline-flex;
+  display: flex;
   align-items: flex-end;
-  /* justify-content: center; */
   gap: clamp(10px, 1vw, 18px);
   margin-bottom: clamp(40px, 4.16vw, 80px);
   color: #676f43;
@@ -377,7 +403,6 @@
   transform-origin: top;
   transform: scaleY(1);
   transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-  display: none;
 }
 .years-Mastery .img-wrap .complex-sec-wrap:hover .img-wrap::after {
   transform: scaleY(0);
@@ -523,7 +548,7 @@
   color: #ffffff;
   font-weight: 700;
   text-align: left;
-  margin-bottom: clamp(22px, 2vw, 36px);
+  margin-bottom: clamp(10px, 1vw, 16px);
 }
 .teaching-publication-section .tp-content h2::after {
   background: #ffffff;
@@ -532,7 +557,7 @@
   color: #eee7aa;
   font-weight: 400;
   line-height: 1.25;
-  margin-bottom: clamp(24px, 2vw, 36px);
+  margin-bottom: clamp(10px, 1vw, 16px);
 }
 .teaching-publication-section .tp-content h3::after {
   display: none;
@@ -797,7 +822,7 @@
 .beyond-consultation-section h2 {
   color: #fff;
   text-align: left;
-  margin-bottom: clamp(26px, 2vw, 40px);
+  margin-bottom: clamp(10px, 1vw, 16px);
 }
 .beyond-consultation-section h2::after {
   background: #eee7aa;
@@ -853,7 +878,7 @@
   max-width: 1180px;
 }
 .beyond-consultation-section .consultation-content h2 {
-  margin-bottom: clamp(22px, 1.8vw, 34px);
+  margin-bottom: clamp(10px, 1vw, 16px);
 }
 .beyond-consultation-section .consultation-content p {
   margin-bottom: clamp(14px, 1.2vw, 22px);
@@ -867,7 +892,7 @@
   border-radius: 10px;
   background: #eee7aa;
   color: #485a2e;
-  text-transform: none;
+  text-transform: uppercase;
   transition: transform 0.35s ease, background 0.35s ease;
 }
 .beyond-consultation-section .consultation-btn:hover {
