@@ -28,7 +28,7 @@ export default function Header() {
         <div className="brand">
           <Link className="logo" href="/">
             <Image
-              src="/images/sanjay-logo.svg"
+              src="/images/Dr. Sanjay Sonar - Final Logo.svg"
               alt="Dr. Sanjay Sonar Logo"
               width={232}
               height={52}
