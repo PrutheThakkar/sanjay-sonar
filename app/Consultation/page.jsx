@@ -6,6 +6,18 @@ import { seoPageMetadata } from "../../lib/seo";
 
 export const metadata = seoPageMetadata("/consultation");
 
+// Enhanced copies of the seven original consultation illustrations.
+// Unrecognized CMS images continue to use their original source.
+const enhancedAreaImages = {
+  "Gastrointestinal-and.jpg": "/images/consultation-enhanced/Gastrointestinal-and.webp",
+  "Colorectal-disorders.jpg": "/images/consultation-enhanced/Colorectal-disorders.webp",
+  "Thyroid-conditions.jpg": "/images/consultation-enhanced/Thyroid-conditions.webp",
+  "Thoracic-surgical.jpg": "/images/consultation-enhanced/Thoracic-surgical.webp",
+  "Varicose-veins.jpg": "/images/consultation-enhanced/Varicose-veins.webp",
+  "Reconstructive-urological.jpg": "/images/consultation-enhanced/Reconstructive-urological.webp",
+  "Complex-or-recurrent.jpg": "/images/consultation-enhanced/Complex-or-recurrent.webp",
+};
+
 function CmsTitle({ html }) {
   if (!html) return null;
 
@@ -156,10 +168,12 @@ export default async function ConsultationPage() {
                       {item.imageUrl && (
                         <div className="evaluated-img">
                           <Image
-                            src={item.imageUrl}
+                            src={enhancedAreaImages[item.imageUrl.split(/[?#]/)[0].split("/").pop()] || item.imageUrl}
                             alt={item.imageAlt}
                             width={260}
                             height={145}
+                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 22vw"
+                            quality={90}
                           />
                         </div>
                       )}
@@ -196,12 +210,13 @@ export default async function ConsultationPage() {
 
             <div className="appointment-row" id="appointment">
               <div className="appointment-map">
-                <iframe
-                  src="https://www.google.com/maps?q=DR.+SANJAY+SONAR,+Plot+No.+185,+15th+Rd,+opposite+The+Fine+Arts+Society,+Chembur,+Mumbai,+Maharashtra+400071&z=15&output=embed"
-                  title="Map of Dr. Sanjay Sonar's clinic in Chembur, Mumbai"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  allowFullScreen
+                <Image
+                  src="/images/contact-map-img.webp"
+                  alt="Map showing Laparoscopy and Scopy Centre, Godrej Memorial Hospital, and Wockhardt Hospitals in Mumbai"
+                  width={741}
+                  height={581}
+                  sizes="(max-width: 991px) 90vw, 43vw"
+                  quality={90}
                 />
               </div>
               <div className="appointment-card">

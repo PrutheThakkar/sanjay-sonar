@@ -79,6 +79,9 @@
 .teaching-copy h2 span {
   color: #485a2e;
 }
+.teaching-copy h2 .subheading br {
+  display: none;
+}
 .teaching-copy p {
   color: #485a2e;
   font-size: clamp(17px, 1.25vw, 22px);

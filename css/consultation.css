@@ -24,19 +24,9 @@
 .expect-section h4 {
   position: relative;
   margin: clamp(34px, 3vw, 58px) 0 clamp(30px, 3vw, 55px);
-  padding-left: 22px;
   font-weight: 600;
 }
-.expect-section h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #fff;
-}
+
 .expect-section .expect-content {
   width: 100%;
 }

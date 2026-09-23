@@ -901,3 +901,34 @@
     transform: none;
   }
 }/*# sourceMappingURL=selected-work.css.map */
+
+/* Match case-title underlines to their text on Selected Work only. */
+.selected-work .case-header h2 {
+  width: fit-content;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+.selected-work .case-header h2::after {
+  width: 100% !important;
+}
+
+/* Compact typography for the Approach Across Cases section. */
+.selected-work .approach-heading h2 {
+  font-size: clamp(26px, 2vw, 34px);
+}
+
+.selected-work .approach-heading p,
+.selected-work .approach-closing p {
+  font-size: clamp(18px, 1.15vw, 22px);
+  line-height: 1.5;
+}
+
+.selected-work .approach-label {
+  font-size: clamp(16px, 1.05vw, 20px);
+  line-height: 1.4;
+}
+
+.selected-work .approach-step-number {
+  font-size: clamp(12px, 0.8vw, 14px);
+}

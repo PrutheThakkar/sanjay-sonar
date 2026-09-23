@@ -85,10 +85,12 @@ export default function ExpertisePage({ expertiseItems }) {
 
                             <div className="expertise-top-img">
                                 <Image
-                                    src="/images/expertise-new-banner.webp"
+                                    src="/images/DSS_Expertisepage_1 (1).webp"
                                     alt="Dr. Sanjay Sonar"
-                                    width={500}
-                                    height={500}
+                                    width={750}
+                                    height={750}
+                                    sizes="(max-width: 991px) 90vw, 35vw"
+                                    quality={90}
                                     priority
                                 />
                             </div>
@@ -161,10 +163,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laparoscopic-cholecystectomy.webp"
+                                            src="/images/general-laparoscopic-surgery-img-1.webp"
                                             alt="Laparoscopic Cholecystectomy"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Cholecystectomy </p>
                                     </Link>
@@ -174,10 +178,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laparoscopic-appendicectomy.webp"
+                                            src="/images/general-laparoscopic-surgery-img-2.webp"
                                             alt="Laparoscopic Appendicectomy"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Appendicectomy </p>
                                     </Link>
@@ -187,10 +193,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Laparoscopic-Heller’s-Cardiomyotomy.webp"
+                                            src="/images/general-laparoscopic-surgery-img-3.webp"
                                             alt="Laparoscopic Heller’s Cardiomyotomy"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Heller’s Cardiomyotomy </p>
                                     </Link>
@@ -200,10 +208,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laparoscopic-hiatus-hernia-surgery.webp"
+                                            src="/images/general-laparoscopic-surgery-img-4.webp"
                                             alt="Laparoscopic Hiatus Hernia Surgery"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Hiatus Hernia Surgery</p>
                                     </Link>
@@ -213,10 +223,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Advanced-GI-Surgery.webp"
+                                            src="/images/general-laparoscopic-surgery-img-5.webp"
                                             alt="Advanced GI Surgery"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Advanced GI Surgery</p>
                                     </Link>
@@ -226,10 +238,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Complex-Hernia-Repair.webp"
+                                            src="/images/general-laparoscopic-surgery-img-6.webp"
                                             alt="Complex Hernia Repair"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Complex Hernia Repair</p>
                                     </Link>
@@ -239,10 +253,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Recurrent-Hernia-Surgery.webp"
+                                            src="/images/general-laparoscopic-surgery-img-7.webp"
                                             alt="Recurrent Hernia Surgery"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Recurrent Hernia Surgery</p>
                                     </Link>
@@ -264,10 +280,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Laparoscopic-Rectopexy-new.webp"
+                                            src="/images/Colorectal-surgery-img-1.webp"
                                             alt="Laparoscopic Rectopexy"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Rectopexy </p>
                                     </Link>
@@ -277,10 +295,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Laparoscopic-Colectomy-new.webp"
+                                            src="/images/colorectal-surgery-img-2.webp"
                                             alt="Laparoscopic Colectomy"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Colectomy </p>
                                     </Link>
@@ -303,10 +323,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/Video-Assisted-Thoracoscopic-Surgery-new.webp"
+                                            src="/images/thoracic-surgery-img-new-1.webp"
                                             alt="Video-Assisted Thoracoscopic Surgery (VATS)"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 991px) 90vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Video-Assisted Thoracoscopic Surgery (VATS) </p>
                                     </Link>
@@ -326,10 +348,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laparoscopic-thyroid-surgery.webp"
+                                            src="/images/endocrine-surgery-img-new-1.webp"
                                             alt="Laparoscopic Thyroid Surgery"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 991px) 90vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laparoscopic Thyroid Surgery </p>
                                     </Link>
@@ -351,10 +375,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/pyeloplasty.webp"
+                                            src="/images/reconstructive-urological-surgery-img-1.webp"
                                             alt="Pyeloplasty"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 991px) 90vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Pyeloplasty</p>
                                     </Link>
@@ -374,10 +400,12 @@ export default function ExpertisePage({ expertiseItems }) {
                                         className="procedure-card"
                                     >
                                         <Image
-                                            src="/images/laser-treatment.webp"
+                                            src="/images/vascular-procedures-img-1.webp"
                                             alt="Laser Treatment for Varicose Veins"
                                             width={520}
                                             height={250}
+                                            sizes="(max-width: 991px) 90vw, 43vw"
+                                            quality={90}
                                         />
                                         <p>Laser Treatment for Varicose Veins</p>
                                     </Link>

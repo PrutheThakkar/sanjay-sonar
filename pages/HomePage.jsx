@@ -103,6 +103,8 @@ export default function HomePage({
                                             alt={aboutSection.imageAlt}
                                             width={485}
                                             height={585}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 420px, (max-width: 1100px) 330px, (max-width: 1365px) 400px, (max-width: 1600px) 45vw, 720px"
+                                            quality={90}
                                             priority
                                             className="about-img"
                                         />
@@ -168,6 +170,8 @@ export default function HomePage({
                                     <div className="img-wrap">
                                         <Image
                                             src={item.imageUrl}
+                                            sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 28vw"
+                                            quality={90}
                                             alt={item.imageAlt}
                                             width={442}
                                             height={330}
@@ -201,6 +205,8 @@ export default function HomePage({
                                 <div className="tp-image" data-aos="fade-up">
                                     <Image
                                         src={item.imageUrl}
+                                        sizes="(max-width: 575px) 90vw, (max-width: 991px) 520px, 33vw"
+                                        quality={90}
                                         alt={item.imageAlt}
                                         width={560}
                                         height={410}
@@ -370,18 +376,22 @@ export default function HomePage({
                             </div>
 
                             <div className="beyond-small-images">
-                                <div className="beyond-img small site-img-reveal delay-1">
+                                <div className="beyond-img small" data-aos="fade-up">
                                     <Image
                                         src="/images/beyond-surgery-1st.webp"
+                                        sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 22vw"
+                                        quality={90}
                                         alt="Beyond surgery"
                                         width={420}
                                         height={260}
                                     />
                                 </div>
 
-                                <div className="beyond-img small site-img-reveal delay-2">
+                                <div className="beyond-img small" data-aos="fade-up">
                                     <Image
                                         src="/images/beyond-surgery-2nd.webp"
+                                        sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 22vw"
+                                        quality={90}
                                         alt="Plantation drive"
                                         width={420}
                                         height={260}
@@ -391,9 +401,11 @@ export default function HomePage({
                         </div>
 
                         <div className="beyond-right">
-                            <div className="beyond-img large site-img-reveal delay-3">
+                            <div className="beyond-img large" data-aos="fade-up">
                                 <Image
                                     src="/images/beyond-surgery-3rd.webp"
+                                    sizes="(max-width: 991px) 90vw, 40vw"
+                                    quality={90}
                                     alt="Community care"
                                     width={720}
                                     height={650}
