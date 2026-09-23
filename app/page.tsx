@@ -1,19 +1,28 @@
 import Layout from "../components/Layout";
 import HomePage from "../pages/HomePage";
-import { getHomePageData } from "../lib/wordpress";
+import { getHomePageData, getSelectedWorkPageData } from "../lib/wordpress";
 import { seoPageMetadata } from "../lib/seo";
+import { fallbackCases } from "../lib/case-studies";
 import SeoSchema from "../components/SeoSchema";
 
 export const metadata = seoPageMetadata("/");
 
 export default async function Page() {
-  let homePageData: Awaited<ReturnType<typeof getHomePageData>> | null = null;
+  const [homeResult, casesResult] = await Promise.allSettled([
+    getHomePageData(),
+    getSelectedWorkPageData(),
+  ]);
+  const homePageData = homeResult.status === "fulfilled" ? homeResult.value : null;
+  const selectedWork = casesResult.status === "fulfilled" ? casesResult.value : null;
 
-  try {
-    homePageData = await getHomePageData();
-  } catch (error) {
-    console.error("Unable to load the WordPress homepage:", error);
+  if (homeResult.status === "rejected") {
+    console.error("Unable to load the WordPress homepage:", homeResult.reason);
   }
+  if (casesResult.status === "rejected") {
+    console.error("Unable to load the WordPress case studies:", casesResult.reason);
+  }
+
+  const caseStudies = selectedWork?.items?.length ? selectedWork.items : fallbackCases;
 
   return (
     <>
@@ -23,6 +32,7 @@ export default async function Page() {
         heroSlides={homePageData?.heroSlides ?? []}
         aboutSection={homePageData?.aboutSection ?? null}
         expertiseSection={homePageData?.expertiseSection ?? null}
+        caseStudies={caseStudies}
         teachingSection={homePageData?.teachingSection ?? []}
         consultationSection={homePageData?.consultationSection ?? null}
       />

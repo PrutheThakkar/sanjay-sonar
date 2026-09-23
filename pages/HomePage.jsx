@@ -8,6 +8,7 @@ export default function HomePage({
     heroSlides,
     aboutSection,
     expertiseSection,
+    caseStudies = [],
     teachingSection,
     consultationSection,
 }) {
@@ -159,27 +160,27 @@ export default function HomePage({
                     </h3>
 
                     <ul>
-                        {(expertiseSection?.items || []).map((item, index) => (
+                        {caseStudies.map((item, index) => (
                             <li
-                                key={item.id}
+                                key={item.id || item.number}
                                 data-aos="fade-up"
                                 data-aos-duration="850"
                                 data-aos-delay={150 + index * 100}
                             >
-                                <div className="complex-sec-wrap">
+                                <Link href={{ pathname: "/selected-work/", query: { case: index + 1 } }} scroll={false} className="complex-sec-wrap" style={{ display: "block", color: "inherit", textDecoration: "none" }}>
                                     <div className="img-wrap">
-                                        <Image
-                                            src={item.imageUrl}
+                                        {item.image && <Image
+                                            src={item.image}
                                             sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 28vw"
                                             quality={90}
-                                            alt={item.imageAlt}
+                                            alt={item.imageAlt || item.title}
                                             width={442}
                                             height={330}
                                             className="about-img"
-                                        />
+                                        />}
                                     </div>
                                     {item.title && <h4>{item.title}</h4>}
-                                </div>
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -190,7 +191,7 @@ export default function HomePage({
                         data-aos-duration="850"
                         data-aos-delay="750"
                     >
-                        <Link href="/expertise#Colorectal-Surgery" className="btn cta site-cta">
+                        <Link href="/selected-work/" className="btn cta site-cta">
                             View More
                         </Link>
                     </div>

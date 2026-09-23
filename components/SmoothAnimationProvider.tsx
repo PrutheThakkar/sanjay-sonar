@@ -10,6 +10,17 @@ import "aos/dist/aos.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let activeLenis: Lenis | null = null;
+
+export function scrollPageTo(top: number) {
+  if (activeLenis) {
+    activeLenis.resize();
+    activeLenis.scrollTo(top, { immediate: true, force: true });
+  } else {
+    window.scrollTo({ top, behavior: "instant" });
+  }
+}
+
 const cardSelector = [
   ".expertise-item",
   ".procedure-card",
@@ -97,6 +108,8 @@ export default function SmoothAnimationProvider() {
       smoothWheel: true,
     });
 
+    activeLenis = lenis;
+
     let rafId: number;
 
     function raf(time: number) {
@@ -115,13 +128,20 @@ export default function SmoothAnimationProvider() {
 
     return () => {
       cancelAnimationFrame(rafId);
+      if (activeLenis === lenis) activeLenis = null;
       lenis.destroy();
     };
   }, []);
 
   useLayoutEffect(() => {
     if (!pageReady) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frame = requestAnimationFrame(() => {
+        ScrollTrigger.refresh();
+        window.dispatchEvent(new Event("page-scroll-ready"));
+      });
+      return () => cancelAnimationFrame(frame);
+    }
 
     const context = gsap.context(() => {
       const sections = gsap.utils.toArray<HTMLElement>(
@@ -251,6 +271,7 @@ export default function SmoothAnimationProvider() {
       requestAnimationFrame(() => {
         AOS.refreshHard();
         ScrollTrigger.refresh();
+        window.dispatchEvent(new Event("page-scroll-ready"));
       });
     });
 
