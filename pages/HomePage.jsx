@@ -204,7 +204,7 @@ export default function HomePage({
                             {item.imageUrl && (
                                 <div className="tp-image" data-aos="fade-up">
                                     <Image
-                                        src={item.imageUrl}
+                                        src={/\/teaching-img\.webp(?:[?#]|$)/.test(item.imageUrl) ? "/images/homepage-enhanced/teaching-img.webp" : item.imageUrl}
                                         sizes="(max-width: 575px) 90vw, (max-width: 991px) 520px, 33vw"
                                         quality={90}
                                         alt={item.imageAlt}
@@ -378,7 +378,7 @@ export default function HomePage({
                             <div className="beyond-small-images">
                                 <div className="beyond-img small" data-aos="fade-up">
                                     <Image
-                                        src="/images/beyond-surgery-1st.webp"
+                                        src="/images/homepage-enhanced/beyond-surgery-1st.webp"
                                         sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 22vw"
                                         quality={90}
                                         alt="Beyond surgery"
@@ -389,7 +389,7 @@ export default function HomePage({
 
                                 <div className="beyond-img small" data-aos="fade-up">
                                     <Image
-                                        src="/images/beyond-surgery-2nd.webp"
+                                        src="/images/homepage-enhanced/beyond-surgery-2nd.webp"
                                         sizes="(max-width: 575px) 90vw, (max-width: 991px) 43vw, 22vw"
                                         quality={90}
                                         alt="Plantation drive"
@@ -403,7 +403,7 @@ export default function HomePage({
                         <div className="beyond-right">
                             <div className="beyond-img large" data-aos="fade-up">
                                 <Image
-                                    src="/images/beyond-surgery-3rd.webp"
+                                    src="/images/homepage-enhanced/beyond-surgery-3rd.webp"
                                     sizes="(max-width: 991px) 90vw, 40vw"
                                     quality={90}
                                     alt="Community care"
