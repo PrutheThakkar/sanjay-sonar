@@ -209,6 +209,7 @@ export default function ExpertisePage({ expertiseItems }) {
                                     >
                                         <Image
                                             src="/images/general-laparoscopic-surgery-img-4.webp"
+                                            className="procedure-image-hiatus"
                                             alt="Laparoscopic Hiatus Hernia Surgery"
                                             width={520}
                                             height={250}
