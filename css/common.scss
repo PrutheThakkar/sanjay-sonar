@@ -1065,3 +1065,17 @@ body :is(
     padding-top: 120px;
   }
 }
+
+@media (max-width: 991px) {
+  .inside-page .inside-banner,
+  .home-page .inside-banner {
+    height: auto;
+    min-height: 320px;
+    padding-top: 140px;
+    padding-bottom: 50px;
+  }
+
+  .inside-banner h1 {
+    line-height: 1.15;
+  }
+}
