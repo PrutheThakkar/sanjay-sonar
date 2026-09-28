@@ -137,6 +137,9 @@ export default function Footer() {
               </a>
             </div>
           </div>
+          <Link href="/consultation" className="footer-consultation-btn footer-consultation-bottom site-cta">
+            Consultation
+          </Link>
         </div>
       </div>
     </footer>

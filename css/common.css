@@ -852,7 +852,16 @@ body:has(.mobileMenu.open) {
     width: 100%;
   }
 }
+.footer .footer-consultation-bottom {
+  display: none;
+}
 @media (max-width: 575px) {
+  .footer .footer-brand > .footer-consultation-btn {
+    display: none;
+  }
+  .footer .footer-consultation-bottom {
+    display: inline-flex;
+  }
   .footer {
     padding: 36px 0;
   }

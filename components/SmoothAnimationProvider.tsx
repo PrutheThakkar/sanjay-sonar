@@ -148,22 +148,27 @@ export default function SmoothAnimationProvider() {
         ".main > section:not(.hero):not(.inside-banner)",
       );
 
-      sections.forEach((section) => {
-        gsap.fromTo(
-          section,
-          { clipPath: "inset(100% 0% 0% 0%)" },
-          {
-            clipPath: "inset(0% 0% 0% 0%)",
-            ease: "none",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 98%",
-              end: "top 40%",
-              scrub: 0.6,
-              invalidateOnRefresh: true,
+      // Tall mobile sections should be visible immediately, rather than clipped
+      // across their full height while they enter the viewport.
+      const sectionMedia = gsap.matchMedia();
+      sectionMedia.add("(min-width: 992px)", () => {
+        sections.forEach((section) => {
+          gsap.fromTo(
+            section,
+            { clipPath: "inset(100% 0% 0% 0%)" },
+            {
+              clipPath: "inset(0% 0% 0% 0%)",
+              ease: "none",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 98%",
+                end: "top 40%",
+                scrub: 0.6,
+                invalidateOnRefresh: true,
+              },
             },
-          },
-        );
+          );
+        });
       });
 
       gsap.fromTo(
