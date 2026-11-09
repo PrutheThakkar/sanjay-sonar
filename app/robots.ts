@@ -4,7 +4,16 @@ import { siteUrl } from "../lib/seo";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: "*",
+      userAgent: [
+        "*",
+        "GPTBot",
+        "OAI-SearchBot",
+        "ChatGPT-User",
+        "Claude-SearchBot",
+        "PerplexityBot",
+        "Google-Extended",
+        "meta-externalagent",
+      ],
       allow: "/",
       disallow: ["/api/", "/__graphql"],
     },
